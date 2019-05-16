@@ -16,26 +16,49 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.ui.flashCards.FlashCardsFragment;
 import com.dariahaze.learning_english.ui.grammar.GrammarFragment;
 import com.dariahaze.learning_english.ui.grammar.GrammarPagesFragment;
+import com.dariahaze.learning_english.ui.registration.SignInActivity;
 import com.dariahaze.learning_english.ui.statistics.StatisticsFragment;
 import com.dariahaze.learning_english.ui.tests.TestsFragment;
 import com.dariahaze.learning_english.ui.videoLessons.VideoLessonsFragment;
 import com.dariahaze.learning_english.utils.Utils;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private FragmentManager fm;
     private boolean mainFragmentIsOpened = true;
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FirebaseApp.initializeApp(this);
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
+
+
+        if (currentUser == null){
+            openSignInActivity();
+        }
+        else {
+            TextView usernameTV = (TextView)findViewById(R.id.usernameTV);
+            System.out.println(currentUser.getDisplayName());
+            //usernameTV.setText(currentUser.getDisplayName());
+
+        }
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -125,12 +148,20 @@ public class MainActivity extends AppCompatActivity
 
             startActivity(Intent.createChooser(share, "Share link via..."));
         } else if (id == R.id.nav_sign_out) {
-            //sign out
+            mAuth.signOut();
+            openSignInActivity();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void openSignInActivity(){
+        Intent intent = new Intent(this, SignInActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        this.startActivity (intent);
+        this.finishActivity (0);
     }
 
 }

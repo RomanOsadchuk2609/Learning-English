@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Learning English</string>
+    <string name="web_client_id">391054699526-e828316umovtdjr5i55qkq668usf2mkd.apps.googleusercontent.com</string>
     <string name="sign_in">Sign in</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -18,8 +19,6 @@
     <string name="total">Total</string>
     <string name="users_s_statistics">Users\'s statistics</string>
     <string name="communicate">Communicate</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="grammar">Grammar</string>
     <string name="tenses">Tenses</string>

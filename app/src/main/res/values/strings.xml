@@ -29,4 +29,5 @@
     <string name="tests">Tests</string>
     <string name="username">Username</string>
     <string name="statistics">Statistics</string>
+    <string name="please_sign_in">Please, Sign In</string>
 </resources>

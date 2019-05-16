@@ -12,8 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dariahaze.learning_english.R;
+import com.dariahaze.learning_english.ui.flashCards.FlashCardsFragment;
 import com.dariahaze.learning_english.ui.grammar.GrammarFragment;
 import com.dariahaze.learning_english.ui.grammar.GrammarPagesFragment;
+import com.dariahaze.learning_english.ui.tests.TestsFragment;
+import com.dariahaze.learning_english.ui.videoLessons.VideoLessonsFragment;
 
 
 /**
@@ -46,13 +49,50 @@ public class MainFragment extends Fragment {
         CardView grammarCV = view.findViewById(R.id.grammar_CV);
         CardView testsCV = view.findViewById(R.id.tests_CV);
         CardView flashCardsCV = view.findViewById(R.id.flash_cards_CV);
+        CardView videoLessonsCV = view.findViewById(R.id.video_lessons_CV);
+        CardView statisticsCV = view.findViewById(R.id.statistics_CV);
 
         grammarCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 assert getFragmentManager() != null;
                 getFragmentManager().beginTransaction().replace(R.id.main_content, GrammarPagesFragment.newInstance())
+                        .commit();
+            }
+        });
+
+        testsCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                assert getFragmentManager() != null;
+                getFragmentManager().beginTransaction().replace(R.id.main_content, TestsFragment.newInstance())
+                        .commit();
+            }
+        });
+
+        flashCardsCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                assert getFragmentManager() != null;
+                getFragmentManager().beginTransaction().replace(R.id.main_content, FlashCardsFragment.newInstance())
+                        .commit();
+            }
+        });
+
+        videoLessonsCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                assert getFragmentManager() != null;
+                getFragmentManager().beginTransaction().replace(R.id.main_content, VideoLessonsFragment.newInstance())
+                        .commit();
+            }
+        });
+
+        statisticsCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                assert getFragmentManager() != null;
+                getFragmentManager().beginTransaction().replace(R.id.main_content, VideoLessonsFragment.newInstance())
                         .commit();
             }
         });

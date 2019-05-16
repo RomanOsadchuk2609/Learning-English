@@ -28,4 +28,6 @@
     <string name="_1">1</string>
     <string name="grammar_and_tenses">Grammar and tenses</string>
     <string name="tests">Tests</string>
+    <string name="username">Username</string>
+    <string name="statistics">Statistics</string>
 </resources>

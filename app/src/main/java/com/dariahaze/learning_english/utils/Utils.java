@@ -10,6 +10,8 @@ public class Utils {
     public final static String GRAMMAR_HTML_PATH = "file:///android_asset/Grammar/";
     public final static String TENSES_HTML_PATH = "file:///android_asset/Tenses/";
 
+    public final static String APP_LINK = "https://play.google.com/store/apps/details?id=com.dariahaze.learning_english";
+
     public final static List<GrammarElement> grammarOtherElements;
     public final static List<GrammarElement> grammarTensesElements;
     public final static List<GrammarElement> grammarElements;

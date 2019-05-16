@@ -1,5 +1,6 @@
 package com.dariahaze.learning_english.ui.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,13 +18,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.dariahaze.learning_english.R;
+import com.dariahaze.learning_english.ui.flashCards.FlashCardsFragment;
 import com.dariahaze.learning_english.ui.grammar.GrammarFragment;
 import com.dariahaze.learning_english.ui.grammar.GrammarPagesFragment;
+import com.dariahaze.learning_english.ui.statistics.StatisticsFragment;
+import com.dariahaze.learning_english.ui.tests.TestsFragment;
+import com.dariahaze.learning_english.ui.videoLessons.VideoLessonsFragment;
+import com.dariahaze.learning_english.utils.Utils;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private FragmentManager fm;
+    private boolean mainFragmentIsOpened = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,19 +40,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         fm = getSupportFragmentManager();
-        loadFragment(fm, MainFragment.newInstance());
-
-
-        /*CardView grammarCV = findViewById(R.id.grammar_CV);
-        CardView testsCV = findViewById(R.id.tests_CV);
-        CardView flashCardsCV = findViewById(R.id.flash_cards_CV);
-
-        grammarCV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                assert getFragmentManager() != null;
-            }
-        });*/
+        fm.beginTransaction().replace(R.id.main_content, MainFragment.newInstance()).commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -60,10 +55,15 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
+        System.out.println("mainFragmentIsOpened = " + mainFragmentIsOpened);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        } /*else if (!mainFragmentIsOpened){
+            fm.beginTransaction().replace(R.id.main_content, MainFragment.newInstance()).commit();
+            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+            navigationView.getMenu().getItem(0).setChecked(true);
+        } */else {
             super.onBackPressed();
         }
     }
@@ -96,19 +96,36 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         if (id == R.id.nav_total) {
-            loadFragment(fm, MainFragment.newInstance());
-        }
-        else if (id == R.id.nav_grammar_test) {
-
+            fm.beginTransaction().replace(R.id.main_content, MainFragment.newInstance()).commit();
+            mainFragmentIsOpened = true;
         } else if (id == R.id.nav_grammar_in_use) {
-            fm.beginTransaction().replace(R.id.main_content, GrammarPagesFragment.newInstance())
-                    .commit();
-        } else if (id == R.id.nav_video_lessons) {
-
+            fm.beginTransaction().replace(R.id.main_content, GrammarPagesFragment.newInstance()).commit();
+            mainFragmentIsOpened = false;
+        } else if (id == R.id.nav_grammar_test) {
+            fm.beginTransaction().replace(R.id.main_content, TestsFragment.newInstance()).commit();
+            mainFragmentIsOpened = false;
+        } else if (id == R.id.nav_flash_cards) {
+            fm.beginTransaction().replace(R.id.main_content, FlashCardsFragment.newInstance()).commit();
+            mainFragmentIsOpened = false;
+        }else if (id == R.id.nav_video_lessons) {
+            fm.beginTransaction().replace(R.id.main_content, VideoLessonsFragment.newInstance()).commit();
+            mainFragmentIsOpened = false;
+        } else if (id == R.id.nav_user_statistics) {
+            fm.beginTransaction().replace(R.id.main_content, StatisticsFragment.newInstance()).commit();
+            mainFragmentIsOpened = false;
         } else if (id == R.id.nav_share) {
+            Intent share = new Intent(android.content.Intent.ACTION_SEND);
+            share.setType("text/plain");
+            share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
 
-        } else if (id == R.id.nav_feedback) {
+            // Add data to the intent, the receiving app will decide
+            // what to do with it.
+            share.putExtra(Intent.EXTRA_SUBJECT, "This is really nice app for learning English!");
+            share.putExtra(Intent.EXTRA_TEXT, Utils.APP_LINK);
 
+            startActivity(Intent.createChooser(share, "Share link via..."));
+        } else if (id == R.id.nav_sign_out) {
+            //sign out
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -116,7 +133,4 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void loadFragment(FragmentManager fm, Fragment fragment){
-        fm.beginTransaction().replace(R.id.main_content, fragment).commit();
-    }
 }

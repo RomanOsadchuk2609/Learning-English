@@ -1,6 +1,7 @@
 package com.dariahaze.learning_english.utils;
 
 import com.dariahaze.learning_english.model.GrammarElement;
+import com.dariahaze.learning_english.model.VideoLesson;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,6 +16,7 @@ public class Utils {
     public final static List<GrammarElement> grammarOtherElements;
     public final static List<GrammarElement> grammarTensesElements;
     public final static List<GrammarElement> grammarElements;
+    public final static List<VideoLesson> videoLessons;
 
     static {
         //TODO WRITE PATH
@@ -208,7 +210,52 @@ public class Utils {
                 relativeClauses));
 
 
+        videoLessons = new ArrayList<>(Arrays.asList(
+                new VideoLesson("Learn CONTINUOUS TENSES in English the EASY way","https://www.youtube.com/watch?v=23sIBk6gL4w&feature=youtu.be"),
+                new VideoLesson("Basic English – How and when to use DO, DOES, and DID","https://www.youtube.com/watch?v=oDGCCJRZU7I"),
+                new VideoLesson("Should you use DO or BE?","https://www.youtube.com/watch?v=cd_o-94r8iE"),
+                new VideoLesson("WOULD contractions: I'D, YOU'D, HE'D...","https://www.youtube.com/watch?v=dmozaTka7zs"),
+                new VideoLesson("What is an auxiliary verb?","https://www.youtube.com/watch?v=HHt52kFa2ow"),
+                new VideoLesson("English Prepositions: IN or ON?","https://www.youtube.com/watch?v=TaPg7CW56Qg"),
+                new VideoLesson("8 rules for using 'THE' in English","https://www.youtube.com/watch?v=P4U0uLBATZI"),
+                new VideoLesson("3 Quick Grammar Fixes","https://www.youtube.com/watch?v=IoN1ABki6HU"),
+                new VideoLesson("Pronouns - SHE, HER, HE, HIS","https://www.youtube.com/watch?v=_IK_0sIsfxg&t=3s"),
+                new VideoLesson("When to use 'good' and 'well'","https://www.youtube.com/watch?v=xS1Krim0TUo"),
+                new VideoLesson("TOO MUCH, TOO MANY, A LOT OF","https://www.youtube.com/watch?v=gFc6STGTU4w"),
+                new VideoLesson("10 common verbs followed by infinitives","https://www.youtube.com/watch?v=szb4FJHakIk"),
+                new VideoLesson("Noun, Verb, Adjective, Adverb","https://www.youtube.com/watch?v=CzHotHaXGk0"),
+                new VideoLesson("AGO & FROM NOW - Talking about time in English","https://www.youtube.com/watch?v=2ltn4UrOTRk"),
+                new VideoLesson("Superlative Adjectives - biggest, best, most beautiful, etc","https://www.youtube.com/watch?v=yFWVbV3fd3I"),
+                new VideoLesson("Prepositions - Arrive AT, ON, or IN?","https://www.youtube.com/watch?v=4H7VpBwYPOE"),
+                new VideoLesson("6 ways to use the verb 'GO' in english ","https://www.youtube.com/watch?v=gDLX3jqkEhI"),
+                new VideoLesson("How to compare: \"as cold as ice\"","https://www.youtube.com/watch?v=4CEmvXbTDNg"),
+                new VideoLesson("Basic English Grammar - BE verb","https://www.youtube.com/watch?v=1FByqdpRSVs"),
+                new VideoLesson("Present Simple - YES/NO QUESTIONS","https://www.youtube.com/watch?v=zEv1DJuhiWU"),
+                new VideoLesson("5 Common Irregular Past Tense Verbs","https://www.youtube.com/watch?v=XAFPfyZ8D1Q"),
+                new VideoLesson("THIS, THAT, THESE, THOSE","https://www.youtube.com/watch?v=KxmgDmz6JEU&t=7s"),
+                new VideoLesson("How to show possession in English - MY / MINE, HER / SHE / HERS, and more!","https://www.youtube.com/watch?v=TKN8WUa_hOI"),
+                new VideoLesson("Future Tense - WILL & GOING TO","https://www.youtube.com/watch?v=SmSKJ-t8lJ8"),
+                new VideoLesson("When NOT to use prepositions in English","https://www.youtube.com/watch?v=J0MYHI3R5OE"),
+                new VideoLesson("How to spell plural nouns easily","https://www.youtube.com/watch?v=kg7PouRs2Lg"),
+                new VideoLesson("Supposed to and going to","https://www.youtube.com/watch?v=FWeTXElJPwc"),
+                new VideoLesson("Common English Grammar Errors with Plurals","https://www.youtube.com/watch?v=DmtBX8jDwds"),
+                new VideoLesson("6 ways to use WILL","https://www.youtube.com/watch?v=YfztVj5Qwqk"),
+                new VideoLesson("How to learn grammar – any grammar!!!","https://www.youtube.com/watch?v=c6Y1UJb2fvc"),
+                new VideoLesson("Has, have, have got","https://www.youtube.com/watch?v=A6hF53-vHjk"),
+                new VideoLesson("3 ways to use HAVE GOT in English","https://www.youtube.com/watch?v=jXDMl3HVEBY"),
+                new VideoLesson("Causative Verbs: Make, Have, Let, Get, Help","https://www.youtube.com/watch?v=ZyfLxDTlsOQ"),
+                new VideoLesson("Subject-Verb Agreement with EACH, EVERY, ANY, SOME","https://www.youtube.com/watch?v=dmw0kBuuEy4"),
+                new VideoLesson("TO or FOR? Prepositions in English","https://www.youtube.com/watch?v=E3gvjrh5_TY"),
+                new VideoLesson("How to use 'too' and 'enough' in English","https://www.youtube.com/watch?v=ethbBja46v4"),
+                new VideoLesson("Learn English: ALL or WHOLE?","https://www.youtube.com/watch?v=hJAXF8YryL4"),
+                new VideoLesson("Alright or All right?","https://www.youtube.com/watch?v=pOFWLKDk3Hk"),
+                new VideoLesson("Farther or Further?","https://www.youtube.com/watch?v=ytGzJbu4mPE"),
+                new VideoLesson("Past Simple and Past Perfect - Tenses in English","https://www.youtube.com/watch?v=7Mni3yDpIWo")
+        ));
+
     }
+
+
 
 
 }

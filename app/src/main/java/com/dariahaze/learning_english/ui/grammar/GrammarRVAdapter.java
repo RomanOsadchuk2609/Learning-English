@@ -9,11 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.model.GrammarElement;
-import com.dariahaze.learning_english.utils.Utils;
 
 import java.util.List;
 
@@ -42,7 +40,7 @@ public class GrammarRVAdapter extends RecyclerView.Adapter<GrammarRVAdapter.View
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ConstraintLayout v = (ConstraintLayout) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_grammar_element_large, parent, false);
+                .inflate(R.layout.item_rv_large, parent, false);
         return new GrammarRVAdapter.ViewHolder(v);
     }
 
@@ -70,8 +68,8 @@ public class GrammarRVAdapter extends RecyclerView.Adapter<GrammarRVAdapter.View
         public ViewHolder(ConstraintLayout itemView) {
             super(itemView);
             constraintLayout = itemView;
-            numberTV = constraintLayout.findViewById(R.id.grammarItemNumberTV);
-            nameTV = constraintLayout.findViewById(R.id.grammarItemNameTV);
+            numberTV = constraintLayout.findViewById(R.id.itemNumberTV);
+            nameTV = constraintLayout.findViewById(R.id.itemNameTV);
             sublistRV = constraintLayout.findViewById(R.id.sublistRV);
             sublistRV.setLayoutManager(new LinearLayoutManager(constraintLayout.getContext()));
             sublistRV.setVisibility(View.GONE);

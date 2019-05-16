@@ -26,4 +26,6 @@
     <string name="Other">Other</string>
     <string name="textview">TextView</string>
     <string name="_1">1</string>
+    <string name="grammar_and_tenses">Grammar and tenses</string>
+    <string name="tests">Tests</string>
 </resources>

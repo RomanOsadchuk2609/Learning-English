@@ -6,4 +6,5 @@
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorWindowBackground">#F5F5F5</color>
+    <color name="colorPressedGrey">#f2f2f2</color>
 </resources>

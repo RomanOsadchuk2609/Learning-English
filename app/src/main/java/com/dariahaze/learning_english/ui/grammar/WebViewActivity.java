@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.dariahaze.learning_english.R;
 
+import java.util.Objects;
+
 public class WebViewActivity extends AppCompatActivity {
 
     @Override
@@ -17,7 +19,7 @@ public class WebViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_web_view);
         Toolbar toolbar = findViewById(R.id.toolbarWebView);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 

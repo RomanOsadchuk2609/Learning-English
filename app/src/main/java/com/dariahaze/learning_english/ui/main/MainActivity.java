@@ -21,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.dariahaze.learning_english.R;
+import com.dariahaze.learning_english.ui.flashCards.CardPagerActivity;
 import com.dariahaze.learning_english.ui.flashCards.FlashCardsFragment;
 import com.dariahaze.learning_english.ui.grammar.GrammarFragment;
 import com.dariahaze.learning_english.ui.grammar.GrammarPagesFragment;
@@ -132,7 +133,10 @@ public class MainActivity extends AppCompatActivity
             fm.beginTransaction().replace(R.id.main_content, TestsFragment.newInstance()).commit();
             mainFragmentIsOpened = false;
         } else if (id == R.id.nav_flash_cards) {
-            fm.beginTransaction().replace(R.id.main_content, FlashCardsFragment.newInstance()).commit();
+//            fm.beginTransaction().replace(R.id.main_content, FlashCardsFragment.newInstance()).commit();
+
+            Intent intent = new Intent (getApplicationContext(), CardPagerActivity.class);
+            startActivity(intent);
             mainFragmentIsOpened = false;
         }else if (id == R.id.nav_video_lessons) {
             fm.beginTransaction().replace(R.id.main_content, VideoLessonsFragment.newInstance()).commit();

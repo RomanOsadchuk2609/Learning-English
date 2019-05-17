@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.model.FlashCard;
+import com.wajahatkarim3.easyflipview.EasyFlipView;
 
 
 /**
@@ -48,13 +49,27 @@ public class CardFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        TextView cardIndexTV, frontTextTV;
+        final EasyFlipView flipView = view.findViewById(R.id.flipView);
+        flipView.setFlipOnTouch(false);
+        flipView.setFlipDuration(500);
+        flipView.setFlipEnabled(true);
+
+        flipView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipView.flipTheView();
+            }
+        });
+
+        TextView cardIndexTV, frontTextTV, backTextTV;
         cardIndexTV = view.findViewById(R.id.card_index_tv);
         frontTextTV = view.findViewById(R.id.card_front_tv);
+        backTextTV = view.findViewById(R.id.card_back_tv);
 
         cardIndexTV.setText(cardIndex + " of " + amountOfCards);
         if (flashCard!=null){
             frontTextTV.setText(flashCard.getFrontText());
+            backTextTV.setText(flashCard.getBackText());
         }
     }
 

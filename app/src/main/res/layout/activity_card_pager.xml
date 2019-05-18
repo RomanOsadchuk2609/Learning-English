@@ -14,7 +14,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/AppTheme.PopupOverlay" />
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/flash_cards"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"/>
+    </android.support.v7.widget.Toolbar>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/cardPager"

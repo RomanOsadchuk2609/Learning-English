@@ -25,6 +25,7 @@ public class CardFragment extends Fragment {
     private boolean isFront = true;
     private int amountOfCards;
     private int cardIndex;
+    private boolean isFrontSide = true;
 
     public CardFragment() {
         // Required empty public constructor
@@ -50,14 +51,15 @@ public class CardFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         final EasyFlipView flipView = view.findViewById(R.id.flipView);
-        flipView.setFlipOnTouch(false);
+        /*flipView.setFlipOnTouch(false);
         flipView.setFlipDuration(500);
-        flipView.setFlipEnabled(true);
+        flipView.setFlipEnabled(true);*/
 
         flipView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 flipView.flipTheView();
+                isFrontSide = !isFrontSide;
             }
         });
 
@@ -72,6 +74,7 @@ public class CardFragment extends Fragment {
             backTextTV.setText(flashCard.getBackText());
         }
     }
+
 
     public FlashCard getFlashCard() {
         return flashCard;

@@ -30,4 +30,5 @@
     <string name="username">Username</string>
     <string name="statistics">Statistics</string>
     <string name="please_sign_in">Please, Sign In</string>
+    <string name="edittext">EditText</string>
 </resources>

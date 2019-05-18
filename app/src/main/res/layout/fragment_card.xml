@@ -14,18 +14,19 @@
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="64dp"
+        android:longClickable="true"
+        app:flipDuration="300"
+        app:flipEnabled="true"
+        app:flipOnTouch="false"
+        app:flipType="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/card_index_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:flipType="horizontal"
-        app:flipOnTouch="false"
-        app:flipEnabled="true"
-        app:flipDuration="300">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <include layout="@layout/card_back_side"/>
+        <include layout="@layout/card_back_side" />
 
-        <include layout="@layout/card_front_side"/>
+        <include layout="@layout/card_front_side" />
 
     </com.wajahatkarim3.easyflipview.EasyFlipView>
 
@@ -34,8 +35,21 @@
         android:id="@+id/card_index_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="4dp"
         android:text="@string/hello_blank_fragment"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/card_front_back_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    <TextView
+        android:id="@+id/card_front_back_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="@string/front"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,8 +85,18 @@
             android:layout_height="48dp"
             android:layout_weight="1"
             android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_save_black_48dp" />
+
+        <ImageButton
+            android:id="@+id/imageButtonBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_back_48dp" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

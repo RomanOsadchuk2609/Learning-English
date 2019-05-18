@@ -2,6 +2,7 @@ package com.dariahaze.learning_english.ui.flashCards;
 
 
 import android.annotation.SuppressLint;
+import android.opengl.Visibility;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +31,7 @@ public class CardFragment extends Fragment {
     private int amountOfCards;
     private int cardIndex;
     private boolean isFrontSide = true;
+    private boolean isButtonsVisible = false;
 
     public CardFragment() {
         // Required empty public constructor
@@ -50,28 +54,83 @@ public class CardFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         final EasyFlipView flipView = view.findViewById(R.id.flipView);
+
+        final TextView cardIndexTV, frontTextTV, backTextTV, sideTV;
+        cardIndexTV = view.findViewById(R.id.card_index_tv);
+        frontTextTV = view.findViewById(R.id.card_front_tv);
+        backTextTV = view.findViewById(R.id.card_back_tv);
+        sideTV = view.findViewById(R.id.card_front_back_tv);
+
+        final EditText frontTextET, backTextET;
+        frontTextET = view.findViewById(R.id.editTextFront);
+        backTextET = view.findViewById(R.id.editTextBack);
+
+        final ImageButton buttonSave, buttonRemove, buttonBack;
+        buttonSave = view.findViewById(R.id.imageButtonSaveCard);
+        buttonRemove = view.findViewById(R.id.imageButtonSaveCard);
+        buttonBack = view.findViewById(R.id.imageButtonBack);
 
         flipView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 flipView.flipTheView();
+                if (isFrontSide){
+                    sideTV.setText("Front");
+                } else {
+                    sideTV.setText("Back");
+                }
                 isFrontSide = !isFrontSide;
             }
         });
 
-        TextView cardIndexTV, frontTextTV, backTextTV;
-        cardIndexTV = view.findViewById(R.id.card_index_tv);
-        frontTextTV = view.findViewById(R.id.card_front_tv);
-        backTextTV = view.findViewById(R.id.card_back_tv);
+        flipView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                view.findViewById(R.id.imageButtonLayout).setVisibility(View.VISIBLE);
+                frontTextET.setVisibility(View.VISIBLE);
+                backTextET.setVisibility(View.VISIBLE);
+                frontTextTV.setVisibility(View.INVISIBLE);
+                backTextTV.setVisibility(View.INVISIBLE);
+                return true;
+            }
+        });
+
 
         cardIndexTV.setText(cardIndex + " of " + amountOfCards);
         if (flashCard!=null){
             frontTextTV.setText(flashCard.getFrontText());
             backTextTV.setText(flashCard.getBackText());
+            frontTextET.setText(flashCard.getFrontText());
+            backTextET.setText(flashCard.getBackText());
         }
+
+        /*frontTextTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                view.findViewById(R.id.imageButtonLayout).setVisibility(View.VISIBLE);
+                frontTextET.setVisibility(View.VISIBLE);
+                backTextET.setVisibility(View.VISIBLE);
+                frontTextTV.setVisibility(View.INVISIBLE);
+                backTextTV.setVisibility(View.INVISIBLE);
+            }
+        });
+
+
+        backTextTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                view.findViewById(R.id.imageButtonLayout).setVisibility(View.VISIBLE);
+                frontTextET.setVisibility(View.VISIBLE);
+                backTextET.setVisibility(View.VISIBLE);
+                frontTextTV.setVisibility(View.INVISIBLE);
+                backTextTV.setVisibility(View.INVISIBLE);
+            }
+        });*/
+
+
     }
 
     /*@Override

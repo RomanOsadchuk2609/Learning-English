@@ -9,7 +9,7 @@ import com.dariahaze.learning_english.ui.grammar.GrammarFragment;
 import com.dariahaze.learning_english.ui.grammar.GrammarOtherFragment;
 import com.dariahaze.learning_english.ui.grammar.TensesFragment;
 
-public class FlashCardsPagerAdapter  extends FragmentStatePagerAdapter {
+public class  FlashCardsPagerAdapter  extends FragmentStatePagerAdapter {
     private static final float WIDTH_SCALE = 0.9f;
     private int numberOfTabs;
     private CardGroup cardGroup;
@@ -36,4 +36,7 @@ public class FlashCardsPagerAdapter  extends FragmentStatePagerAdapter {
         return WIDTH_SCALE;
     }*/
 
+    public CardGroup getCardGroup() {
+        return cardGroup;
+    }
 }

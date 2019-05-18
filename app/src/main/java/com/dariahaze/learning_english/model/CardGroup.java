@@ -1,8 +1,11 @@
 package com.dariahaze.learning_english.model;
 
+import android.os.Parcelable;
+
+import java.io.Serializable;
 import java.util.List;
 
-public class CardGroup {
+public class CardGroup implements Serializable {
     private String name;
     private List<FlashCard> flashCards;
 

@@ -1,6 +1,8 @@
 package com.dariahaze.learning_english.model;
 
-public class FlashCard {
+import java.io.Serializable;
+
+public class FlashCard implements Serializable {
     private String frontText;
     private String backText;
 

@@ -31,4 +31,9 @@
     <string name="statistics">Statistics</string>
     <string name="please_sign_in">Please, Sign In</string>
     <string name="edittext">EditText</string>
+    <string name="edit">Edit</string>
+    <string name="card_group_name">Card Group Name</string>
+    <string name="amount_of_cards">Amount Of Cards</string>
+    <string name="empty_card_group">Empty</string>
+    <string name="one_card">1 card</string>
 </resources>

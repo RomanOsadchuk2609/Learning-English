@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.model.CardGroup;
@@ -81,9 +82,14 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
             linearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent (linearLayout.getContext(), CardPagerActivity.class);
-                    intent.putExtra("CardGroup", cardGroup);
-                    linearLayout.getContext().startActivity(intent);
+                    if (cardGroup.getSize() == 0){
+                        Toast.makeText(v.getContext(), "Card set is empty!",Toast.LENGTH_LONG).show();
+                    }
+                    else {
+                        Intent intent = new Intent (linearLayout.getContext(), CardPagerActivity.class);
+                        intent.putExtra("CardGroup", cardGroup);
+                        linearLayout.getContext().startActivity(intent);
+                    }
                 }
             });
         }

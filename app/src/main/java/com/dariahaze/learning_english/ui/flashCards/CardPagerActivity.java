@@ -87,12 +87,12 @@ public class CardPagerActivity extends AppCompatActivity {
     }
 
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.flash_card_edit, menu);
         return true;
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -100,10 +100,10 @@ public class CardPagerActivity extends AppCompatActivity {
 
         if (id == android.R.id.home) {
             finish();
-        } else if (id == R.id.edit_card) {
+        } /*else if (id == R.id.edit_card) {
             Toast.makeText(getApplicationContext(),"Edit Card",Toast.LENGTH_SHORT).show();
             return true;
-        }
+        }*/
         return super.onOptionsItemSelected(item);
     }
 }

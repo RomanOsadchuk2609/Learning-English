@@ -175,9 +175,9 @@ public class Utils {
         quantifiers.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
                 new GrammarElement("Quantifiers Introduction", quantifiers.getPath()+"Quantifiers Introduction.html"),
                 new GrammarElement("Quantifiers That Express Attitude", quantifiers.getPath()+"Quantifiers that express attitude.html"),
-                new GrammarElement("Comparative Quantifiers", quantifiers.getPath()+"Comparative Quantifiers.html"),
+                new GrammarElement("Comparative Quantifiers", quantifiers.getPath()+"Comparative quantifiers.html"),
                 new GrammarElement("Graded Quantifiers", quantifiers.getPath()+"Graded_Quantifiers.html"),
-                new GrammarElement("Quantifiers With Countable And Uncountable Nouns", quantifiers.getPath()+"Quantifiers_with_countable_and _uncountable_nouns.html"),
+                new GrammarElement("Quantifiers With Countable And Uncountable Nouns", quantifiers.getPath()+"Quantifiers_with_countable_and_uncountable_nouns.html"),
                 new GrammarElement("The Quantifiers Some And Any", quantifiers.getPath()+"The_Quantifiers_Some_and_Any.html"),
                 new GrammarElement("The Quantifiers A Few, few, A Little, Little", quantifiers.getPath()+"The_Quantifiers_Few_Little.html"),
                 new GrammarElement("The Quantifiers Compound Nouns Made With SOME, ANY, NO", quantifiers.getPath()+"The_Quantifiers_Compound_nouns_made_with_SOME,_ANY_and_NO.html")

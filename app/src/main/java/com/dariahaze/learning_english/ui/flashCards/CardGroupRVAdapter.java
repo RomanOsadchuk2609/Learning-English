@@ -1,5 +1,7 @@
 package com.dariahaze.learning_english.ui.flashCards;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
@@ -11,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
@@ -187,6 +190,10 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
                                     frontText.getText().clear();
                                     backText.getText().clear();
                                     setAmountOfCards(cardNumber[0]-1);
+                                    frontText.requestFocus();
+                                    InputMethodManager imm = (InputMethodManager) dialog.getContext()
+                                            .getSystemService(Context.INPUT_METHOD_SERVICE);
+                                    imm.showSoftInput(frontText, InputMethodManager.SHOW_IMPLICIT);
                                 }
                             })
                             .onNegative(new MaterialDialog.SingleButtonCallback() {

@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.model.GrammarElement;
@@ -40,7 +39,7 @@ public class GrammarRVSmallAdapter extends RecyclerView.Adapter<GrammarRVSmallAd
     @Override
     public GrammarRVSmallAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ConstraintLayout v = (ConstraintLayout) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_grammar_element_small, parent, false);
+                .inflate(R.layout.item_rv_small, parent, false);
         return new GrammarRVSmallAdapter.ViewHolder(v);
     }
 
@@ -66,7 +65,7 @@ public class GrammarRVSmallAdapter extends RecyclerView.Adapter<GrammarRVSmallAd
         public ViewHolder(ConstraintLayout itemView) {
             super(itemView);
             constraintLayout = itemView;
-            nameTV = constraintLayout.findViewById(R.id.grammarItemSmallNameTV);
+            nameTV = constraintLayout.findViewById(R.id.itemSmallNameTV);
         }
 
         public void setItem(GrammarElement element) {

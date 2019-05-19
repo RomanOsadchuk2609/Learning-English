@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 public class GrammarPagesAdapter extends FragmentStatePagerAdapter {
-    int numberOfTabs;
+    private int numberOfTabs;
 
     public GrammarPagesAdapter(FragmentManager fm, int numberOfTabs) {
         super(fm);

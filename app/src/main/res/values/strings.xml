@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Learning English</string>
+    <string name="web_client_id">391054699526-e828316umovtdjr5i55qkq668usf2mkd.apps.googleusercontent.com</string>
     <string name="sign_in">Sign in</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -18,12 +19,24 @@
     <string name="total">Total</string>
     <string name="users_s_statistics">Users\'s statistics</string>
     <string name="communicate">Communicate</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="grammar">Grammar</string>
     <string name="tenses">Tenses</string>
     <string name="Other">Other</string>
     <string name="textview">TextView</string>
     <string name="_1">1</string>
+    <string name="grammar_and_tenses">Grammar and tenses</string>
+    <string name="tests">Tests</string>
+    <string name="username">Username</string>
+    <string name="statistics">Statistics</string>
+    <string name="please_sign_in">Please, Sign In</string>
+    <string name="edittext">EditText</string>
+    <string name="edit">Edit</string>
+    <string name="card_group_name">Card Group Name</string>
+    <string name="amount_of_cards">Amount Of Cards</string>
+    <string name="empty_card_group">Empty</string>
+    <string name="one_card">1 card</string>
+    <string name="front">Front</string>
+    <string name="front_text">Front Text</string>
+    <string name="back_text">Back Text</string>
 </resources>

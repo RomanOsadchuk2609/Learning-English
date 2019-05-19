@@ -10,6 +10,9 @@ import java.util.Objects;
 public class CardGroup implements Serializable {
     @Exclude
     private String key;
+    @Exclude
+    private String path;
+
     private String name;
     private int size;
 
@@ -44,6 +47,16 @@ public class CardGroup implements Serializable {
     @Exclude
     public void setKey(String key) {
         this.key = key;
+    }
+
+    @Exclude
+    public String getPath() {
+        return path;
+    }
+
+    @Exclude
+    public void setPath(String path) {
+        this.path = path;
     }
 
     @Override

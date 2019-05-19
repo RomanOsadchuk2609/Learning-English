@@ -66,15 +66,16 @@ public class FlashCardsFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        final String commonPath = "cards/admin/";
         super.onViewCreated(view, savedInstanceState);
-        mCommonCardSetReference = FirebaseDatabase.getInstance().getReference("cards/admin");
+        mCommonCardSetReference = FirebaseDatabase.getInstance().getReference(commonPath);
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
         RecyclerView recyclerView = view.findViewById(R.id.card_groups_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         final List<CardGroup> cardGroupList = new ArrayList<>();
-        final CardGroupRVAdapter adapter = new CardGroupRVAdapter(cardGroupList);
+        final CardGroupRVAdapter adapter = new CardGroupRVAdapter(cardGroupList, this);
         recyclerView.setAdapter(adapter);
 
         final FloatingActionButton fabAddGroup = view.findViewById(R.id.addCardGroupFab);
@@ -96,15 +97,9 @@ public class FlashCardsFragment extends Fragment {
                 MaterialDialog dialog = new MaterialDialog.Builder(getContext())
                         .title("Add new card set")
                         .positiveText("Add")
+                        .negativeText("Cancel")
                         .inputType(InputType.TYPE_CLASS_TEXT)
-                        .input("Set Name", "", new MaterialDialog.InputCallback() {
-                            @Override
-                            public void onInput(MaterialDialog dialog, CharSequence input) {
-                                // Do something
-                            }
-                        })
-                        .inputType(InputType.TYPE_CLASS_TEXT)
-                        .input("Set Name 2", "", new MaterialDialog.InputCallback() {
+                        .input("Name", "", new MaterialDialog.InputCallback() {
                             @Override
                             public void onInput(MaterialDialog dialog, CharSequence input) {
                                 // Do something
@@ -135,6 +130,7 @@ public class FlashCardsFragment extends Fragment {
                 String key = dataSnapshot.getKey();
                 System.out.println("KEY: "+key);
                 cardGroup.setKey(key);
+                cardGroup.setPath(commonPath+key);
                 if (!cardGroupList.contains(cardGroup)){
                     cardGroupList.add(cardGroup);
                     //adapter.getDataSet().add(cardGroup);
@@ -175,7 +171,8 @@ public class FlashCardsFragment extends Fragment {
 
         if (currentUser!=null){
             String userReference = Utils.getFormattedUserKey(currentUser.getEmail());
-            mUserCardSetReference = FirebaseDatabase.getInstance().getReference("cards/"+userReference+"/");
+            final String userPath = "cards/"+userReference+"/";
+            mUserCardSetReference = FirebaseDatabase.getInstance().getReference(userPath);
 
             mUserCardSetReference.addChildEventListener(new ChildEventListener() {
                 @Override
@@ -184,6 +181,7 @@ public class FlashCardsFragment extends Fragment {
                     CardGroup cardGroup = dataSnapshot.getValue(CardGroup.class);
                     String key = dataSnapshot.getKey();
                     cardGroup.setKey(key);
+                    cardGroup.setPath(userPath+key);
                     if (!cardGroupList.contains(cardGroup)){
                         cardGroupList.add(cardGroup);
                         //adapter.getDataSet().add(cardGroup);

@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.model.CardGroup;
+import com.dariahaze.learning_english.model.FlashCard;
 import com.dariahaze.learning_english.utils.Utils;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -32,6 +34,7 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
     private List<CardGroup> dataSet;
     private Fragment parent;
     private DatabaseReference mCardGroupReference;
+    private DatabaseReference mFlashCardsReference;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
 
@@ -97,17 +100,9 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
         }
 
         public void setItem(CardGroup element) {
-            if (element.getSize()>1){
-                amountOfCards.setText(element.getSize() + " cards");
-            }
-            else if (element.getSize() == 1){
-                amountOfCards.setText(itemView.getResources().getString(R.string.one_card));
-            }
-            else {
-                amountOfCards.setText(itemView.getResources().getString(R.string.empty_card_group));
-            }
             this.cardGroup = element;
             nameTV.setText(this.cardGroup.getName());
+            setAmountOfCards(cardGroup.getSize());
 
             constraintLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -157,14 +152,55 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
         @Override
         public boolean onMenuItemClick(MenuItem item) {
             MaterialDialog dialog;
+            final String userKey = Utils.getFormattedUserKey(currentUser.getEmail());
+            mCardGroupReference = FirebaseDatabase.getInstance().getReference(cardGroup.getPath());
 
             switch (item.getItemId()){
                 case R.id.add_card:
-                    Toast.makeText(parent.getContext(),"Add Card", Toast.LENGTH_SHORT).show();
+                    final int[] cardNumber = {cardGroup.getSize() + 1};
+                    dialog = new MaterialDialog.Builder(constraintLayout.getContext())
+                            .autoDismiss(false)
+                            .title("Add card #"+ cardNumber[0])
+                            .customView(R.layout.dialog_add_flash_card, true)
+                            .positiveText("Add")
+                            .negativeText("Close")
+                            .onPositive(new MaterialDialog.SingleButtonCallback() {
+                                @Override
+                                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                    View view = dialog.getCustomView();
+                                    EditText frontText,  backText;
+                                    frontText = view.findViewById(R.id.dialogFrontText);
+                                    backText = view.findViewById(R.id.dialogBackText);
+                                    FlashCard flashCard = new FlashCard(backText.getText()+"",
+                                            frontText.getText()+"");
+                                    flashCard.setKey(userKey+"FlashCardId"+Utils.generateStringId());
+                                    flashCard.setNumber(cardNumber[0]);
+
+                                    mFlashCardsReference = FirebaseDatabase.getInstance()
+                                            .getReference("flashCards/"+cardGroup.getKey()+"/"+flashCard.getKey());
+                                    mFlashCardsReference.setValue(flashCard);
+                                    cardGroup.setSize(cardGroup.getSize()+1);
+                                    mCardGroupReference.setValue(cardGroup);
+                                    notifyItemChanged(getAdapterPosition());
+                                    cardNumber[0]++;
+                                    dialog.setTitle("Add card #"+ cardNumber[0]);
+                                    frontText.getText().clear();
+                                    backText.getText().clear();
+                                    setAmountOfCards(cardNumber[0]-1);
+                                }
+                            })
+                            .onNegative(new MaterialDialog.SingleButtonCallback() {
+                                @Override
+                                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                    dialog.dismiss();
+                                    notifyDataSetChanged();
+                                }
+                            })
+                            .show();
                     break;
                 case R.id.rename:
                     dialog = new MaterialDialog.Builder(constraintLayout.getContext())
-                            .title("Rename card set \""+cardGroup.getName()+"\"")
+                            .title("Rename card set \""+cardGroup.getName()+"\"  ")
                             .positiveText("Rename")
                             .negativeText("Cancel")
                             .inputType(InputType.TYPE_CLASS_TEXT)
@@ -178,7 +214,7 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
                                 @Override
                                 public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                                     cardGroup.setName(dialog.getInputEditText().getText().toString());
-                                    mCardGroupReference = FirebaseDatabase.getInstance().getReference(cardGroup.getPath());
+
                                     mCardGroupReference.setValue(cardGroup);
                                     notifyItemChanged(getAdapterPosition());
                                 }
@@ -192,7 +228,6 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
                             .onPositive(new MaterialDialog.SingleButtonCallback() {
                                 @Override
                                 public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                                    mCardGroupReference = FirebaseDatabase.getInstance().getReference(cardGroup.getPath());
                                     mCardGroupReference.setValue(null);
                                     dataSet.remove(getAdapterPosition());
                                     notifyItemRemoved(getAdapterPosition());
@@ -202,6 +237,18 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
             }
 
             return true;
+        }
+
+        private void setAmountOfCards(int amount){
+            if (amount>1){
+                amountOfCards.setText(amount + " cards");
+            }
+            else if (cardGroup.getSize() == 1){
+                amountOfCards.setText(itemView.getResources().getString(R.string.one_card));
+            }
+            else {
+                amountOfCards.setText(itemView.getResources().getString(R.string.empty_card_group));
+            }
         }
     }
 }

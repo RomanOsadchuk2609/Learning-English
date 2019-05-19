@@ -6,6 +6,7 @@ import com.dariahaze.learning_english.model.VideoLesson;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 public class Utils {
     public final static String GRAMMAR_HTML_PATH = "file:///android_asset/Grammar/";
@@ -20,6 +21,9 @@ public class Utils {
 
     public static String getFormattedUserKey(String email){
         return email.replaceAll("\\."," ");
+    }
+    public static String generateStringId(){
+        return UUID.randomUUID().toString();
     }
 
     static {

@@ -108,7 +108,6 @@ public class FlashCardsFragment extends Fragment {
                         .onPositive(new MaterialDialog.SingleButtonCallback() {
                             @Override
                             public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                                Toast.makeText(getContext(), dialog.getInputEditText().getText(), Toast.LENGTH_SHORT).show();
                                 CardGroup cardGroup = new CardGroup();
                                 cardGroup.setKey(Utils.getFormattedUserKey(currentUser.getEmail()) +
                                         UUID.randomUUID().toString());

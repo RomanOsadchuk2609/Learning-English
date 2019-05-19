@@ -21,6 +21,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,7 @@ import java.util.Objects;
 
 public class CardPagerActivity extends AppCompatActivity {
     private CardGroup cardGroup;
-    private DatabaseReference mFlashCardsReference;
+    private Query mFlashCardsReference;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
 
@@ -55,7 +56,8 @@ public class CardPagerActivity extends AppCompatActivity {
                 getSupportFragmentManager(),flashCardList,cardGroup.getSize(),isEditable);
         cardsPager.setAdapter(adapter);
 
-        mFlashCardsReference = FirebaseDatabase.getInstance().getReference("flashCards/"+cardGroup.getKey());
+        mFlashCardsReference = FirebaseDatabase.getInstance()
+                .getReference("flashCards/"+cardGroup.getKey()).orderByChild("number");
         mFlashCardsReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {

@@ -8,9 +8,10 @@ import java.util.Objects;
 
 @IgnoreExtraProperties
 public class CardGroup implements Serializable {
+    @Exclude
+    private String key;
     private String name;
     private int size;
-    private String key;
 
     public CardGroup() {
     }

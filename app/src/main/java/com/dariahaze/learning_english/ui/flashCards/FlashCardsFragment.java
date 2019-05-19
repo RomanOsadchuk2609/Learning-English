@@ -4,17 +4,23 @@ package com.dariahaze.learning_english.ui.flashCards;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.model.CardGroup;
 import com.dariahaze.learning_english.model.FlashCard;
+import com.dariahaze.learning_english.utils.Utils;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -26,6 +32,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 
 /**
@@ -66,21 +73,59 @@ public class FlashCardsFragment extends Fragment {
 
         RecyclerView recyclerView = view.findViewById(R.id.card_groups_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        /*CardGroup cardGroup = new CardGroup("Group", new ArrayList<FlashCard>(Arrays.asList(
-                new FlashCard("AAA","AAA AAA"),
-                new FlashCard("BBB","BBB BBB"),
-                new FlashCard("CCC","CCC CCC"),
-                new FlashCard("DDD","DDD DDD"),
-                new FlashCard("EEE","EEE EEE"),
-                new FlashCard("FFF","FFF FFF")
-        )));*/
-
         final List<CardGroup> cardGroupList = new ArrayList<>();
-        //cardGroupList.add(cardGroup);
-
         final CardGroupRVAdapter adapter = new CardGroupRVAdapter(cardGroupList);
         recyclerView.setAdapter(adapter);
+
+        final FloatingActionButton fabAddGroup = view.findViewById(R.id.addCardGroupFab);
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                if(dy > 0){
+                    fabAddGroup.hide();
+                } else{
+                    fabAddGroup.show();
+                }
+                super.onScrolled(recyclerView, dx, dy);
+            }
+        });
+
+        fabAddGroup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MaterialDialog dialog = new MaterialDialog.Builder(getContext())
+                        .title("Add new card set")
+                        .positiveText("Add")
+                        .inputType(InputType.TYPE_CLASS_TEXT)
+                        .input("Set Name", "", new MaterialDialog.InputCallback() {
+                            @Override
+                            public void onInput(MaterialDialog dialog, CharSequence input) {
+                                // Do something
+                            }
+                        })
+                        .inputType(InputType.TYPE_CLASS_TEXT)
+                        .input("Set Name 2", "", new MaterialDialog.InputCallback() {
+                            @Override
+                            public void onInput(MaterialDialog dialog, CharSequence input) {
+                                // Do something
+                            }
+                        })
+                        .onPositive(new MaterialDialog.SingleButtonCallback() {
+                            @Override
+                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                Toast.makeText(getContext(), dialog.getInputEditText().getText(), Toast.LENGTH_SHORT).show();
+                                CardGroup cardGroup = new CardGroup();
+                                cardGroup.setKey(Utils.getFormattedUserKey(currentUser.getEmail()) +
+                                        UUID.randomUUID().toString());
+                                cardGroup.setName(dialog.getInputEditText().getText().toString());
+                                cardGroup.setSize(0);
+                                if (currentUser!=null){
+                                    mUserCardSetReference.child(cardGroup.getKey()).setValue(cardGroup);
+                                }
+                            }
+                        }).show();
+            }
+        });
 
         mCommonCardSetReference.addChildEventListener(new ChildEventListener() {
             @Override
@@ -129,9 +174,8 @@ public class FlashCardsFragment extends Fragment {
         });
 
         if (currentUser!=null){
-            String userReference = currentUser.getEmail();
-            userReference = userReference.replaceAll("."," ");
-            mUserCardSetReference = FirebaseDatabase.getInstance().getReference("cards/admin/"+userReference);
+            String userReference = Utils.getFormattedUserKey(currentUser.getEmail());
+            mUserCardSetReference = FirebaseDatabase.getInstance().getReference("cards/"+userReference+"/");
 
             mUserCardSetReference.addChildEventListener(new ChildEventListener() {
                 @Override

@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.model.CardGroup;
 import com.dariahaze.learning_english.model.FlashCard;
+import com.dariahaze.learning_english.utils.Utils;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -47,7 +48,7 @@ public class CardPagerActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         cardGroup = (CardGroup) bundle.get("CardGroup");
 
-        String userKey = currentUser.getEmail().replaceAll("."," ");
+        String userKey = Utils.getFormattedUserKey(currentUser.getEmail());
         boolean isEditable = cardGroup.getKey().contains(userKey);
         List<FlashCard> flashCardList = new ArrayList<>();
         final FlashCardsPagerAdapter adapter = new FlashCardsPagerAdapter(

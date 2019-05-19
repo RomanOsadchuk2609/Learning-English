@@ -18,6 +18,10 @@ public class Utils {
     public final static List<GrammarElement> grammarElements;
     public final static List<VideoLesson> videoLessons;
 
+    public static String getFormattedUserKey(String email){
+        return email.replaceAll("\\."," ");
+    }
+
     static {
         //TODO WRITE PATH
         grammarOtherElements = new ArrayList<>(Arrays.asList(

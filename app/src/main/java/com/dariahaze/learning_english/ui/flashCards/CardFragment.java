@@ -32,17 +32,19 @@ public class CardFragment extends Fragment {
     private int cardIndex;
     private boolean isFrontSide = true;
     private boolean isButtonsVisible = false;
+    private boolean isEditable = false;
 
     public CardFragment() {
         // Required empty public constructor
     }
 
 
-    public static CardFragment newInstance(FlashCard flashCard, int cardIndex, int amountOfCards) {
+    public static CardFragment newInstance(FlashCard flashCard, int cardIndex, int amountOfCards, boolean isEditable) {
         CardFragment fragment = new CardFragment();
         fragment.setAmountOfCards(amountOfCards);
         fragment.setCardIndex(cardIndex);
         fragment.setFlashCard(flashCard);
+        fragment.setEditable(isEditable);
         return fragment;
     }
 
@@ -77,26 +79,28 @@ public class CardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 flipView.flipTheView();
+                isFrontSide = !isFrontSide;
                 if (isFrontSide){
                     sideTV.setText("Front");
                 } else {
                     sideTV.setText("Back");
                 }
-                isFrontSide = !isFrontSide;
             }
         });
 
-        flipView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                view.findViewById(R.id.imageButtonLayout).setVisibility(View.VISIBLE);
-                frontTextET.setVisibility(View.VISIBLE);
-                backTextET.setVisibility(View.VISIBLE);
-                frontTextTV.setVisibility(View.INVISIBLE);
-                backTextTV.setVisibility(View.INVISIBLE);
-                return true;
-            }
-        });
+        if (isEditable){
+            flipView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    view.findViewById(R.id.imageButtonLayout).setVisibility(View.VISIBLE);
+                    frontTextET.setVisibility(View.VISIBLE);
+                    backTextET.setVisibility(View.VISIBLE);
+                    frontTextTV.setVisibility(View.INVISIBLE);
+                    backTextTV.setVisibility(View.INVISIBLE);
+                    return true;
+                }
+            });
+        }
 
 
         cardIndexTV.setText(cardIndex + " of " + amountOfCards);
@@ -107,41 +111,8 @@ public class CardFragment extends Fragment {
             backTextET.setText(flashCard.getBackText());
         }
 
-        /*frontTextTV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                view.findViewById(R.id.imageButtonLayout).setVisibility(View.VISIBLE);
-                frontTextET.setVisibility(View.VISIBLE);
-                backTextET.setVisibility(View.VISIBLE);
-                frontTextTV.setVisibility(View.INVISIBLE);
-                backTextTV.setVisibility(View.INVISIBLE);
-            }
-        });
-
-
-        backTextTV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                view.findViewById(R.id.imageButtonLayout).setVisibility(View.VISIBLE);
-                frontTextET.setVisibility(View.VISIBLE);
-                backTextET.setVisibility(View.VISIBLE);
-                frontTextTV.setVisibility(View.INVISIBLE);
-                backTextTV.setVisibility(View.INVISIBLE);
-            }
-        });*/
-
 
     }
-
-    /*@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.edit_card) {
-            Toast.makeText(getContext(),"Edit Card",Toast.LENGTH_SHORT).show();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }*/
 
     public FlashCard getFlashCard() {
         return flashCard;
@@ -165,5 +136,13 @@ public class CardFragment extends Fragment {
 
     public void setCardIndex(int cardIndex) {
         this.cardIndex = cardIndex;
+    }
+
+    public boolean isEditable() {
+        return isEditable;
+    }
+
+    public void setEditable(boolean editable) {
+        isEditable = editable;
     }
 }

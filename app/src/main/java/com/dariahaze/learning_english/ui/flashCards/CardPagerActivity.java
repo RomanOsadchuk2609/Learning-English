@@ -1,5 +1,7 @@
 package com.dariahaze.learning_english.ui.flashCards;
 
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,18 +13,30 @@ import android.widget.Toast;
 import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.model.CardGroup;
 import com.dariahaze.learning_english.model.FlashCard;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class CardPagerActivity extends AppCompatActivity {
     private CardGroup cardGroup;
+    private DatabaseReference mFlashCardsReference;
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_pager);
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
 
         Toolbar toolbar = findViewById(R.id.toolbarCardPager);
         setSupportActionBar(toolbar);
@@ -32,22 +46,43 @@ public class CardPagerActivity extends AppCompatActivity {
         ViewPager cardsPager = findViewById(R.id.cardPager);
         Bundle bundle = getIntent().getExtras();
         cardGroup = (CardGroup) bundle.get("CardGroup");
-        if (cardGroup != null) {
-            FlashCardsPagerAdapter adapter = new FlashCardsPagerAdapter(
-                    getSupportFragmentManager(),cardGroup);
-            cardsPager.setAdapter(adapter);
-        }
-        /*FlashCardsPagerAdapter adapter = new FlashCardsPagerAdapter(
-                getSupportFragmentManager(),
-                new CardGroup("Group", new ArrayList<FlashCard>(Arrays.asList(
-                        new FlashCard("AAA","AAA AAA"),
-                        new FlashCard("BBB","BBB BBB"),
-                        new FlashCard("CCC","CCC CCC"),
-                        new FlashCard("DDD","DDD DDD"),
-                        new FlashCard("EEE","EEE EEE"),
-                        new FlashCard("FFF","FFF FFF")
-                ))));
-        cardsPager.setAdapter(adapter);*/
+
+        String userKey = currentUser.getEmail().replaceAll("."," ");
+        boolean isEditable = cardGroup.getKey().contains(userKey);
+        List<FlashCard> flashCardList = new ArrayList<>();
+        final FlashCardsPagerAdapter adapter = new FlashCardsPagerAdapter(
+                getSupportFragmentManager(),flashCardList,cardGroup.getSize(),isEditable);
+        cardsPager.setAdapter(adapter);
+
+        mFlashCardsReference = FirebaseDatabase.getInstance().getReference("flashCards/"+cardGroup.getKey());
+        mFlashCardsReference.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                FlashCard flashCard = dataSnapshot.getValue(FlashCard.class);
+                adapter.addCard(flashCard);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
 

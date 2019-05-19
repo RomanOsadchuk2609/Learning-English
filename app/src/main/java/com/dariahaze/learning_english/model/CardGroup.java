@@ -1,24 +1,22 @@
 package com.dariahaze.learning_english.model;
 
-import android.os.Parcelable;
+import com.google.firebase.database.Exclude;
+import com.google.firebase.database.IgnoreExtraProperties;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
+@IgnoreExtraProperties
 public class CardGroup implements Serializable {
     private String name;
     private int size;
-    private List<FlashCard> flashCards;
+    private String key;
 
     public CardGroup() {
-        flashCards = new ArrayList<>();
     }
 
-    public CardGroup(String name, List<FlashCard> flashCards) {
+    public CardGroup(String name) {
         this.name = name;
-        this.flashCards = flashCards;
     }
 
     public String getName() {
@@ -37,12 +35,14 @@ public class CardGroup implements Serializable {
         this.size = size;
     }
 
-    public List<FlashCard> getFlashCards() {
-        return flashCards;
+    @Exclude
+    public String getKey() {
+        return key;
     }
 
-    public void setFlashCards(List<FlashCard> flashCards) {
-        this.flashCards = flashCards;
+    @Exclude
+    public void setKey(String key) {
+        this.key = key;
     }
 
     @Override
@@ -50,7 +50,6 @@ public class CardGroup implements Serializable {
         return "CardGroup{" +
                 "name='" + name + '\'' +
                 ", size=" + size +
-                ", flashCards=" + flashCards +
                 '}';
     }
 
@@ -59,9 +58,7 @@ public class CardGroup implements Serializable {
         if (this == o) return true;
         if (!(o instanceof CardGroup)) return false;
         CardGroup cardGroup = (CardGroup) o;
-        return getSize() == cardGroup.getSize() &&
-                Objects.equals(getName(), cardGroup.getName()) /*&&
-                Objects.equals(getFlashCards(), cardGroup.getFlashCards())*/;
+        return Objects.equals(getKey(), cardGroup.getKey());
     }
 
     @Override

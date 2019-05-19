@@ -6,6 +6,9 @@ public class FlashCard implements Serializable {
     private String frontText;
     private String backText;
 
+    public FlashCard() {
+    }
+
     public FlashCard(String frontText, String backText) {
         this.frontText = frontText;
         this.backText = backText;

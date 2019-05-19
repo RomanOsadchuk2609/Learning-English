@@ -67,14 +67,14 @@ public class FlashCardsFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.card_groups_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        CardGroup cardGroup = new CardGroup("Group", new ArrayList<FlashCard>(Arrays.asList(
+        /*CardGroup cardGroup = new CardGroup("Group", new ArrayList<FlashCard>(Arrays.asList(
                 new FlashCard("AAA","AAA AAA"),
                 new FlashCard("BBB","BBB BBB"),
                 new FlashCard("CCC","CCC CCC"),
                 new FlashCard("DDD","DDD DDD"),
                 new FlashCard("EEE","EEE EEE"),
                 new FlashCard("FFF","FFF FFF")
-        )));
+        )));*/
 
         final List<CardGroup> cardGroupList = new ArrayList<>();
         //cardGroupList.add(cardGroup);
@@ -87,6 +87,9 @@ public class FlashCardsFragment extends Fragment {
             public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
                 // A new data item has been added, add it to the list
                 CardGroup cardGroup = dataSnapshot.getValue(CardGroup.class);
+                String key = dataSnapshot.getKey();
+                System.out.println("KEY: "+key);
+                cardGroup.setKey(key);
                 if (!cardGroupList.contains(cardGroup)){
                     cardGroupList.add(cardGroup);
                     //adapter.getDataSet().add(cardGroup);
@@ -135,6 +138,8 @@ public class FlashCardsFragment extends Fragment {
                 public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
                     // A new data item has been added, add it to the list
                     CardGroup cardGroup = dataSnapshot.getValue(CardGroup.class);
+                    String key = dataSnapshot.getKey();
+                    cardGroup.setKey(key);
                     if (!cardGroupList.contains(cardGroup)){
                         cardGroupList.add(cardGroup);
                         //adapter.getDataSet().add(cardGroup);

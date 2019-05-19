@@ -2,28 +2,21 @@ package com.dariahaze.learning_english.ui.main;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.widget.CardView;
-import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
+import android.util.Log;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
+import android.view.View;
 import android.widget.TextView;
 
 import com.dariahaze.learning_english.R;
-import com.dariahaze.learning_english.ui.flashCards.CardPagerActivity;
+import com.dariahaze.learning_english.model.CardGroup;
 import com.dariahaze.learning_english.ui.flashCards.FlashCardsFragment;
-import com.dariahaze.learning_english.ui.grammar.GrammarFragment;
 import com.dariahaze.learning_english.ui.grammar.GrammarPagesFragment;
 import com.dariahaze.learning_english.ui.registration.SignInActivity;
 import com.dariahaze.learning_english.ui.statistics.StatisticsFragment;
@@ -33,6 +26,11 @@ import com.dariahaze.learning_english.utils.Utils;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -41,6 +39,7 @@ public class MainActivity extends AppCompatActivity
     private boolean mainFragmentIsOpened = true;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +48,28 @@ public class MainActivity extends AppCompatActivity
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
+        mDatabase = FirebaseDatabase.getInstance().getReference("cards/admin/cardgroupID");
+
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Get Post object and use the values to update the UI
+                CardGroup cardGroup = dataSnapshot.getValue(CardGroup.class);
+                System.out.println(cardGroup);
+                // ...
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                Log.w("DB", "loadPost:onCancelled", databaseError.toException());
+                // ...
+            }
+        };
+        mDatabase.addValueEventListener(postListener);
+
+
+
 
 
         if (currentUser == null){

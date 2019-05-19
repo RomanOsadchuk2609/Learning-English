@@ -4,12 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    android:paddingBottom="0dp"
     tools:context=".ui.flashCards.FlashCardsFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/card_groups_rv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

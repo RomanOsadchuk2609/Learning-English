@@ -171,8 +171,8 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
                                     EditText frontText,  backText;
                                     frontText = view.findViewById(R.id.dialogFrontText);
                                     backText = view.findViewById(R.id.dialogBackText);
-                                    FlashCard flashCard = new FlashCard(backText.getText()+"",
-                                            frontText.getText()+"");
+                                    FlashCard flashCard = new FlashCard(frontText.getText()+"",
+                                            backText.getText()+"");
                                     flashCard.setKey(userKey+"FlashCardId"+Utils.generateStringId());
                                     flashCard.setNumber(cardNumber[0]);
 

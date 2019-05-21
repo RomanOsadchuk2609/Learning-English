@@ -1,23 +1,28 @@
 package com.dariahaze.learning_english.ui.flashCards;
 
 
-import android.annotation.SuppressLint;
-import android.opengl.Visibility;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.model.FlashCard;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.wajahatkarim3.easyflipview.EasyFlipView;
 
 
@@ -27,12 +32,16 @@ import com.wajahatkarim3.easyflipview.EasyFlipView;
 public class CardFragment extends Fragment {
 
     private FlashCard flashCard;
-    private boolean isFront = true;
     private int amountOfCards;
     private int cardIndex;
     private boolean isFrontSide = true;
-    private boolean isButtonsVisible = false;
     private boolean isEditable = false;
+
+    private EditText frontTextET, backTextET;
+    private TextView cardIndexTV, frontTextTV, backTextTV, sideTV;
+    private ImageButton buttonSave, buttonRemove, buttonBack;
+    private LinearLayout editorLayout;
+    private DatabaseReference mFlashCardReference;
 
     public CardFragment() {
         // Required empty public constructor
@@ -60,20 +69,18 @@ public class CardFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         final EasyFlipView flipView = view.findViewById(R.id.flipView);
 
-        final TextView cardIndexTV, frontTextTV, backTextTV, sideTV;
         cardIndexTV = view.findViewById(R.id.card_index_tv);
         frontTextTV = view.findViewById(R.id.card_front_tv);
         backTextTV = view.findViewById(R.id.card_back_tv);
         sideTV = view.findViewById(R.id.card_front_back_tv);
-
-        final EditText frontTextET, backTextET;
         frontTextET = view.findViewById(R.id.editTextFront);
         backTextET = view.findViewById(R.id.editTextBack);
 
-        final ImageButton buttonSave, buttonRemove, buttonBack;
         buttonSave = view.findViewById(R.id.imageButtonSaveCard);
         buttonRemove = view.findViewById(R.id.imageButtonSaveCard);
         buttonBack = view.findViewById(R.id.imageButtonBack);
+
+        editorLayout = view.findViewById(R.id.imageButtonLayout);
 
         flipView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +99,7 @@ public class CardFragment extends Fragment {
             flipView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    view.findViewById(R.id.imageButtonLayout).setVisibility(View.VISIBLE);
+                    editorLayout.setVisibility(View.VISIBLE);
                     frontTextET.setVisibility(View.VISIBLE);
                     backTextET.setVisibility(View.VISIBLE);
                     frontTextTV.setVisibility(View.INVISIBLE);
@@ -112,6 +119,93 @@ public class CardFragment extends Fragment {
         }
 
 
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.edit_card) {
+            editCard();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void editCard(){
+        if (isEditable){
+            mFlashCardReference = FirebaseDatabase.getInstance()
+                    .getReference(flashCard.getPath()+flashCard.getKey());
+
+            final String oldFrontText = flashCard.getFrontText(), oldBackText = flashCard.getBackText();
+
+            final InputMethodManager imm = (InputMethodManager) getContext()
+                    .getSystemService(Context.INPUT_METHOD_SERVICE);
+            editorLayout.setVisibility(View.VISIBLE);
+            frontTextET.setVisibility(View.VISIBLE);
+            backTextET.setVisibility(View.VISIBLE);
+            frontTextTV.setVisibility(View.INVISIBLE);
+            backTextTV.setVisibility(View.INVISIBLE);
+
+            if (isFrontSide){
+                frontTextET.requestFocus();
+                imm.showSoftInput(frontTextET, InputMethodManager.SHOW_IMPLICIT);
+            } else {
+                backTextET.requestFocus();
+                imm.showSoftInput(backTextET, InputMethodManager.SHOW_IMPLICIT);
+            }
+
+            buttonBack.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    frontTextTV.setText(oldFrontText);
+                    backTextTV.setText(oldBackText);
+
+                    editorLayout.setVisibility(View.INVISIBLE);
+                    frontTextET.setVisibility(View.INVISIBLE);
+                    backTextET.setVisibility(View.INVISIBLE);
+                    frontTextTV.setVisibility(View.VISIBLE);
+                    backTextTV.setVisibility(View.VISIBLE);
+
+                    frontTextET.setText(oldFrontText);
+                    backTextET.setText(oldBackText);
+                }
+            });
+
+            buttonSave.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    flashCard.setFrontText(frontTextET.getText().toString());
+                    flashCard.setBackText(backTextET.getText().toString());
+
+                    frontTextTV.setText(flashCard.getFrontText());
+                    backTextTV.setText(flashCard.getBackText());
+
+                    editorLayout.setVisibility(View.INVISIBLE);
+                    frontTextET.setVisibility(View.INVISIBLE);
+                    backTextET.setVisibility(View.INVISIBLE);
+                    frontTextTV.setVisibility(View.VISIBLE);
+                    backTextTV.setVisibility(View.VISIBLE);
+
+                    mFlashCardReference.setValue(flashCard);
+                }
+            });
+        }
+        else {
+            Toast.makeText(getContext(),"You can't edit cards of this set!",Toast.LENGTH_LONG).show();
+        }
     }
 
     public FlashCard getFlashCard() {

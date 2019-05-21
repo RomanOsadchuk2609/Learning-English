@@ -62,6 +62,8 @@ public class CardPagerActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 FlashCard flashCard = dataSnapshot.getValue(FlashCard.class);
+                flashCard.setKey(dataSnapshot.getKey());
+                flashCard.setPath("flashCards/"+cardGroup.getKey()+"/");
                 adapter.addCard(flashCard);
             }
 
@@ -89,12 +91,12 @@ public class CardPagerActivity extends AppCompatActivity {
     }
 
 
-   /* @Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.flash_card_edit, menu);
         return true;
-    }*/
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

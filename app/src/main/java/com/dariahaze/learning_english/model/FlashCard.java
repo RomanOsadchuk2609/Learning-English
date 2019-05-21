@@ -7,6 +7,8 @@ import java.io.Serializable;
 public class FlashCard implements Serializable {
     @Exclude
     private String key;
+    @Exclude
+    private String path;
     private int number;
     private String frontText;
     private String backText;
@@ -51,5 +53,14 @@ public class FlashCard implements Serializable {
     @Exclude
     public void setKey(String key) {
         this.key = key;
+    }
+
+    @Exclude
+    public String getPath() {
+        return path;
+    }
+    @Exclude
+    public void setPath(String path) {
+        this.path = path;
     }
 }

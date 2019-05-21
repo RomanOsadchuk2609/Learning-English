@@ -39,4 +39,10 @@
     <string name="front">Front</string>
     <string name="front_text">Front Text</string>
     <string name="back_text">Back Text</string>
+    <string name="practice">Practice</string>
+    <string name="test">Test</string>
+    <string name="random_20_questions">- Random 20 questions from over 5000 grammar questions for each test</string>
+    <string name="sec_for_question">- You have 30 seconds for each question</string>
+    <string name="detail_explanation">- You can review correct answer and detail explanation after finish of each Test</string>
+    <string name="start">start</string>
 </resources>

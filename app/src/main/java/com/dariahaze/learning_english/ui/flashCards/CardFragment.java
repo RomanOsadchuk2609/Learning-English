@@ -19,6 +19,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.model.FlashCard;
 import com.google.firebase.database.DatabaseReference;
@@ -43,17 +45,21 @@ public class CardFragment extends Fragment {
     private LinearLayout editorLayout;
     private DatabaseReference mFlashCardReference;
 
+    FlashCardsPagerAdapter adapter;
+
     public CardFragment() {
         // Required empty public constructor
     }
 
 
-    public static CardFragment newInstance(FlashCard flashCard, int cardIndex, int amountOfCards, boolean isEditable) {
+    public static CardFragment newInstance(FlashCard flashCard, int cardIndex, int amountOfCards,
+                                           boolean isEditable, FlashCardsPagerAdapter adapter) {
         CardFragment fragment = new CardFragment();
         fragment.setAmountOfCards(amountOfCards);
         fragment.setCardIndex(cardIndex);
         fragment.setFlashCard(flashCard);
         fragment.setEditable(isEditable);
+        fragment.setAdapter(adapter);
         return fragment;
     }
 
@@ -77,7 +83,7 @@ public class CardFragment extends Fragment {
         backTextET = view.findViewById(R.id.editTextBack);
 
         buttonSave = view.findViewById(R.id.imageButtonSaveCard);
-        buttonRemove = view.findViewById(R.id.imageButtonSaveCard);
+        //buttonRemove = view.findViewById(R.id.imageButtonSaveCard);
         buttonBack = view.findViewById(R.id.imageButtonBack);
 
         editorLayout = view.findViewById(R.id.imageButtonLayout);
@@ -95,7 +101,7 @@ public class CardFragment extends Fragment {
             }
         });
 
-        if (isEditable){
+        /*if (isEditable){
             flipView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
@@ -107,7 +113,7 @@ public class CardFragment extends Fragment {
                     return true;
                 }
             });
-        }
+        }*/
 
 
         cardIndexTV.setText(cardIndex + " of " + amountOfCards);
@@ -140,14 +146,38 @@ public class CardFragment extends Fragment {
         if (id == R.id.edit_card) {
             editCard();
             return true;
+        } else if (id == R.id.delete_card){
+            deleteCard();
+            return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void deleteCard(){
+        if (isEditable){
+            MaterialDialog dialog = new MaterialDialog.Builder(getContext())
+                    .title("Delete this card?")
+                    .positiveText("Yes")
+                    .negativeText("No")
+                    .onPositive(new MaterialDialog.SingleButtonCallback() {
+                        @Override
+                        public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                            mFlashCardReference = FirebaseDatabase.getInstance()
+                                    .getReference(flashCard.getPath());
+                            mFlashCardReference.setValue(null);
+                            adapter.deleteCard(flashCard);
+                            Toast.makeText(getContext(),"Card will be deleted",Toast.LENGTH_LONG).show();
+                        }
+                    }).show();
+        } else {
+            Toast.makeText(getContext(),"You can't delete cards of this set!",Toast.LENGTH_LONG).show();
+        }
     }
 
     private void editCard(){
         if (isEditable){
             mFlashCardReference = FirebaseDatabase.getInstance()
-                    .getReference(flashCard.getPath()+flashCard.getKey());
+                    .getReference(flashCard.getPath());
 
             final String oldFrontText = flashCard.getFrontText(), oldBackText = flashCard.getBackText();
 
@@ -238,5 +268,13 @@ public class CardFragment extends Fragment {
 
     public void setEditable(boolean editable) {
         isEditable = editable;
+    }
+
+    public FlashCardsPagerAdapter getAdapter() {
+        return adapter;
+    }
+
+    public void setAdapter(FlashCardsPagerAdapter adapter) {
+        this.adapter = adapter;
     }
 }

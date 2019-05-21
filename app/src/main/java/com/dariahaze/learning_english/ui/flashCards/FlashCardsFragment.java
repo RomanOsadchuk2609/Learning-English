@@ -69,6 +69,7 @@ public class FlashCardsFragment extends Fragment {
         final String commonPath = "cards/admin/";
         super.onViewCreated(view, savedInstanceState);
         mCommonCardSetReference = FirebaseDatabase.getInstance().getReference(commonPath);
+        mCommonCardSetReference.keepSynced(true);
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
@@ -172,6 +173,7 @@ public class FlashCardsFragment extends Fragment {
             String userReference = Utils.getFormattedUserKey(currentUser.getEmail());
             final String userPath = "cards/"+userReference+"/";
             mUserCardSetReference = FirebaseDatabase.getInstance().getReference(userPath);
+            mUserCardSetReference.keepSynced(true);
 
             mUserCardSetReference.addChildEventListener(new ChildEventListener() {
                 @Override

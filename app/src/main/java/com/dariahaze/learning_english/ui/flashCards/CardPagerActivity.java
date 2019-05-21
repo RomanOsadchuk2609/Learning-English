@@ -45,7 +45,7 @@ public class CardPagerActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        ViewPager cardsPager = findViewById(R.id.cardPager);
+        final ViewPager cardsPager = findViewById(R.id.cardPager);
         Bundle bundle = getIntent().getExtras();
         cardGroup = (CardGroup) bundle.get("CardGroup");
 
@@ -53,17 +53,20 @@ public class CardPagerActivity extends AppCompatActivity {
         boolean isEditable = cardGroup.getKey().contains(userKey);
         List<FlashCard> flashCardList = new ArrayList<>();
         final FlashCardsPagerAdapter adapter = new FlashCardsPagerAdapter(
-                getSupportFragmentManager(),flashCardList,cardGroup.getSize(),isEditable);
+                getSupportFragmentManager(),flashCardList,cardGroup,isEditable);
         cardsPager.setAdapter(adapter);
 
         mFlashCardsReference = FirebaseDatabase.getInstance()
                 .getReference("flashCards/"+cardGroup.getKey()).orderByChild("number");
+        mFlashCardsReference.keepSynced(true);
+
+
         mFlashCardsReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 FlashCard flashCard = dataSnapshot.getValue(FlashCard.class);
                 flashCard.setKey(dataSnapshot.getKey());
-                flashCard.setPath("flashCards/"+cardGroup.getKey()+"/");
+                flashCard.setPath("flashCards/"+cardGroup.getKey()+"/"+flashCard.getKey());
                 adapter.addCard(flashCard);
             }
 
@@ -74,7 +77,10 @@ public class CardPagerActivity extends AppCompatActivity {
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
+                FlashCard flashCard = dataSnapshot.getValue(FlashCard.class);
+                flashCard.setKey(dataSnapshot.getKey());
+                flashCard.setPath("flashCards/"+cardGroup.getKey()+"/"+flashCard.getKey());
+                adapter.notifyDataSetChanged();
             }
 
             @Override

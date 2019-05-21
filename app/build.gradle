@@ -36,4 +36,5 @@ dependencies {
     implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.2'
     implementation 'com.google.firebase:firebase-database:17.0.0'
     implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
 }

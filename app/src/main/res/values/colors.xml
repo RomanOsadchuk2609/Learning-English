@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimaryLight">#09A290</color>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
@@ -7,4 +8,7 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorWindowBackground">#F5F5F5</color>
     <color name="colorPressedGrey">#f2f2f2</color>
+    <color name="colorQuestion">#2196F3</color>
+    <color name="colorWrongQuestion">#FF5209</color>
+    <color name="colorCorrectQuestion">#5DC256</color>
 </resources>

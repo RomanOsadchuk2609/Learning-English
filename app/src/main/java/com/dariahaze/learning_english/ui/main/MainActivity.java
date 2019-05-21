@@ -15,10 +15,13 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.dariahaze.learning_english.R;
+import com.dariahaze.learning_english.dao.DatabaseAccess;
+import com.dariahaze.learning_english.model.RandomQuestion;
 import com.dariahaze.learning_english.ui.flashCards.FlashCardsFragment;
 import com.dariahaze.learning_english.ui.grammar.GrammarPagesFragment;
 import com.dariahaze.learning_english.ui.registration.SignInActivity;
 import com.dariahaze.learning_english.ui.statistics.StatisticsFragment;
+import com.dariahaze.learning_english.ui.tests.RandomTestFragment;
 import com.dariahaze.learning_english.ui.tests.TestsFragment;
 import com.dariahaze.learning_english.ui.videoLessons.VideoLessonsFragment;
 import com.dariahaze.learning_english.utils.Utils;
@@ -28,6 +31,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Date;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -41,6 +45,13 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
+        databaseAccess.open();
+        List<RandomQuestion> questions = databaseAccess.get20RandomQuestions();
+        databaseAccess.close();
+        System.out.println(questions);
+
 
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 

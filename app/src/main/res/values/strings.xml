@@ -45,4 +45,10 @@
     <string name="sec_for_question">- You have 30 seconds for each question</string>
     <string name="detail_explanation">- You can review correct answer and detail explanation after finish of each Test</string>
     <string name="start">start</string>
+    <string name="_0">0</string>
+    <string name="_1_20">1/20</string>
+    <string name="_00_30">00:30</string>
+    <string name="correct_answer">Correct Answer</string>
+    <string name="next">Next</string>
+    <string name="question">Question</string>
 </resources>

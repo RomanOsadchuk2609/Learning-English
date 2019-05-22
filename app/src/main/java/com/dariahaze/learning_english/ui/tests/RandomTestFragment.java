@@ -1,6 +1,8 @@
 package com.dariahaze.learning_english.ui.tests;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,8 +10,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.dariahaze.learning_english.R;
+import com.dariahaze.learning_english.ui.flashCards.CardPagerActivity;
 
 
 /**
@@ -38,5 +42,14 @@ public class RandomTestFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        final Button start = view.findViewById(R.id.buttonStart);
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (start.getContext(), TestActivity.class);
+                start.getContext().startActivity(intent);
+            }
+        });
     }
 }

@@ -2,14 +2,19 @@ package com.dariahaze.learning_english.ui.tests;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.dao.DatabaseAccess;
 import com.dariahaze.learning_english.model.RandomQuestion;
+import com.dariahaze.learning_english.utils.Utils;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,12 +22,13 @@ import java.util.Map;
 public class TestActivity extends AppCompatActivity {
 
     private  List<RandomQuestion> questionList;
+    private List<Integer> answerList = new ArrayList<>();
     private int questionIndex = 0;
     private int correctAnswers = 0;
     private TextView questionTV, answer1TV, answer2TV, answer3TV, explanationTV, correctAnswersTV,
     timeTV, questionNumberTV;
     private Button buttonNext;
-    private Map<Integer,RandomQuestion> usersAnswers = new LinkedHashMap<>();
+    private int usersAnswer = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +59,7 @@ public class TestActivity extends AppCompatActivity {
                     correctAnswers++;
                     correctAnswersTV.setText(correctAnswers+"");
                 }
-                usersAnswers.put(1,questionList.get(questionIndex));
+                usersAnswer = 1;
                 showCorrectAnswer(questionList.get(questionIndex));
             }
         });
@@ -65,7 +71,7 @@ public class TestActivity extends AppCompatActivity {
                     correctAnswers++;
                     correctAnswersTV.setText(correctAnswers+"");
                 }
-                usersAnswers.put(2,questionList.get(questionIndex));
+                usersAnswer = 2;
                 showCorrectAnswer(questionList.get(questionIndex));
             }
         });
@@ -77,7 +83,7 @@ public class TestActivity extends AppCompatActivity {
                     correctAnswers++;
                     correctAnswersTV.setText(correctAnswers+"");
                 }
-                usersAnswers.put(3,questionList.get(questionIndex));
+                usersAnswer = 2;
                 showCorrectAnswer(questionList.get(questionIndex));
             }
         });
@@ -89,7 +95,17 @@ public class TestActivity extends AppCompatActivity {
                 if (questionIndex < questionList.size()-1){
                     setDefaultAnswerBackground();
                     questionIndex++;
+                    answerList.add(usersAnswer);
+                    usersAnswer = 0;
                     loadQuestion(questionList.get(questionIndex));
+                } else {
+                    buttonNext.setVisibility(View.GONE);
+                    LinearLayout layoutResults = findViewById(R.id.layoutResults);
+                    layoutResults.setVisibility(View.VISIBLE);
+                    RecyclerView recyclerView = findViewById(R.id.usersAnswersRV);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                    UsersAnswersAdapter adapter = new UsersAnswersAdapter(answerList, questionList);
+                    recyclerView.setAdapter(adapter);
                 }
             }
         });

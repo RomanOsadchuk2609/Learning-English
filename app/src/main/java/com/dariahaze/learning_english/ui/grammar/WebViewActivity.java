@@ -35,7 +35,10 @@ public class WebViewActivity extends AppCompatActivity {
             topicSmall.setText(bundle.getString("TopicSmall"));
         }
         if (bundle.getString("HtmlPath")!=null){
-            webView.loadUrl(bundle.getString("HtmlPath"));
+            String path = bundle.getString("HtmlPath");
+            String fileName = path.substring(path.lastIndexOf('/')+1,path.lastIndexOf('.'));
+            path = path.replaceFirst(fileName,fileName.toUpperCase());
+            webView.loadUrl(path);
         }
 
     }

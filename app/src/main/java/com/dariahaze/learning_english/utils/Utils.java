@@ -50,7 +50,7 @@ public class Utils {
                 new GrammarElement("Homonyms", GRAMMAR_HTML_PATH + "Homonyms" + ".html")
         ));
 
-        GrammarElement pastTenses = new GrammarElement("Past tenses",TENSES_HTML_PATH + "Past tense/");
+        /*GrammarElement pastTenses = new GrammarElement("Past tenses",TENSES_HTML_PATH + "Past tense/");
         GrammarElement presentTenses = new GrammarElement("Present tenses",TENSES_HTML_PATH + "Present tense/");
         GrammarElement futureTenses = new GrammarElement("Future tenses",TENSES_HTML_PATH + "Future tense/");
 
@@ -76,6 +76,39 @@ public class Utils {
                 new GrammarElement("Future continuous",futureTenses.getPath()+"Future continuous.html"),
                 new GrammarElement("Future perfect",futureTenses.getPath()+"Future perfect.html"),
                 new GrammarElement("Future perfect continuous",futureTenses.getPath()+"Future perfect continuous.html")
+        )));*/
+
+        GrammarElement pastTenses = new GrammarElement("Past tenses",TENSES_HTML_PATH + "Past/");
+        GrammarElement presentTenses = new GrammarElement("Present tenses",TENSES_HTML_PATH + "Present/");
+        GrammarElement futureTenses = new GrammarElement("Future tenses",TENSES_HTML_PATH + "Future/");
+
+        pastTenses.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
+                new GrammarElement("Past",pastTenses.getPath()+"past.html"),
+                new GrammarElement("Simple past",pastTenses.getPath()+"Simple past tense.html"),
+                new GrammarElement("Past continuous",pastTenses.getPath()+"Past continuous tense.html"),
+                new GrammarElement("Past perfect",pastTenses.getPath()+"Past perfect tense.html"),
+                new GrammarElement("Past perfect continuous",pastTenses.getPath()+"Past perfect continuous tense.html")
+        )));
+
+        presentTenses.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
+                new GrammarElement("Present",presentTenses.getPath()+"present.html"),
+                new GrammarElement("Simple present",presentTenses.getPath()+"Simple present tense.html"),
+                new GrammarElement("Present continuous",presentTenses.getPath()+"Present continuous.html"),
+                new GrammarElement("Present perfect",presentTenses.getPath()+"Present perfect.html"),
+                new GrammarElement("Present perfect continuous",presentTenses.getPath()+"Present perfect continuous.html")
+        )));
+
+        futureTenses.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
+                new GrammarElement("Future",futureTenses.getPath()+"future.html"),
+                new GrammarElement("Simple future",futureTenses.getPath()+"Simple future tense.html"),
+                new GrammarElement("Future continuous",futureTenses.getPath()+"Future continuous.html"),
+                new GrammarElement("Future perfect",futureTenses.getPath()+"Future perfect.html"),
+                new GrammarElement("Future perfect continuous",futureTenses.getPath()+"Future perfect continuous.html"),
+                new GrammarElement("Immediate future",futureTenses.getPath()+"Immediate future.html"),
+                new GrammarElement("Future obligation",futureTenses.getPath()+"Future obligation.html"),
+                new GrammarElement("Future with going",futureTenses.getPath()+"Future with going.html"),
+                new GrammarElement("Present continuous for future arrangements",futureTenses.getPath()+"Present continuous for future arrangements.html"),
+                new GrammarElement("Simple present for future events",futureTenses.getPath()+"Simple present for future events.html")
         )));
 
         grammarTensesElements = new ArrayList<>(Arrays.asList(

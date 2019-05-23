@@ -110,10 +110,7 @@ public class CardPagerActivity extends AppCompatActivity {
 
         if (id == android.R.id.home) {
             finish();
-        } /*else if (id == R.id.edit_card) {
-            Toast.makeText(getApplicationContext(),"Edit Card",Toast.LENGTH_SHORT).show();
-            return true;
-        }*/
+        }
         return super.onOptionsItemSelected(item);
     }
 }

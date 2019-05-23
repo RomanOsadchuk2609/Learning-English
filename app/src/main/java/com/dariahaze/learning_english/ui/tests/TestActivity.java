@@ -4,8 +4,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -16,6 +19,7 @@ import com.dariahaze.learning_english.model.RandomQuestion;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -28,8 +32,9 @@ public class TestActivity extends AppCompatActivity {
     private int questionIndex = 0;
     private int correctAnswers = 0;
     private TextView questionTV, answer1TV, answer2TV, answer3TV, explanationTV, correctAnswersTV,
-    timeTV, questionNumberTV;
+        timeTV, questionNumberTV;
     private Button buttonNext;
+    private ImageView check1, check2, check3;
     private int usersAnswer = 0;
     ScheduledExecutorService scheduler;
     ScheduledFuture scheduledFuture;
@@ -39,6 +44,13 @@ public class TestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+
+        Toolbar toolbar = findViewById(R.id.toolbarRandomTests);
+        setSupportActionBar(toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
         scheduler =  Executors.newSingleThreadScheduledExecutor();
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
         databaseAccess.open();
@@ -53,7 +65,9 @@ public class TestActivity extends AppCompatActivity {
         correctAnswersTV = findViewById(R.id.textViewCorrectAnswer);
         timeTV = findViewById(R.id.textViewTime30);
         questionNumberTV = findViewById(R.id.textViewAnswerNumber);
-
+        check1 = findViewById(R.id.checkAnswer1);
+        check2 = findViewById(R.id.checkAnswer2);
+        check3 = findViewById(R.id.checkAnswer3);
 
         loadQuestion(questionList.get(questionIndex));
 
@@ -64,6 +78,7 @@ public class TestActivity extends AppCompatActivity {
                     correctAnswers++;
                     correctAnswersTV.setText(correctAnswers+"");
                 }
+                check1.setVisibility(View.VISIBLE);
                 scheduler.shutdown();
                 usersAnswer = 1;
                 showCorrectAnswer(questionList.get(questionIndex));
@@ -77,6 +92,7 @@ public class TestActivity extends AppCompatActivity {
                     correctAnswers++;
                     correctAnswersTV.setText(correctAnswers+"");
                 }
+                check2.setVisibility(View.VISIBLE);
                 scheduler.shutdown();
                 usersAnswer = 2;
                 showCorrectAnswer(questionList.get(questionIndex));
@@ -90,6 +106,7 @@ public class TestActivity extends AppCompatActivity {
                     correctAnswers++;
                     correctAnswersTV.setText(correctAnswers+"");
                 }
+                check3.setVisibility(View.VISIBLE);
                 scheduler.shutdown();
                 usersAnswer = 2;
                 showCorrectAnswer(questionList.get(questionIndex));
@@ -167,6 +184,9 @@ public class TestActivity extends AppCompatActivity {
     private void loadQuestion(RandomQuestion question){
         System.out.println(question);
         int number = questionIndex+1;
+        check1.setVisibility(View.INVISIBLE);
+        check2.setVisibility(View.INVISIBLE);
+        check3.setVisibility(View.INVISIBLE);
         questionNumberTV.setText(number + "/" + questionList.size());
         questionTV.setText(question.getQuestion());
         explanationTV.setVisibility(View.GONE);
@@ -226,5 +246,16 @@ public class TestActivity extends AppCompatActivity {
         answer1TV.setBackground(getDrawable(R.drawable.answer_background));
         answer2TV.setBackground(getDrawable(R.drawable.answer_background));
         answer3TV.setBackground(getDrawable(R.drawable.answer_background));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == android.R.id.home) {
+            scheduler.shutdown();
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

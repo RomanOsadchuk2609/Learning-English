@@ -43,7 +43,8 @@ public class TestActivity extends AppCompatActivity {
     private ScheduledFuture scheduledFuture;
     private int seconds = 30;
     private boolean isAnswerSelected;
-    MaterialDialog exitDialog;
+    private MaterialDialog exitDialog;
+    private boolean showExitDialog = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -165,6 +166,7 @@ public class TestActivity extends AppCompatActivity {
             scheduledFuture = restartScheduler();
             isAnswerSelected = false;
         } else {
+            showExitDialog = false;
             buttonNext.setVisibility(View.GONE);
             LinearLayout layoutResults = findViewById(R.id.layoutResults);
             layoutResults.setVisibility(View.VISIBLE);
@@ -277,7 +279,7 @@ public class TestActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == android.R.id.home) {
+        if (id == android.R.id.home && showExitDialog) {
             exitDialog.show();
         }
         return super.onOptionsItemSelected(item);
@@ -285,6 +287,8 @@ public class TestActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        exitDialog.show();
+        if (showExitDialog){
+            exitDialog.show();
+        }
     }
 }

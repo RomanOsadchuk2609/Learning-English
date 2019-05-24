@@ -18,7 +18,6 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.model.PracticeQuestion;
 import com.dariahaze.learning_english.model.PracticeTest;
-import com.dariahaze.learning_english.model.RandomQuestion;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -36,7 +35,7 @@ public class PracticeTestActivity extends AppCompatActivity {
     private int questionIndex = 0;
     private int correctAnswers = 0;
     private TextView questionTV, answer1TV, answer2TV, answer3TV, correctAnswersTV, headerTV,
-            timeTV, questionNumberTV, answer4TV, topicTV;
+            header2TV,timeTV, questionNumberTV, answer4TV, topicTV;
     private Button buttonNext;
     private ImageView check1, check2, check3, check4;
     private int usersAnswer = 0;
@@ -44,7 +43,8 @@ public class PracticeTestActivity extends AppCompatActivity {
     private ScheduledFuture scheduledFuture;
     private long seconds;
     private boolean isAnswerSelected;
-    MaterialDialog exitDialog;
+    boolean showExitDialog = true;
+    private MaterialDialog exitDialog, resultDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +60,7 @@ public class PracticeTestActivity extends AppCompatActivity {
         practiceTest = (PracticeTest) bundle.get("Test");
 
         headerTV = findViewById(R.id.practiceHeaderTV);
+        header2TV = findViewById(R.id.practiceHeader2TV);
         topicTV = findViewById(R.id.topicPracticeTV);
         questionTV = findViewById(R.id.practiceQuestionTV);
         answer1TV = findViewById(R.id.practiceAnswer1);
@@ -76,6 +77,7 @@ public class PracticeTestActivity extends AppCompatActivity {
 
         topicTV.setText(bundle.getString("Topic"));
         headerTV.setText(practiceTest.getHeader());
+        header2TV.setText(practiceTest.getHeader());
         seconds = practiceTest.getMinutes()*60;
         setTimeTV(seconds);
 
@@ -220,8 +222,35 @@ public class PracticeTestActivity extends AppCompatActivity {
             usersAnswer = 0;
             loadQuestion(practiceTest.getQuestions().get(questionIndex));
         } else {
-            //show Result dialog
+            showExitDialog = false;
+            resultDialog = new MaterialDialog.Builder(this)
+                    .title("You got " + correctAnswers + " of " + practiceTest.getQuestions().size())
+                    .positiveText("Exit")
+                    .negativeText("Review")
+                    .onPositive(new MaterialDialog.SingleButtonCallback() {
+                        @Override
+                        public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                            scheduler.shutdown();
+                            finish();
+                        }
+                    }).onNegative(new MaterialDialog.SingleButtonCallback() {
+                        @Override
+                        public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                            scheduler.shutdown();
+                            showResult();
+                        }
+                    }).show();
         }
+    }
+
+    private void showResult(){
+        buttonNext.setVisibility(View.GONE);
+        LinearLayout layoutResults = findViewById(R.id.layoutPracticeResults);
+        layoutResults.setVisibility(View.VISIBLE);
+        RecyclerView recyclerView = findViewById(R.id.practiceAnswersRV);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        PracticeAnswersAdapter adapter = new PracticeAnswersAdapter(answerList, practiceTest);
+        recyclerView.setAdapter(adapter);
     }
 
     private void loadQuestion(PracticeQuestion question){
@@ -311,13 +340,23 @@ public class PracticeTestActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == android.R.id.home) {
-            exitDialog.show();
+            if (showExitDialog){
+                exitDialog.show();
+            }
+            else {
+                finish();
+            }
         }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
     public void onBackPressed() {
-        exitDialog.show();
+        if (showExitDialog) {
+            exitDialog.show();
+        }
+        else {
+            finish();
+        }
     }
 }

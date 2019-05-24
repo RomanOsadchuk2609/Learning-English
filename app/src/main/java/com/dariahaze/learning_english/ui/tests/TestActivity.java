@@ -282,16 +282,24 @@ public class TestActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == android.R.id.home && showExitDialog) {
-            exitDialog.show();
+        if (id == android.R.id.home) {
+            if (showExitDialog){
+                exitDialog.show();
+            }
+            else {
+                finish();
+            }
         }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
     public void onBackPressed() {
-        if (showExitDialog){
+        if (showExitDialog) {
             exitDialog.show();
+        }
+        else {
+            finish();
         }
     }
 }

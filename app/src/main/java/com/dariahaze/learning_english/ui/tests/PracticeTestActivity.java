@@ -122,7 +122,6 @@ public class PracticeTestActivity extends AppCompatActivity {
                         correctAnswersTV.setText(correctAnswers+"");
                     }
                     check1.setVisibility(View.VISIBLE);
-                    scheduler.shutdown();
                     usersAnswer = 1;
                     answerList.add(usersAnswer);
                     showCorrectAnswer(practiceTest.getQuestions().get(questionIndex));
@@ -141,7 +140,6 @@ public class PracticeTestActivity extends AppCompatActivity {
                         correctAnswersTV.setText(correctAnswers+"");
                     }
                     check2.setVisibility(View.VISIBLE);
-                    scheduler.shutdown();
                     usersAnswer = 2;
                     answerList.add(usersAnswer);
                     showCorrectAnswer(practiceTest.getQuestions().get(questionIndex));
@@ -160,7 +158,6 @@ public class PracticeTestActivity extends AppCompatActivity {
                         correctAnswersTV.setText(correctAnswers+"");
                     }
                     check3.setVisibility(View.VISIBLE);
-                    scheduler.shutdown();
                     usersAnswer = 3;
                     answerList.add(usersAnswer);
                     showCorrectAnswer(practiceTest.getQuestions().get(questionIndex));
@@ -179,7 +176,6 @@ public class PracticeTestActivity extends AppCompatActivity {
                         correctAnswersTV.setText(correctAnswers+"");
                     }
                     check4.setVisibility(View.VISIBLE);
-                    scheduler.shutdown();
                     usersAnswer = 4;
                     answerList.add(usersAnswer);
                     showCorrectAnswer(practiceTest.getQuestions().get(questionIndex));
@@ -207,6 +203,10 @@ public class PracticeTestActivity extends AppCompatActivity {
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        if (correctAnswers > practiceTest.getBestScore()){
+                            practiceTest.setBestScore(correctAnswers);
+                            bestScoreReference.setValue(correctAnswers);
+                        }
                         scheduler.shutdown();
                         finish();
                     }

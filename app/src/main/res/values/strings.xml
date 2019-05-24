@@ -57,4 +57,9 @@
     <string name="_0_10">0/10</string>
     <string name="_10">10\'</string>
     <string name="header">Header</string>
+    <string name="user_s_statistics">User\'s Statistics</string>
+    <string name="amount_of_learned_topics_0_x">Amount of learned topics: 0/X</string>
+    <string name="amount_of_successfully_passed_tests_0_x">Amount of successfully passed tests: 0/X</string>
+    <string name="amount_of_learned_card_sets_0_x">Amount of learned card sets: 0/X</string>
+    <string name="your_statistics">Your Statistics</string>
 </resources>

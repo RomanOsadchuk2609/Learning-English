@@ -15,6 +15,7 @@ import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.ui.flashCards.FlashCardsFragment;
 import com.dariahaze.learning_english.ui.grammar.GrammarFragment;
 import com.dariahaze.learning_english.ui.grammar.GrammarPagesFragment;
+import com.dariahaze.learning_english.ui.statistics.StatisticsFragment;
 import com.dariahaze.learning_english.ui.tests.TestsFragment;
 import com.dariahaze.learning_english.ui.videoLessons.VideoLessonsFragment;
 
@@ -92,7 +93,7 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 assert getFragmentManager() != null;
-                getFragmentManager().beginTransaction().replace(R.id.main_content, VideoLessonsFragment.newInstance())
+                getFragmentManager().beginTransaction().replace(R.id.main_content, StatisticsFragment.newInstance())
                         .commit();
             }
         });

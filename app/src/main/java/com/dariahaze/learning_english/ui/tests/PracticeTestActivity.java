@@ -1,5 +1,6 @@
 package com.dariahaze.learning_english.ui.tests;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.model.PracticeQuestion;
 import com.dariahaze.learning_english.model.PracticeTest;
@@ -41,6 +44,7 @@ public class PracticeTestActivity extends AppCompatActivity {
     private ScheduledFuture scheduledFuture;
     private long seconds;
     private boolean isAnswerSelected;
+    MaterialDialog exitDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,6 +159,18 @@ public class PracticeTestActivity extends AppCompatActivity {
                 moveToNextQuestion();
             }
         });
+
+        exitDialog = new MaterialDialog.Builder(this)
+                .title("Are you sure you want to exit?")
+                .positiveText("Yes")
+                .negativeText("No")
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        scheduler.shutdown();
+                        finish();
+                    }
+                }).build();
 
     }
 
@@ -295,10 +311,13 @@ public class PracticeTestActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == android.R.id.home) {
-            scheduler.shutdown();
-            //show exit dialog
-            //finish();
+            exitDialog.show();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        exitDialog.show();
     }
 }

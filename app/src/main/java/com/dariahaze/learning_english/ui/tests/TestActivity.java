@@ -1,7 +1,8 @@
 package com.dariahaze.learning_english.ui.tests;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -12,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.dao.DatabaseAccess;
 import com.dariahaze.learning_english.model.RandomQuestion;
@@ -40,6 +43,7 @@ public class TestActivity extends AppCompatActivity {
     private ScheduledFuture scheduledFuture;
     private int seconds = 30;
     private boolean isAnswerSelected;
+    MaterialDialog exitDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,6 +135,18 @@ public class TestActivity extends AppCompatActivity {
                 moveToNextQuestion();
             }
         });
+
+        exitDialog = new MaterialDialog.Builder(this)
+                .title("Are you sure you want to exit?")
+                .positiveText("Yes")
+                .negativeText("No")
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        scheduler.shutdown();
+                        finish();
+                    }
+                }).build();
     }
 
     private void moveToNextQuestion(){
@@ -262,9 +278,13 @@ public class TestActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == android.R.id.home) {
-            scheduler.shutdown();
-            finish();
+            exitDialog.show();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        exitDialog.show();
     }
 }

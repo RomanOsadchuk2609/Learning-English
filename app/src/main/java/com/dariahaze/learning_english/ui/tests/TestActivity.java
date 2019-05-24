@@ -167,6 +167,9 @@ public class TestActivity extends AppCompatActivity {
             isAnswerSelected = false;
         } else {
             showExitDialog = false;
+            while (answerList.size()!=questionList.size() && answerList.size()<questionList.size()){
+                answerList.add(0);
+            }
             buttonNext.setVisibility(View.GONE);
             LinearLayout layoutResults = findViewById(R.id.layoutResults);
             layoutResults.setVisibility(View.VISIBLE);

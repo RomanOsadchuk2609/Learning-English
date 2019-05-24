@@ -57,8 +57,8 @@ public class PracticeAnswersAdapter extends RecyclerView.Adapter<PracticeAnswers
 
     @Override
     public int getItemCount() {
-        if(answers !=null)
-            return answers.size();
+        if(practiceTest.getQuestions() !=null)
+            return practiceTest.getQuestions().size();
         else return 0;    }
 
 

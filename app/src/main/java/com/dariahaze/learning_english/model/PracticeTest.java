@@ -21,4 +21,6 @@ public class PracticeTest implements Serializable {
 
     @JsonAlias("minutes")
     private int minutes;
+
+    private int bestScore = 0;
 }

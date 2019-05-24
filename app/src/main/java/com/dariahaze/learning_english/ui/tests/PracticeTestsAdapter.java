@@ -14,20 +14,29 @@ import com.dariahaze.learning_english.model.PracticeTest;
 import com.dariahaze.learning_english.ui.grammar.WebViewActivity;
 import com.dariahaze.learning_english.utils.Utils;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.util.List;
 
+import lombok.Data;
+
 public class PracticeTestsAdapter extends RecyclerView.Adapter<PracticeTestsAdapter.ViewHolder> {
     private List<String> dataSet;
-    private String topicLarge;
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
 
-    public void setTopicLarge(String topicLarge) {
-        this.topicLarge = topicLarge;
-    }
 
     public PracticeTestsAdapter(List<String> dataSet) {
         this.dataSet = dataSet;
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
     }
 
     public List<String> getDataSet() {
@@ -66,6 +75,7 @@ public class PracticeTestsAdapter extends RecyclerView.Adapter<PracticeTestsAdap
         private PracticeTest practiceTest;
         private ConstraintLayout constraintLayout;
         private TextView nameTV, numberTV, bestScoreTV, timeTV;
+        private DatabaseReference bestScoreReference;
 
 
         public ViewHolder(ConstraintLayout itemView) {
@@ -89,6 +99,24 @@ public class PracticeTestsAdapter extends RecyclerView.Adapter<PracticeTestsAdap
                 numberTV.setText(number+"");
                 timeTV.setText(practiceTest.getMinutes()+"'");
                 bestScoreTV.setText("0/"+practiceTest.getQuestions().size());
+
+                bestScoreReference = FirebaseDatabase.getInstance().getReference("bestScores/"
+                                +Utils.getFormattedUserKey(currentUser.getEmail())+"/"+name);
+                bestScoreReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Integer bestScore = dataSnapshot.getValue(Integer.class);
+                        if (bestScore!=null){
+                            bestScoreTV.setText(bestScore+"/"+practiceTest.getQuestions().size());
+                            practiceTest.setBestScore(bestScore);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
 
                 constraintLayout.setOnClickListener(new View.OnClickListener() {
                     @Override

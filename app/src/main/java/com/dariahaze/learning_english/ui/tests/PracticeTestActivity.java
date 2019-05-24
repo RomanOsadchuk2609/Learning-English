@@ -18,6 +18,14 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.model.PracticeQuestion;
 import com.dariahaze.learning_english.model.PracticeTest;
+import com.dariahaze.learning_english.utils.Utils;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -45,19 +53,41 @@ public class PracticeTestActivity extends AppCompatActivity {
     private boolean isAnswerSelected;
     boolean showExitDialog = true;
     private MaterialDialog exitDialog, resultDialog;
+    private DatabaseReference bestScoreReference;
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
+    private Integer bestScore = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practice_test);
 
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
+
+        Bundle bundle = getIntent().getExtras();
+        practiceTest = (PracticeTest) bundle.get("Test");
+
+        bestScoreReference = FirebaseDatabase.getInstance().getReference("bestScores/"
+                + Utils.getFormattedUserKey(currentUser.getEmail())+"/"+bundle.getString("Topic"));
+
+        bestScoreReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                bestScore = dataSnapshot.getValue(Integer.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         Toolbar toolbar = findViewById(R.id.toolbarPracticeTests);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-        Bundle bundle = getIntent().getExtras();
-        practiceTest = (PracticeTest) bundle.get("Test");
 
         headerTV = findViewById(R.id.practiceHeaderTV);
         header2TV = findViewById(R.id.practiceHeader2TV);
@@ -94,8 +124,10 @@ public class PracticeTestActivity extends AppCompatActivity {
                     check1.setVisibility(View.VISIBLE);
                     scheduler.shutdown();
                     usersAnswer = 1;
+                    answerList.add(usersAnswer);
                     showCorrectAnswer(practiceTest.getQuestions().get(questionIndex));
                     isAnswerSelected = true;
+                    checkOnLastQuestion();
                 }
             }
         });
@@ -111,8 +143,10 @@ public class PracticeTestActivity extends AppCompatActivity {
                     check2.setVisibility(View.VISIBLE);
                     scheduler.shutdown();
                     usersAnswer = 2;
+                    answerList.add(usersAnswer);
                     showCorrectAnswer(practiceTest.getQuestions().get(questionIndex));
                     isAnswerSelected = true;
+                    checkOnLastQuestion();
                 }
             }
         });
@@ -128,8 +162,10 @@ public class PracticeTestActivity extends AppCompatActivity {
                     check3.setVisibility(View.VISIBLE);
                     scheduler.shutdown();
                     usersAnswer = 3;
+                    answerList.add(usersAnswer);
                     showCorrectAnswer(practiceTest.getQuestions().get(questionIndex));
                     isAnswerSelected = true;
+                    checkOnLastQuestion();
                 }
             }
         });
@@ -145,8 +181,10 @@ public class PracticeTestActivity extends AppCompatActivity {
                     check4.setVisibility(View.VISIBLE);
                     scheduler.shutdown();
                     usersAnswer = 4;
+                    answerList.add(usersAnswer);
                     showCorrectAnswer(practiceTest.getQuestions().get(questionIndex));
                     isAnswerSelected = true;
+                    checkOnLastQuestion();
                 }
             }
         });
@@ -203,7 +241,7 @@ public class PracticeTestActivity extends AppCompatActivity {
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    //show Result Dialog
+                                    finishTest();
                                 }
                             });
                         }
@@ -212,38 +250,56 @@ public class PracticeTestActivity extends AppCompatActivity {
     }
 
 
-
     private void moveToNextQuestion(){
         if (questionIndex < practiceTest.getQuestions().size()-1){
             isAnswerSelected = false;
             setDefaultAnswerBackground();
             questionIndex++;
-            answerList.add(usersAnswer);
             usersAnswer = 0;
             loadQuestion(practiceTest.getQuestions().get(questionIndex));
         } else {
-            showExitDialog = false;
-            resultDialog = new MaterialDialog.Builder(this)
-                    .title("You got " + correctAnswers + " of " + practiceTest.getQuestions().size())
-                    .positiveText("Exit")
-                    .negativeText("Review")
-                    .onPositive(new MaterialDialog.SingleButtonCallback() {
-                        @Override
-                        public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                            scheduler.shutdown();
-                            finish();
-                        }
-                    }).onNegative(new MaterialDialog.SingleButtonCallback() {
-                        @Override
-                        public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                            scheduler.shutdown();
-                            showResult();
-                        }
-                    }).show();
+            finishTest();
         }
     }
 
+    private void checkOnLastQuestion(){
+        if (questionIndex == practiceTest.getQuestions().size()){
+            finishTest();
+        }
+    }
+
+    private void finishTest(){
+        showExitDialog = false;
+        if (correctAnswers > practiceTest.getBestScore()){
+            practiceTest.setBestScore(correctAnswers);
+            bestScoreReference.setValue(correctAnswers);
+        }
+        resultDialog = new MaterialDialog.Builder(this)
+                .title("You got " + correctAnswers + " of " + practiceTest.getQuestions().size())
+                .content("Best Score: "+practiceTest.getBestScore())
+                .positiveText("Exit")
+                .negativeText("Review")
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        scheduler.shutdown();
+                        finish();
+                    }
+                }).onNegative(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        scheduler.shutdown();
+                        showResult();
+                    }
+                }).show();
+    }
+
     private void showResult(){
+        while (answerList.size() != practiceTest.getQuestions().size()
+                && answerList.size() < practiceTest.getQuestions().size()){
+            answerList.add(0);
+        }
+
         buttonNext.setVisibility(View.GONE);
         LinearLayout layoutResults = findViewById(R.id.layoutPracticeResults);
         layoutResults.setVisibility(View.VISIBLE);

@@ -1,8 +1,7 @@
  {  "Mainhd":"Select The Correct Adjective From The Given Options.",
-
+    "minutes":20,
 
     "Sub":
-
     [
       {
         "quetn":"Bill is two years ___ than Wanda.",

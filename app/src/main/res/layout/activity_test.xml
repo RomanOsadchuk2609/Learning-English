@@ -17,7 +17,6 @@
         app:popupTheme="@style/AppTheme.PopupOverlay">
 
         <TextView
-            android:id="@+id/topicLargeTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/test"

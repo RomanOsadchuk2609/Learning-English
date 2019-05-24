@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,14 +46,9 @@ public class PracticeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ObjectMapper mapper = new ObjectMapper();
-        PracticeTest practiceTest;
-        try {
-            practiceTest = mapper.readValue(getActivity().getAssets().open(Utils.PRACTICE_TESTS_PATH+"Adverbs.json"), PracticeTest.class);
-            System.out.println(practiceTest);
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("FILE NOT OPENED");
-        }
+        RecyclerView recyclerView = view.findViewById(R.id.practiceRV);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        PracticeTestsAdapter adapter = new PracticeTestsAdapter(Utils.practiceTests);
+        recyclerView.setAdapter(adapter);
     }
 }

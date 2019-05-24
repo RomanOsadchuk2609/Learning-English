@@ -19,6 +19,7 @@ public class Utils {
     public final static List<GrammarElement> grammarTensesElements;
     public final static List<GrammarElement> grammarElements;
     public final static List<VideoLesson> videoLessons;
+    public final static List<String> practiceTests;
 
     public static String getFormattedUserKey(String email){
         return email.replaceAll("\\."," ");
@@ -293,6 +294,18 @@ public class Utils {
                 new VideoLesson("Alright or All right?","https://www.youtube.com/watch?v=pOFWLKDk3Hk"),
                 new VideoLesson("Farther or Further?","https://www.youtube.com/watch?v=ytGzJbu4mPE"),
                 new VideoLesson("Past Simple and Past Perfect - Tenses in English","https://www.youtube.com/watch?v=7Mni3yDpIWo")
+        ));
+
+        practiceTests = new ArrayList<>(Arrays.asList(
+                "Adverbs", "Adjectives Part One", "Adjectives Part Two",
+                "Appropriate Order", "Articles", "Correct Words",
+                "Correct Form Of Nouns", "Gerunds", "Homophones",
+                "Idioms", "If And Unless", "Interjection",
+                "Nouns And Verb", "Collective Nouns", "Participles",
+                "Choose Best Word Or Phrase", "Plural Forms", "Preposition",
+                "Pronouns", "verbs", "General Part 1",
+                "General Part 2", "General Part 3", "General Part 4",
+                "General Part 5", "Phrasal Verbs Part 1", "Phrasal Verbs Part 2"
         ));
 
     }

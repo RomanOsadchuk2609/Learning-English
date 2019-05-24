@@ -36,9 +36,10 @@ public class TestActivity extends AppCompatActivity {
     private Button buttonNext;
     private ImageView check1, check2, check3;
     private int usersAnswer = 0;
-    ScheduledExecutorService scheduler;
-    ScheduledFuture scheduledFuture;
+    private ScheduledExecutorService scheduler;
+    private ScheduledFuture scheduledFuture;
     private int seconds = 30;
+    private boolean isAnswerSelected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +51,6 @@ public class TestActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-
-        scheduler =  Executors.newSingleThreadScheduledExecutor();
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
         databaseAccess.open();
         questionList = databaseAccess.get20RandomQuestions();
@@ -74,45 +73,53 @@ public class TestActivity extends AppCompatActivity {
         answer1TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (questionList.get(questionIndex).getCorrect()==1){
-                    correctAnswers++;
-                    correctAnswersTV.setText(correctAnswers+"");
+                if (!isAnswerSelected){
+                    if (questionList.get(questionIndex).getCorrect()==1){
+                        correctAnswers++;
+                        correctAnswersTV.setText(correctAnswers+"");
+                    }
+                    check1.setVisibility(View.VISIBLE);
+                    scheduler.shutdown();
+                    usersAnswer = 1;
+                    showCorrectAnswer(questionList.get(questionIndex));
+                    isAnswerSelected = true;
                 }
-                check1.setVisibility(View.VISIBLE);
-                scheduler.shutdown();
-                usersAnswer = 1;
-                showCorrectAnswer(questionList.get(questionIndex));
             }
         });
 
         answer2TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (questionList.get(questionIndex).getCorrect()==2){
-                    correctAnswers++;
-                    correctAnswersTV.setText(correctAnswers+"");
+                if (!isAnswerSelected){
+                    if (questionList.get(questionIndex).getCorrect()==2){
+                        correctAnswers++;
+                        correctAnswersTV.setText(correctAnswers+"");
+                    }
+                    check2.setVisibility(View.VISIBLE);
+                    scheduler.shutdown();
+                    usersAnswer = 2;
+                    showCorrectAnswer(questionList.get(questionIndex));
+                    isAnswerSelected = true;
                 }
-                check2.setVisibility(View.VISIBLE);
-                scheduler.shutdown();
-                usersAnswer = 2;
-                showCorrectAnswer(questionList.get(questionIndex));
             }
         });
 
         answer3TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (questionList.get(questionIndex).getCorrect()==3){
-                    correctAnswers++;
-                    correctAnswersTV.setText(correctAnswers+"");
+                if (!isAnswerSelected){
+                    if (questionList.get(questionIndex).getCorrect()==3){
+                        correctAnswers++;
+                        correctAnswersTV.setText(correctAnswers+"");
+                    }
+                    check3.setVisibility(View.VISIBLE);
+                    scheduler.shutdown();
+                    usersAnswer = 3;
+                    showCorrectAnswer(questionList.get(questionIndex));
+                    isAnswerSelected = true;
                 }
-                check3.setVisibility(View.VISIBLE);
-                scheduler.shutdown();
-                usersAnswer = 2;
-                showCorrectAnswer(questionList.get(questionIndex));
             }
         });
-
 
         System.out.println("PreScheduler: seconds = "+seconds+" "+new Date());
         scheduledFuture = restartScheduler();
@@ -132,6 +139,7 @@ public class TestActivity extends AppCompatActivity {
         }
 
         if (questionIndex < questionList.size()-1){
+
             setDefaultAnswerBackground();
             questionIndex++;
             answerList.add(usersAnswer);
@@ -139,6 +147,7 @@ public class TestActivity extends AppCompatActivity {
             loadQuestion(questionList.get(questionIndex));
             timeTV.setText(getResources().getString(R.string._00_30));
             scheduledFuture = restartScheduler();
+            isAnswerSelected = false;
         } else {
             buttonNext.setVisibility(View.GONE);
             LinearLayout layoutResults = findViewById(R.id.layoutResults);

@@ -1,0 +1,68 @@
+{
+    "Mainhd":"Select The Correct Adverb From The Given Options.",
+    "Sub": [
+      {
+        "quetn":"I have been a fan of mystery stories since I was quite young. ",
+        "Answr":"2",
+        "optns":"1,2,3,4",
+        "4":" young",
+        "3":" since",
+        "2":" quite",
+        "1":" fan "
+      },
+      {
+        "quetn":" Others build suspense very slowly.",
+        "Answr":"4",
+        "optns":"1,2,3,4",
+        "4":" very, slowly ",
+        "3":" Others, very, slowly ",
+        "2":" Others, slowly ",
+        "1":" Others, very "
+      },
+      {
+        "quetn":"If I like a story, I almost never put it down until I finish it.",
+        "Answr":"3",
+        "optns":"1,2,3,4",
+        "4":" a, never, down ",
+        "3":" almost, never, down ",
+        "2":" almost, never, until ",
+        "1":" a, almost, never "
+      },
+      {
+        "quetn":" In many cases, I can scarcely prevent myself from peeking at the last chapter to see the ending.",
+        "Answr":"2",
+        "optns":"1,2,3,4",
+        "4":" many ",
+        "3":" prevent ",
+        "2":" scarcely ",
+        "1":" from "
+      },
+      {
+        "quetn":" I never start reading a mystery story if I have homework because then it is more tempting to read than to study.",
+        "Answr":"1",
+        "optns":"1,2,3,4",
+        "4":"a, never, more ",
+        "3":" never, more ",
+        "2":" a, never, then ",
+        "1":" never, then, more "
+      },
+      {
+        "quetn":" My favorite detectives are ones who cleverly match wits with equally clever villains.",
+        "Answr":"2",
+        "optns":"1,2,3,4",
+        "4":" favorite, cleverly ",
+        "3":" favorite, clever ",
+        "2":" cleverly, equally ",
+        "1":" equally, clever "
+      },
+      {
+        "quetn":" I especially like detectives who carefully hunt for clues.",
+        "Answr":"3",
+        "optns":"1,2,3,4",
+        "4":" like ",
+        "3":" especially, carefully ",
+        "2":" like, especially ",
+        "1":" hunt, carefully "
+      }
+    ]
+  }

@@ -1,0 +1,169 @@
+{  "Mainhd":"Select The Correct answer from the given options.",
+
+  "Sub":
+
+  [
+    {
+      "quetn":"I have been _________ since 5pm.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Sleeper",
+      "2":"Sleep",
+      "3":"Sleeping",
+      "4":"Sleeps"
+    },{
+    "quetn":" He has ________.",
+    "Answr":"1",
+    "optns":"1,2,3,4",
+    "1":"Eat",
+    "2":"Eaten",
+    "3":"Eats",
+    "4":"Eatery"
+  },
+    {
+      "quetn":" He has been hospitalised since _________.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"Tomorrow",
+      "2":"Yesterday",
+      "3":"Much days",
+      "4":"Many days"
+    },
+    {
+      "quetn":"He has finished ________.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Teaching",
+      "2":"Teach",
+      "3":"Teacher",
+      "4":"Teaches"
+    },
+    {
+      "quetn":"They will leave in some ________.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Timing",
+      "2":"Timer",
+      "3":"Time",
+      "4":"Times"
+    },{
+    "quetn":"Are ________ going?",
+    "Answr":"4",
+    "optns":"1,2,3,4",
+    "1":"Them",
+    "2":"Those",
+    "3":"These",
+    "4":"They"
+  },
+    {
+      "quetn":"Are ________ coming to our house?",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"Them",
+      "2":"Those",
+      "3":"These",
+      "4":"They"
+    },{
+    "quetn":"What are ________ doing?",
+    "Answr":"1",
+    "optns":"1,2,3,4",
+    "1":"They",
+    "2":"Those",
+    "3":"These",
+    "4":"Them"
+  },
+    {
+      "quetn":" Are ________ of them coming together or will ________come later?",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"He - she",
+      "2":"Both - he",
+      "3":"Either - both",
+      "4":"Three - neither"
+    },{
+    "quetn":"Don't give ________ until the race ends.",
+    "Answr":"2",
+    "optns":"1,2,3,4",
+    "1":"Away",
+    "2":"Up",
+    "3":"On",
+    "4":"So"
+  },
+    {
+      "quetn":"Do you know ________ it will rain today?",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"If",
+      "2":"Up",
+      "3":"To",
+      "4":"So"
+    },{
+    "quetn":"I'm tired _______ I'm hungry.",
+    "Answr":"4",
+    "optns":"1,2,3,4",
+    "1":"After",
+    "2":"Such",
+    "3":"If",
+    "4":"And"
+  },
+    {
+      "quetn":"We will go ________ if they don't come today.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Such",
+      "2":"After",
+      "3":"Even",
+      "4":"Since"
+    },{
+    "quetn":"Let's ________ out today.",
+    "Answr":"2",
+    "optns":"1,2,3,4",
+    "1":"Going",
+    "2":"Go",
+    "3":"Gotten",
+    "4":"Goes"
+  },
+    {
+      "quetn":"What will we do ________ you? We'll lose the game if you don't play.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Within",
+      "2":"Win",
+      "3":"Without",
+      "4":"With"
+    },{
+    "quetn":"Are _______ leaving the neighbourhood?",
+    "Answr":"4",
+    "optns":"1,2,3,4",
+    "1":"Them",
+    "2":"Those",
+    "3":"These",
+    "4":"They"
+  },
+    {
+      "quetn":" What about ________?",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Them",
+      "2":"Those",
+      "3":"These",
+      "4":"They"
+    },{
+    "quetn":"Will ________ of them sing?",
+    "Answr":"3",
+    "optns":"1,2,3,4",
+    "1":"So",
+    "2":"Nor",
+    "3":"Either",
+    "4":"Or"
+  },{
+    "quetn":"This book is ________ interesting.",
+    "Answr":"4",
+    "optns":"1,2,3,4",
+    "1":"Much",
+    "2":"Very much",
+    "3":"Most much",
+    "4":"Very"
+  }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "Mainhd":"Select The Correct Articles From The Given Options.",
+
+  "Sub":
+
+  [
+    {
+      "quetn":"New York is _____ large city .",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"Are you attending _____ reception today.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"____ Oranges are grown in Nagpur.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"She wants to become _____ engineer.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"_____ lion is a ferocious animal.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"_____ unit means a measurement.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"He is _____ honest official.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"Taj mahal is built of _____ marble.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"He is _____ European.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"Let us play _____ chess.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"I go to Madurai by _____ Vaigai Express.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"He hopes to join _____ university soon.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"Let us go to a restaurant and have _____ coffee.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"It is _____- absurd story.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"I want to eat _____ apple.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"_____ Metro Express is very popular.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"USA will become _____ super power shortly.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"USA will become _____ super power shortly.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"John was _____ best student in the class.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"Please give me _____ useful gift.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"_____ apples I bought are sour.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"The thief was sent to _____ prison.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"_____ meat you cooked tasted good.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"Our city will have _____ university soon.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"_____ elephant is a vegetaria.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    },
+    {
+      "quetn":"This is _____ car I bought yesterday.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"a",
+      "2":"an",
+      "3":"the",
+      "4":"no article"
+    }
+
+  ]
+}

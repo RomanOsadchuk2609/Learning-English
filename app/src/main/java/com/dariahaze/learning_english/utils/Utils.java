@@ -11,6 +11,7 @@ import java.util.UUID;
 public class Utils {
     public final static String GRAMMAR_HTML_PATH = "file:///android_asset/Grammar/";
     public final static String TENSES_HTML_PATH = "file:///android_asset/Tenses/";
+    public final static String PRACTICE_TESTS_PATH = "Practice/";
 
     public final static String APP_LINK = "https://play.google.com/store/apps/details?id=com.dariahaze.learning_english";
 
@@ -226,7 +227,7 @@ public class Utils {
 
         gerundAndPresentParticles.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
                 new GrammarElement("Gerund Or Infinitive", gerundAndPresentParticles.getPath()+"Gerund or Infinitive.html"),
-                new GrammarElement("The Gerunds", gerundAndPresentParticles.getPath()+"The Gerunds.html"),
+                new GrammarElement("The Gerunds.json", gerundAndPresentParticles.getPath()+"The Gerunds.json.html"),
                 new GrammarElement("The Present Participle", gerundAndPresentParticles.getPath()+"The Present Participle.html"),
                 new GrammarElement("The Gerund And The Present Participle", gerundAndPresentParticles.getPath()+"The Gerund and the Present Participle.html"),
                 new GrammarElement("Verbs Followed By The Gerund", gerundAndPresentParticles.getPath()+"Verbs Followed By The Gerund.html")

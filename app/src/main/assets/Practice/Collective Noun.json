@@ -1,0 +1,114 @@
+{  "Mainhd":"Select The Correct Collective Noun From The Given Options.",
+
+
+  "Sub":
+
+  [
+    {
+      "quetn":"A ______________ of playing cards.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"flock",
+      "2":"pack"
+    },
+
+    {
+      "quetn":"A shoal of ______.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"fish",
+      "2":"birds"
+    },
+    {
+      "quetn":"A _____ of keys.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"bunch",
+      "2":"group"
+    },
+    {
+      "quetn":"A ______ of events.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"group",
+      "2":"series"
+    },
+    {
+      "quetn":"A choir of _______.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"singers",
+      "2":"painters"
+    },
+    {
+      "quetn":"An army of _______.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"ants",
+      "2":"birds"
+    },
+    {
+      "quetn":"A pack of ______.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"cats",
+      "2":"dogs"
+    },
+    {
+      "quetn":"A swarm of ______.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"bears",
+      "2":"bees"
+    },
+    {
+      "quetn":"A herd of ______.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"elephants",
+      "2":"lions"
+    },
+    {
+      "quetn":"A bunch of _____.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"bananas",
+      "2":"apples"
+    },
+    {
+      "quetn":"A hedge of ______.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"trees",
+      "2":"bushes"
+    },
+    {
+      "quetn":"A chest of _______.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"cupboards",
+      "2":"drawers"
+    },
+    {
+      "quetn":"A fleet of _____.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"aeroplanes",
+      "2":"ships"
+    },
+    {
+      "quetn":"A swarm of ______.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"rats",
+      "2":"bats"
+    },
+    {
+      "quetn":"A host of ______.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"crows",
+      "2":"sparrows"
+    }
+  ]
+}

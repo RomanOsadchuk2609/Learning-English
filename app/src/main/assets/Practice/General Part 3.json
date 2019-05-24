@@ -1,0 +1,188 @@
+{  "Mainhd":"Select The Correct answer from the given options.",
+
+  "Sub":
+
+  [
+    {
+      "quetn":"The sun had set, _________ it was still light outside.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Or",
+      "2":"So",
+      "3":"Yet",
+      "4":"For"
+    },
+    {
+      "quetn":"Do you know his name _________ telephone number?",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Or",
+      "2":"Nor",
+      "3":"Yet",
+      "4":"But"
+    },
+    {
+      "quetn":"I have both respect _________ admiration for anyone with a sense of responsibility.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"And",
+      "2":"Nor",
+      "3":"Not",
+      "4":"But"
+    },
+    {
+      "quetn":"Hardly had I finished reading the puzzle, _________ the solution hit me.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"Then",
+      "2":"Than",
+      "3":"While",
+      "4":"When"
+    },
+    {
+      "quetn":"In ________, come to me for help.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"Times",
+      "2":"Future",
+      "3":"Times",
+      "4":"Foreseen"
+    },
+    {
+      "quetn":"The ________ ragged him till 3am.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Senior",
+      "2":"Senor",
+      "3":"Seniors",
+      "4":"Seniority"
+    },
+    {
+      "quetn":"Steve Jobs was a ________ man.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Great",
+      "2":"Greater",
+      "3":"Greatest",
+      "4":"Greats"
+    },
+    {
+      "quetn":"I ________ French.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"Has learnt",
+      "2":"Have learnt",
+      "3":"Hasn't learnt",
+      "4":"Having learnt"
+    },
+    {
+      "quetn":"I ________ lost Shekhar's pen.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Have",
+      "2":"Has",
+      "3":"Will",
+      "4":"Won't"
+    },
+    {
+      "quetn":"I will be _________ to play soon.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"Goes",
+      "2":"Go",
+      "3":"Got",
+      "4":"Going"
+    },
+    {
+      "quetn":"We bought _______ bulk in order to stock up.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"For",
+      "2":"In",
+      "3":"On",
+      "4":"By"
+    },
+    {
+      "quetn":"We shall have to take your story ______ trust.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"By",
+      "2":"To",
+      "3":"For",
+      "4":"On"
+    },
+    {
+      "quetn":"I know the national anthem _______ heart.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"By",
+      "2":"To",
+      "3":"For",
+      "4":"And"
+    },
+    {
+      "quetn":"We are putting up at the company lodge ______ the time being",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"In",
+      "2":"While",
+      "3":"For",
+      "4":"At"
+    },
+    {
+      "quetn":" Little _______ little, the clouds dispersed and the sun shone through again.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"To",
+      "2":"By",
+      "3":"For",
+      "4":"At"
+    },
+    {
+      "quetn":"We studied the research paper ______ detail.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"In",
+      "2":"By",
+      "3":"For",
+      "4":"With"
+    },
+    {
+      "quetn":"All of the products sold here were made _______ hand.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"In",
+      "2":"Through",
+      "3":"With",
+      "4":"By"
+    },
+    {
+      "quetn":"At intersections, pedestrians ought to have the right _______ way.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"On",
+      "2":"Of",
+      "3":"In",
+      "4":"At"
+    },
+    {
+      "quetn":"I parted the curtains _________ looked out into the audience.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"And",
+      "2":"Yet",
+      "3":"But",
+      "4":"So"
+    },
+    {
+      "quetn":"She was neither in the back yard, _________ upstairs.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"Or",
+      "2":"And",
+      "3":"But",
+      "4":"Nor"
+    }
+
+  ]
+}

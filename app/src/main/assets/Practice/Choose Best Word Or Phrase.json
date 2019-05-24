@@ -1,0 +1,117 @@
+{  "Mainhd":"For each sentence, choose the best word or phrase to complete the gap from the choices below.",
+
+
+  "Sub":
+
+  [
+    {
+      "quetn":"It's my birthday today! - _______________.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Congratulations",
+      "2":"Thanks a lot",
+      "3":"Help yourself",
+      "4":" Well done"
+    },
+    {
+      "quetn":"What time will you be back home? - _____________ .",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"Not at all",
+      "2":"After all",
+      "3":"That's it",
+      "4":"Around twleve"
+    },
+    {
+      "quetn":"Are you hungry? - __________.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Just a bit",
+      "2":"Not many",
+      "3":"Not any",
+      "4":"A few"
+    },
+    {
+      "quetn":"Do you like school? - ________.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"More or less",
+      "2":"Not much",
+      "3":"Much less",
+      "4":"A few"
+    },
+    {
+      "quetn":"Is this the first time you have been to Britain? - __________.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"No, I have",
+      "2":"Yes, it is",
+      "3":"Yes, I am",
+      "4":"Yes, I have"
+    },
+    {
+      "quetn":"Is the weather like this in your country? - ____________.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Very good",
+      "2":"Not much",
+      "3":"More or less",
+      "4":"Not bad"
+    },
+    {
+      "quetn":"How often do you see your parents? - When I ___.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"do",
+      "2":"have",
+      "3":"am",
+      "4":"can"
+    },
+    {
+      "quetn":"We're going to the disco. - ________.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Help yourself",
+      "2":"Really fun",
+      "3":"Have fun",
+      "4":"Do it again"
+    },
+    {
+      "quetn":"The phone's ringing - ___________.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"I'll ring it",
+      "2":"I'll see it",
+      "3":"I'll do it",
+      "4":"I'll get it"
+    },
+    {
+      "quetn":"See you tomorrow. - ____________.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"There you are",
+      "2":"Sure enough",
+      "3":"Yes, see you",
+      "4":"You will"
+    },
+    {
+      "quetn":"Do you want another drink? - _________.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"I'm going to",
+      "2":"Can you?",
+      "3":"No thanks",
+      "4":"Please do"
+    },
+    {
+      "quetn":"Do you have mobiles phones in your country? - _________.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Of course",
+      "2":"Not at all",
+      "3":"That's true",
+      "4":"Sometimes"
+    }
+
+  ]
+}

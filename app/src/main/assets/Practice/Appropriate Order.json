@@ -1,0 +1,79 @@
+{
+  "Mainhd":"Select the most appropriate order of modifiers or the only appropriate placement of modifier(s).",
+  "Sub":
+  [
+    {
+      "quetn":"Select the sentence in which usually appears in an appropriate position.",
+      "Answr":"4","optns":"1,2,3,4","1":"She usually shops for clothes at the local thrift store.","2":"Usually she shops for clothes at the local thrift store.", "3":"She shops for clothes at the local thrift store usually.","4":"Either '1' or '2' is fine."
+
+    },
+    {
+      "quetn":"Select the sentence with the most appropriate order of adverbial phrases.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"She leaves the island during the months of December and January after dark.",
+      "2":"She leaves the island after dark during the months of December and January.",
+      "3":"Either '1' or '2' is fine.",
+      "4":"None of these."
+    },
+    {
+      "quetn":"Select the sentence with the most appropriate order of adverbs and adverbial phrases.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Ramonita prays at St. Matthew's Church fervently for her grandmother's recovery.",
+      "2":"Ramonita prays fervently for her grandmother's recovery at St. Matthew's Church.",
+      "3":"Ramonita prays fervently at St. Matthew's Church for her grandmother's recovery.",
+      "4":"Any one of the above is fine."
+    },
+    {
+      "quetn":"Select the sentence with the most appropriate order of adverbial phrases.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Juan made an appointment to see his doctor at two o'clock on the first Thursday of July next summer.",
+      "2":"Juan made an appointment next summer to see his doctor next July at two o'clock on the first Thursday.",
+      "3":"Either '1' or '2' is fine.",
+      "4":"None of these."
+
+    },
+    {
+      "quetn":"Select the sentence with the most appropriate order of modifiers.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"My father was born in Cleveland in the backroom of a bakery.",
+      "2":"My father was born in the backroom of a bakery in Cleveland.",
+      "3":"Either '1' or '2' is fine.",
+      "4":"None of these."
+
+    },
+    {
+      "quetn":"Select the sentence with the most appropriate order of modifiers.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"Dry the car carefully with a soft fluffy towel.",
+      "2":"Dry the car with a soft fluffy towel carefully.",
+      "3":"Carefully dry the car with a soft fluffy towel.",
+      "4":"Either '1' or '3' is fine."
+
+    },
+    {
+      "quetn":"Select the most emphatic position for the adverbial modifier of this sentence.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Rarely do we see this kind of talent on a small-town high school baseball team.",
+      "2":"We rarely see this kind of talent on a small-town high school baseball team.",
+      "3":"'1' and '2' are equally emphatic.",
+      "4":"None of these."
+
+    },
+    {
+      "quetn":"Select the sentence with the most appropriate order of adverbial modifiers.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"He found the golf clubs that his father had used to win the U.S. Open in the car trunk.",
+      "2":"In the car trunk, he found the golf clubs that his father had used to win the U.S. Open.",
+      "3":"None of these.",
+      "4":"Either '1' or '2' is fine."
+
+    }
+  ]
+}

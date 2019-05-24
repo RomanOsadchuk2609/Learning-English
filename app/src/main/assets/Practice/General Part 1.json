@@ -1,0 +1,188 @@
+{  "Mainhd":"Select The Correct answer from the given options.",
+
+  "Sub":
+
+  [
+    {
+      "quetn":"Sachin felt drowsy ________ he had fever.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"But",
+      "2":"So",
+      "3":"Until",
+      "4":"Because"
+    },
+    {
+      "quetn":" I was tired ________ I stopped.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"Since",
+      "2":"So",
+      "3":"But",
+      "4":"Because"
+    },
+    {
+      "quetn":" We drove continuously ________ we reached Patiala.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Till",
+      "2":"So",
+      "3":"But",
+      "4":"Because"
+    },
+    {
+      "quetn":"'Onima' is the ________ gym.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Best",
+      "2":"Good",
+      "3":"Bestest",
+      "4":"God"
+    },
+    {
+      "quetn":" Isn't she the ________?",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"Cute",
+      "2":"Cutest",
+      "3":"Cuter",
+      "4":"Cultural"
+    },
+    {
+      "quetn":"Rani is too ________.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Thinner",
+      "2":"Thinnest",
+      "3":"Thin",
+      "4":"Thinners"
+    },
+    {
+      "quetn":"Ravi has ________ height.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"Gains",
+      "2":"Gainer",
+      "3":"Gainers",
+      "4":"Gained"
+    },
+    {
+      "quetn":"He is madly in ________ with her.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Love",
+      "2":"Loves",
+      "3":"Loving",
+      "4":"Lover"
+    },
+    {
+      "quetn":"I'd like an ________ pizza please.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Large",
+      "2":"Medium",
+      "3":"Extra large",
+      "4":"Largest"
+    },
+    {
+      "quetn":"Dogs ________ fast.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Growth",
+      "2":"Growting",
+      "3":"Grow",
+      "4":"Grows"
+    },
+    {
+      "quetn":"I ________ to Shaila's house.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Went",
+      "2":"Go",
+      "3":"Goes",
+      "4":"Gone"
+    },
+    {
+      "quetn":"You will ________ with us.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"Works",
+      "2":"Worked",
+      "3":"Working",
+      "4":"Work"
+    },
+    {
+      "quetn":" I have ________ nothing in school.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"Learns",
+      "2":"Learn",
+      "3":"Learning",
+      "4":"Learnt"
+    },
+    {
+      "quetn":"I ________ reach Mumbai by 5pm, will you pick me up?",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Should",
+      "2":"Will not",
+      "3":"Won't",
+      "4":"Shouldn't"
+    },
+    {
+      "quetn":"I ________ drive.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"May",
+      "2":"Can",
+      "3":"Know",
+      "4":"Don't know"
+    },
+    {
+      "quetn":"I am a great ________.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"Sings",
+      "2":"Singer",
+      "3":"Singing",
+      "4":"Sang"
+    },
+    {
+      "quetn":" ________ here can get you arrested.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Urination",
+      "2":"Urinary",
+      "3":"Urinating",
+      "4":"Urinal"
+    },
+    {
+      "quetn":"He is fit ________ he is old.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"Until",
+      "2":"Although",
+      "3":"Because",
+      "4":"Since"
+    },
+    {
+      "quetn":"Drive fast ________ we will miss the train",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"But",
+      "2":"Since",
+      "3":"Or",
+      "4":"Until"
+    },
+    {
+      "quetn":"I will go home ________ he has not come.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Since",
+      "2":"But",
+      "3":"Or",
+      "4":"So"
+    }
+
+  ]
+}

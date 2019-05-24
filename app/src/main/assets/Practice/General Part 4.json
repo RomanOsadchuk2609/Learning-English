@@ -1,0 +1,185 @@
+
+{  "Mainhd":"Select The Correct answer from the given options.",
+
+  "Sub":
+
+  [
+    {
+      "quetn":"She is ________ to reach the cupboard.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Enough tall",
+      "2":"Very tall",
+      "3":"Tall enough",
+      "4":"Taller than"
+    },
+    {
+      "quetn":"I am a ________ boy.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Taller",
+      "2":"Enough tall",
+      "3":"Rather tall",
+      "4":"Tall rather"
+    },
+    {
+      "quetn":"I speak ________.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"French welly",
+      "2":"Well French",
+      "3":"French good",
+      "4":"French well"
+    },
+    {
+      "quetn":"He said he is not ________.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"Going here",
+      "2":"Going there",
+      "3":"There going",
+      "4":"Hereby go"
+    },
+    {
+      "quetn":"I am right ________ he is not.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"So",
+      "2":"That",
+      "3":"And",
+      "4":"Yet"
+    },
+    {
+      "quetn":"You can neither play football ________ Badminton.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"Or",
+      "2":"Nor",
+      "3":"Because",
+      "4":"As"
+    },
+    {
+      "quetn":"We can either go to Shimla ________ Rohtang pass.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Or",
+      "2":"At",
+      "3":"For",
+      "4":"Both"
+    },
+    {
+      "quetn":"Please wait here ________ I return",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"For",
+      "2":"As",
+      "3":"Because",
+      "4":"Till"
+    },
+    {
+      "quetn":"________ It rains, India will lose the match ________ of the Duckworth Lewis method.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"As - Due",
+      "2":"If - Because",
+      "3":"For - to",
+      "4":"What - so"
+    },
+    {
+      "quetn":"You are a great singer. My son is a great singer ________.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Too",
+      "2":"But",
+      "3":"As",
+      "4":"For"
+    },
+    {
+      "quetn":"This place is costly ________ it is much better than that place.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Besides",
+      "2":"Yet",
+      "3":"As well",
+      "4":"But"
+    },
+    {
+      "quetn":"Sir, you are not allowed to _______ the theatre as the show has started.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"Entering",
+      "2":"Enter",
+      "3":"Enters",
+      "4":"Entry"
+    },
+    {
+      "quetn":"She enjoys ________.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Sing",
+      "2":"Sings",
+      "3":"Singing",
+      "4":"Singed"
+    },
+    {
+      "quetn":" I am against ________.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"Violent",
+      "2":"Violating",
+      "3":"Violate",
+      "4":"Violence"
+    },
+    {
+      "quetn":"I really ________ the show that day.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"Enjoys",
+      "2":"Enjoying",
+      "3":"Enjoy",
+      "4":"Enjoyed"
+    },
+    {
+      "quetn":"   _______ my phone please.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"Using",
+      "2":"Violating",
+      "3":"Uses",
+      "4":"Use"
+    },
+    {
+      "quetn":" I am ________ sure.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Perfect",
+      "2":"Super",
+      "3":"Quite",
+      "4":"Certain"
+    },{
+    "quetn":" He left home a ________ days back.",
+    "Answr":"1",
+    "optns":"1,2,3,4",
+    "1":"Few",
+    "2":"Many",
+    "3":"Much",
+    "4":"Too"
+  },{
+    "quetn":"The Hotel is ________ far.",
+    "Answr":"3",
+    "optns":"1,2,3,4",
+    "1":"Many",
+    "2":"Very much",
+    "3":"Pretty",
+    "4":"Very many"
+  },{
+    "quetn":"I cannot _________ you.",
+    "Answr":"2",
+    "optns":"1,2,3,4",
+    "1":"Here",
+    "2":"Hear",
+    "3":"Ear",
+    "4":"Listen"
+  }
+  ]
+}

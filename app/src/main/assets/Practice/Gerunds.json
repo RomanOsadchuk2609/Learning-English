@@ -1,0 +1,233 @@
+{  "Mainhd":"Select The Correct Gerunds From The Given Options.",
+
+  "Sub":
+
+  [
+    {
+      "quetn":"Boys like _____ foot ball.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"playing",
+      "2":"to playing",
+      "3":"to played",
+      "4":"to be playing"
+    },
+    {
+      "quetn":"Juli is not capable of _____- hard work.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"do",
+      "2":"doing",
+      "3":"to be doing",
+      "4":"to be done"
+    },
+    {
+      "quetn":"They cannot stop _____.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"sing",
+      "2":"sings",
+      "3":"singing",
+      "4":"be singing"
+    },
+    {
+      "quetn":"On Sundays I go _____.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"fish",
+      "2":"to fish",
+      "3":"fishes",
+      "4":"fishing"
+    },{
+    "quetn":"I remember _____ you last year.",
+    "Answr":"3",
+    "optns":"1,2,3,4",
+    "1":"meet",
+    "2":"met",
+    "3":"meeting",
+    "4":"to meet"
+  },
+    {
+      "quetn":"She felt an insect _____ around.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"to fly",
+      "2":"to be flying",
+      "3":"flying",
+      "4":"fly"
+    },
+    {
+      "quetn":"The boys were punished for _____ late.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"came",
+      "2":"to come",
+      "3":"to coming",
+      "4":"coming"
+    },
+    {
+      "quetn":"It is a common sight to see youngsters _____ Junk food.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"eat",
+      "2":"to eat",
+      "3":"eating",
+      "4":"is eating"
+    },
+    {
+      "quetn":"She servant afraid of _____ the master.	",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"disobey",
+      "2":"disobeyed",
+      "3":"disobeying",
+      "4":"be disobeying"
+    },
+    {
+      "quetn":"_____ to many places enriches our knowledge.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"travel",
+      "2":"to travel",
+      "3":"travelled",
+      "4":"travelling"
+    },
+    {
+      "quetn":"_____ dogs do not bite.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"to bark",
+      "2":"bark",
+      "3":"barking",
+      "4":"is bark"
+    },
+    {
+      "quetn":"Waiting for a bus is a _____ experience. ",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"kills",
+      "2":"kill",
+      "3":"killing",
+      "4":"is killing"
+    },
+    {
+      "quetn":"I detest _____ in public places. ",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"smoke",
+      "2":"smoking",
+      "3":"smoked",
+      "4":"be smoking"
+    },
+    {
+      "quetn":"I am averse to _____. ",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"drink",
+      "2":"drunk",
+      "3":"to be drink",
+      "4":"drinking"
+    },
+    {
+      "quetn":"Do you mind _____ the window.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"closing",
+      "2":"to closing",
+      "3":"closed",
+      "4":"close"
+    },
+    {
+      "quetn":"_____ away one's time in an art.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"idling",
+      "2":"idled",
+      "3":"to idle",
+      "4":"be idling"
+    },
+    {
+      "quetn":"I saw her _____-",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"dance",
+      "2":"dancing",
+      "3":"to dance",
+      "4":"dancing"
+    },
+    {
+      "quetn":"She is not interested in _____ sweets.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"eat",
+      "2":"eaten",
+      "3":"eating",
+      "4":"to be eating"
+    },
+    {
+      "quetn":"She felt an insect _____ around.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"fly",
+      "2":"flying",
+      "3":"to fly",
+      "4":"to flying"
+    },
+    {
+      "quetn":"He went on _____ foolishly.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"spoke",
+      "2":"to speaking",
+      "3":"speaking",
+      "4":"speaks"
+    },
+    {
+      "quetn":"I prefer _____ by air.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"to be going",
+      "2":"to gone",
+      "3":"going",
+      "4":"to going"
+    },
+    {
+      "quetn":"	Lock the door before _____ out.	",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"go",
+      "2":"be going",
+      "3":"gone",
+      "4":"going"
+    },
+    {
+      "quetn":"Waiting for a bus is a _____ experience.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"kill",
+      "2":"killing",
+      "3":"kills",
+      "4":"is killing"
+    },
+    {
+      "quetn":"Can you live without _____- water?",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"drinking",
+      "2":"drink",
+      "3":"drinks",
+      "4":"drunk"
+    },
+    {
+      "quetn":"Without the advice of a doctor _____ medicines is dangerous.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"taking",
+      "2":"to takes",
+      "3":"takes",
+      "4":"is taking"
+    }
+
+
+  ]
+}

@@ -1,0 +1,138 @@
+{  "Mainhd":"Select The Correct Word From The Given Options.",
+
+  "Sub":
+
+  [
+    {
+      "quetn":"Please call the________, we have to take him to hospital.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"ambulance",
+      "2":"fire brigade"
+    },
+    {
+      "quetn":" The manager is impressed by his ________.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"loyalty",
+      "2":"cheating"
+    },
+    {
+      "quetn":"Doctors recommend having ________ every day.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"breakfast",
+      "2":"burger"
+    },{
+    "quetn":"Take your umbrella, it may _______.",
+    "Answr":"1",
+    "optns":"1,2",
+    "1":"rain",
+    "2":"snow"
+  },
+    {
+      "quetn":"Sorry, all our ________are taken.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"rooms",
+      "2":"terrace"
+    },
+    {
+      "quetn":"The president hoists the ______ on Republic Day.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"banner",
+      "2":"flag"
+    },
+    {
+      "quetn":"Take off your ________ outside. They are dirty.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"shoes",
+      "2":"clothes"
+    },
+    {
+      "quetn":"Sheena likes Italian ______ .",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"cousins",
+      "2":"cuisine"
+    },
+    {
+      "quetn":"_______ is a precious metal.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"Iron",
+      "2":"Gold"
+    },{
+    "quetn":"The _________ has done justice with him.",
+    "Answr":"2",
+    "optns":"1,2",
+    "1":"parliament",
+    "2":"court"
+  },
+    {
+      "quetn":"His grandfather is not ___.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"alive",
+      "2":"live"
+    },
+    {
+      "quetn":"She won the ___ prize.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"second",
+      "2":"twice"
+    },
+    {
+      "quetn":"I was ___ tired that I went to bed right away.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"so",
+      "2":"such"
+    },
+    {
+      "quetn":"It was dark ___ we got home.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"when",
+      "2":"that"
+    },
+    {
+      "quetn":"Your children look very ___.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"healthy",
+      "2":"healthful"
+    },
+    {
+      "quetn":"___ she wanted it, she bought it.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"For",
+      "2":"Because"
+    },
+    {
+      "quetn":"Look at the ___ baby.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"sleeping",
+      "2":"asleep"
+    },
+    {
+      "quetn":"Please be quiet ___ the teacher is talking.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"while",
+      "2":"during"
+    },
+    {
+      "quetn":"He ___ writing a letter to his mother.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"is",
+      "2":"have"
+    }
+  ]
+}

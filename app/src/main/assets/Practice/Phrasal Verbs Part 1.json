@@ -1,0 +1,233 @@
+{  "Mainhd":"Select The Correct Phrasal Verb From The Given Options.",
+
+
+  "Sub":
+
+  [
+    {
+      "quetn":"Jim asked Jane ___ on a date.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"out"
+    },
+    {
+      "quetn":"You can save electricity by turning ___ unnecessary lights.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"out",
+      "4":"off"
+    },
+    {
+      "quetn":"Please speak ___. I can't hear you very well.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"up"
+    },
+    {
+      "quetn":"He put ___ his shoes.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"on",
+      "4":"off"
+    },
+    {
+      "quetn":"We have used ___ all the sugar. Please go buy some more.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"up",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"My button has come off. Could you please sew it ___?",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"out",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"The workmen knocked ___ that old building.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"This truck runs ___ diesel.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"on"
+    },
+    {
+      "quetn":"Something just came ___, so I can't go to the party tonight.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"up",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"He sank his teeth ___ the cake.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"She has been saving ___ her money to buy a new car.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"up"
+    },
+    {
+      "quetn":"He put a poster ___ on the wall.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"up",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"The boy burst ___ the room with a smile on his face.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"You can count ___ him to be on time.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"on"
+    },
+    {
+      "quetn":"The strong wind blew ___ the tree.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"May I call ___ you tomorrow afternoon?",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"on",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"The barking dog scared ___ the burglar.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"The thieves tried to break ___ and steal the paintings.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"He drank too much whiskey and passed ___ on the floor.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"out",
+      "4":"off"
+    },{
+    "quetn":"If you are free tomorrow afternoon, please drop ___ for a visit.",
+    "Answr":"2",
+    "optns":"1,2,3,4",
+    "1":"down",
+    "2":"in",
+    "3":"into",
+    "4":"off"
+  },
+    {
+      "quetn":"Look ___! There's a car coming.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"out"
+    },
+    {
+      "quetn":"It's a very fancy party, so you will have to dress ___.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"up"
+    },
+    {
+      "quetn":"May I sit ___. I feel very tired.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"She was almost run ___ by a drunk driver.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"Put ___ the kettle. Let's have a cup of tea.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    }
+
+  ]
+}

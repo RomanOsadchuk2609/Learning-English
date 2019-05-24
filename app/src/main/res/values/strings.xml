@@ -51,4 +51,9 @@
     <string name="correct_answer">Correct Answer</string>
     <string name="next">Next</string>
     <string name="question">Question</string>
+    <string name="testname">TestName</string>
+    <string name="best_score">- Best Score:</string>
+    <string name="time">- Time:</string>
+    <string name="_0_10">0/10</string>
+    <string name="_10">10\'</string>
 </resources>

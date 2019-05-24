@@ -1,0 +1,232 @@
+{  "Mainhd":"Select The Correct Participles From The Given Sentence.",
+
+  "Sub":
+
+  [
+    {
+      "quetn":"I want the book ----- in a week.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"writes",
+      "2":"written",
+      "3":"written",
+      "4":"was written"
+    },
+    {
+      "quetn":"On seeing the police, the thief started ------",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"run",
+      "2":"runs",
+      "3":"running",
+      "4":"its running"
+    },
+    {
+      "quetn":"The train is ------ out of the platform now.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"pull",
+      "2":"pulls",
+      "3":"pulled",
+      "4":"pulling"
+    },
+    {
+      "quetn":"The girls became ------ on seeing the eclipse.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"excite",
+      "2":"excited",
+      "3":"exciting",
+      "4":"excitedly"
+    },
+    {
+      "quetn":"My shoes need ------.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"mend",
+      "2":"mended",
+      "3":"mending",
+      "4":"being mended"
+    },
+    {
+      "quetn":"My boss wants the work ------ before long.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"finish",
+      "2":"finished",
+      "3":"finishing",
+      "4":"finishes"
+    },
+    {
+      "quetn":"All students stood up as the teacher ----- the class room.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"enter",
+      "2":"enters",
+      "3":"entering",
+      "4":"entered"
+    },
+    {
+      "quetn":"Please get ------",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"lose",
+      "2":"loses",
+      "3":"lost",
+      "4":"losing"
+    },
+    {
+      "quetn":"She is ------ a song.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"Sing",
+      "2":"sang",
+      "3":"singing",
+      "4":"been singing"
+    },
+    {
+      "quetn":"They cannot stop -------.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Sing",
+      "2":"sings",
+      "3":"singing",
+      "4":"be singing"
+    },
+    {
+      "quetn":"Suguganya got ------ as an officer in State bank of India.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"appoint",
+      "2":"appointed",
+      "3":"appoints",
+      "4":"appointee"
+    },
+    {
+      "quetn":"They listened to him -----",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"spellbinded",
+      "2":"spellbind",
+      "3":"spellbinding",
+      "4":"spellbound"
+    },
+    {
+      "quetn":"We are ------ with your behavior.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"please",
+      "2":"pleased",
+      "3":"pleasure",
+      "4":"being pleasuring"
+    },
+    {
+      "quetn":"The dress warrants ------ .",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"washed",
+      "2":"wash",
+      "3":"being washed",
+      "4":"washing"
+    },
+    {
+      "quetn":"On entering the house, he found all jewels ------",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"steal",
+      "2":"steals",
+      "3":"stealing",
+      "4":"stolen"
+    },
+    {
+      "quetn":"He has ------ lunch now.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"eat",
+      "2":"ate",
+      "3":"eaten",
+      "4":"will eat"
+    },{
+    "quetn":"When we went out, its started ------",
+    "Answr":"1",
+    "optns":"1,2,3,4",
+    "1":"raining",
+    "2":"rain",
+    "3":"rained",
+    "4":"was rained"
+  },
+    {
+      "quetn":"She is ----- in music.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"interest",
+      "2":"interests",
+      "3":"interesting",
+      "4":"interested"
+    },
+    {
+      "quetn":"Are you ------ for Delhi now?",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"left",
+      "2":"leave",
+      "3":"leaving",
+      "4":"has left"
+    },
+    {
+      "quetn":"------ wood is black.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"burnt",
+      "2":"bured",
+      "3":"burnted",
+      "4":"is burning"
+    },
+    {
+      "quetn":"We were ------ at the assassination of the Prime Minister.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"shock",
+      "2":"shocking",
+      "3":"shocked",
+      "4":"being shocked"
+    },
+    {
+      "quetn":"I want the work ----- at once.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"do",
+      "2":"doing",
+      "3":"done",
+      "4":"is doing"
+    },
+    {
+      "quetn":"Accidents do not happen. They are -----.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"Cause",
+      "2":"caused",
+      "3":"causing",
+      "4":"be caused"
+    },
+    {
+      "quetn":"She has ------- many programmers as a top singer.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"give",
+      "2":"giving",
+      "3":"given",
+      "4":"was giving"
+    },
+    {
+      "quetn":"A car was lying on the load side ----- against a lorry.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"ram",
+      "2":"rams",
+      "3":"ramming",
+      "4":"rammed"
+    }
+
+  ]
+}

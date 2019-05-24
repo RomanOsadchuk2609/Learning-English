@@ -1,0 +1,233 @@
+{  "Mainhd":"Select The Correct Preposition From The Given Options.",
+
+  "Sub":
+
+  [
+    {
+      "quetn":"Since we have no vehicle, we go everywhere ________ foot.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"With",
+      "2":"For",
+      "3":"By",
+      "4":"On"
+    },
+    {
+      "quetn":"I was __________ breath after 15 minutes on the treadmill.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"In",
+      "2":"Out",
+      "3":"In of",
+      "4":" Out of"
+    },
+
+    {
+      "quetn":"We exited the hall ________ tiptoe.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"On",
+      "2":"With",
+      "3":"By",
+      "4":"in"
+    },
+    {
+      "quetn":"You should write the name of your next ______ kin in your passport.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"To",
+      "2":"By",
+      "3":"Of",
+      "4":"On"
+    },
+    {
+      "quetn":"We made out the manifesto ________ triplicate.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"To",
+      "2":"In",
+      "3":"By",
+      "4":"For"
+    },
+    {
+      "quetn":"Certain fruits, _________ example oranges and lemons, require a long growing season.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"By",
+      "2":"In",
+      "3":"As",
+      "4":"For"
+    },
+    {
+      "quetn":"_______ last the ordeal was over.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"By",
+      "2":"At",
+      "3":"Long",
+      "4":"For"
+    },
+    {
+      "quetn":"You always seem to be _______ a hurry.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"In",
+      "2":"By",
+      "3":"With",
+      "4":"For"
+    },
+    {
+      "quetn":"Some animals are capable of reasoning; ______ fact, some are quite intelligent.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"By",
+      "2":"To",
+      "3":"At",
+      "4":"In"
+    },
+    {
+      "quetn":"Sameer is taking antibiotics ________ he has fever.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Also",
+      "2":"Due to",
+      "3":"Because",
+      "4":"Though"
+    },
+    {
+      "quetn":"I shall meet you _________ 6 o'clock.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"by",
+      "2":"at",
+      "3":"in",
+      "4":"during"
+    },
+    {
+      "quetn":"My father will retire from service _________a year.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"of",
+      "2":"on",
+      "3":"in",
+      "4":"by"
+    },
+    {
+      "quetn":"Suganya writes __________  her left hand.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"with",
+      "2":"on",
+      "3":"in",
+      "4":"by"
+    },
+    {
+      "quetn":"He comes __________ a car.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"with",
+      "2":"on",
+      "3":"at",
+      "4":"by"
+    },
+    {
+      "quetn":"Most of us eat _________ a spoon.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"with",
+      "2":"in",
+      "3":"for",
+      "4":"by"
+    },
+    {
+      "quetn":"What are you looking___________ .",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"on",
+      "2":"against",
+      "3":"for",
+      "4":"in"
+    },
+    {
+      "quetn":"Whom are you talking___________ .",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"to",
+      "2":"too",
+      "3":"by",
+      "4":"over"
+    },
+    {
+      "quetn":"I am angry ________  my sister.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"for",
+      "2":"to",
+      "3":"at",
+      "4":"with"
+    },
+    {
+      "quetn":"Can you agree ________ my proposal.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"too",
+      "2":"to",
+      "3":"into",
+      "4":"with"
+    },
+    {
+      "quetn":"Don't look __________ on him.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"up",
+      "3":"for",
+      "4":"on"
+    },
+    {
+      "quetn":"Life is not a bed ________ roses.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"with",
+      "2":"of",
+      "3":"for",
+      "4":"off"
+    },
+    {
+      "quetn":"My grand father will come here ____________ a week.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"with",
+      "2":"before",
+      "3":"at",
+      "4":"within"
+    },
+    {
+      "quetn":"The work was completed ___________ sunset.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"with",
+      "2":"before",
+      "3":"at",
+      "4":"within"
+    },
+    {
+      "quetn":"Can you write _______ this pen.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"with",
+      "2":"on",
+      "3":"by",
+      "4":"in"
+    },
+    {
+      "quetn":"	We are pleased ___________ your visit.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"with",
+      "2":"by",
+      "3":"at",
+      "4":"on"
+    }
+  ]
+}

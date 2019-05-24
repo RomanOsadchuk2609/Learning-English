@@ -1,0 +1,220 @@
+{  "Mainhd":"Select The Correct Homophone for the Given Sentence.",
+
+  "Sub":
+
+  [
+    {
+      "quetn":"The king died -----",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"hareless",
+      "2":"heirless",
+      "3":"hairless",
+      "4":"airless"
+    },
+    {
+      "quetn":"Please remove the -----",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"rid",
+      "2":"reed",
+      "3":"read",
+      "4":"redo"
+    },
+    {
+      "quetn":"My friend is a ----- officer.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"navval",
+      "2":"navel",
+      "3":"naval",
+      "4":"none of these"
+    },
+    {
+      "quetn":"He ----- well when he was at school.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"rote",
+      "2":"wrote",
+      "3":"rout",
+      "4":"route"
+    },
+    {
+      "quetn":"----- is a heavy metal.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"led",
+      "2":"lid",
+      "3":"lead",
+      "4":"none of these"
+    },
+    {
+      "quetn":"----- is an attractive flower.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"rows",
+      "2":"rose",
+      "3":"rouses",
+      "4":"none of these"
+    },
+    {
+      "quetn":"My sister cooks--------.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"raise",
+      "2":"rose",
+      "3":"rice",
+      "4":"rise"
+    },
+    {
+      "quetn":"It is not healthy to use hair------.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"dice",
+      "2":"dye",
+      "3":"die",
+      "4":"dyes"
+    },
+    {
+      "quetn":"Avoid ----- eating for healthy living.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"meet",
+      "2":"meat",
+      "3":"meate",
+      "4":"mete"
+    },
+    {
+      "quetn":"The ------ of a snow clad mountain is exciting.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"site",
+      "2":"cite",
+      "3":"sight",
+      "4":"none of these"
+    },
+    {
+      "quetn":"Prasanna had a good ----- for stage plays.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"trup",
+      "2":"troop",
+      "3":"trupe",
+      "4":"troupe"
+    },{
+    "quetn":"He has a ----- for writing.",
+    "Answr":"3",
+    "optns":"1,2,3,4",
+    "1":"flare",
+    "2":"flairs",
+    "3":"flair",
+    "4":"fare"
+  },
+    {
+      "quetn":"----- of you must do the work.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"sum",
+      "2":"some",
+      "3":"same",
+      "4":"none of these"
+    },{
+    "quetn":"The cattle are ----- on the meadow.",
+    "Answr":"3",
+    "optns":"1,2,3,4",
+    "1":"gracing",
+    "2":"crazing",
+    "3":"grazing",
+    "4":"grace"
+  },
+    {
+      "quetn":"The ----- of the cats are sharp.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"paws",
+      "2":"pauses",
+      "3":"pause",
+      "4":"none of these"
+    },
+    {
+      "quetn":"The ----- is the east.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"sun",
+      "2":"son",
+      "3":"sin",
+      "4":"soon"
+    },
+    {
+      "quetn":"----- men command respect.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"wholly",
+      "2":"holey",
+      "3":"holley",
+      "4":"holy"
+    },{
+    "quetn":"It is good to eat orange ----- also.",
+    "Answr":"2",
+    "optns":"1,2,3,4",
+    "1":"peal",
+    "2":"peels",
+    "3":"peales",
+    "4":"none of these"
+  },
+    {
+      "quetn":"His legal ------ is sheela.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"heir",
+      "2":"hare",
+      "3":"hair",
+      "4":"here"
+    },
+    {
+      "quetn":"----- lands have no market.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"baxen",
+      "2":"barren",
+      "3":"baron",
+      "4":"barron"
+    },
+    {
+      "quetn":"The servant ----- up the mat.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"roll",
+      "2":"rolles",
+      "3":"rolls",
+      "4":"role"
+    },
+    {
+      "quetn":"The child is ------ young to go to school alone.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"to",
+      "2":"too",
+      "3":"two",
+      "4":"none"
+    },
+    {
+      "quetn":"----- him very well.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"no",
+      "2":"now",
+      "3":"know",
+      "4":"none"
+    },
+    {
+      "quetn":"Raman was ----- by the English King.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"nighted",
+      "2":"nighed",
+      "3":"knighted",
+      "4":"knigretted"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{  "Mainhd":"Select The Correct Verb From The Given Options.",
+
+  "Sub":
+
+  [
+    {
+      "quetn":"I have been ________ since the morning.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"Play",
+      "2":"Played",
+      "3":"Plays",
+      "4":"Playing"
+    },
+    {
+      "quetn":"Ravi has been ________ in Mumbai since he was five years old",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"Stayed",
+      "2":"Staying",
+      "3":"Stays",
+      "4":"Stay"
+    },
+    {
+      "quetn":"John ___________ his work.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Have completed",
+      "2":"Completing",
+      "3":"Has completed",
+      "4":"Have completes"
+    },
+    {
+      "quetn":"I have ___________ his name.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Forgot",
+      "2":"Forget",
+      "3":"Forgotten",
+      "4":"Forgets"
+    },
+    {
+      "quetn":"My parents will be ________ for Canada tomorrow.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"Leave",
+      "2":"Leaving",
+      "3":"Leaves",
+      "4":"Left"
+    },
+    {
+      "quetn":" I will be _______ in the park tomorrow.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"Sing",
+      "2":"Sang",
+      "3":"Sung",
+      "4":"Singing"
+    },
+    {
+      "quetn":" We ________ not coming over.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"Is",
+      "2":"Are",
+      "3":"Am",
+      "4":"us"
+    },{
+    "quetn":"  Is ___ your teacher?",
+    "Answr":"3",
+    "optns":"1,2,3,4",
+    "1":"Is",
+    "2":"Are",
+    "3":"he",
+    "4":"him"
+  },
+    {
+      "quetn":"That house _______ ours yet.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Is not",
+      "2":"Are not",
+      "3":"he not",
+      "4":"Am not"
+    },
+    {
+      "quetn":"____ this your new car?",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Is",
+      "2":"When",
+      "3":"Am",
+      "4":"Are"
+    }
+
+  ]
+}

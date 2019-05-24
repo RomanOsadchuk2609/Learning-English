@@ -1,0 +1,189 @@
+
+{  "Mainhd":"Select The Correct answer from the given options.",
+
+  "Sub":
+
+  [
+    {
+      "quetn":"I have known him ________ nine years.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"Since",
+      "2":"For",
+      "3":"In",
+      "4":"By"
+    },
+    {
+      "quetn":"Many vegetables ____________ carrot contain vitamin A.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"Beside",
+      "2":"Besides",
+      "3":"But",
+      "4":"And"
+    },
+    {
+      "quetn":"I will arrive ______ eight o'clock.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"At",
+      "2":"Till",
+      "3":"In",
+      "4":"Within"
+    },
+    {
+      "quetn":" He has been gone __________ Monday.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"For",
+      "2":"From",
+      "3":"Since",
+      "4":"By"
+    },
+    {
+      "quetn":"The store is located ______ Bungalow Road.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"In",
+      "2":"At",
+      "3":"Inside",
+      "4":"On"
+    },
+    {
+      "quetn":"She will be leaving ______ five minutes or so.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"By",
+      "2":"Till",
+      "3":"At",
+      "4":"In"
+    },
+    {
+      "quetn":"John, Jacky and Juli will discuss the issue _________ themselves.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Among",
+      "2":"Between",
+      "3":"With",
+      "4":"In"
+    },
+    {
+      "quetn":"I have known her __________ last year.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"Before",
+      "2":"From",
+      "3":"For",
+      "4":"Since"
+    },
+    {
+      "quetn":"I have been ________ German for the last ten years.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Teach",
+      "2":"Teacher",
+      "3":"Teaching",
+      "4":"Teaches"
+    },
+    {
+      "quetn":"You always take things for ________.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Grants",
+      "2":"Granter",
+      "3":"Granted",
+      "4":"Grant"
+    },
+    {
+      "quetn":"I have fever ________ I am feeling cold.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Even though",
+      "2":"And",
+      "3":"Since",
+      "4":"But"
+    },
+    {
+      "quetn":"He smokes ______ he does not drink.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"And",
+      "2":"For",
+      "3":"Since",
+      "4":"But"
+    },
+    {
+      "quetn":"He plays either hockey __ football every day.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"And",
+      "2":"Or",
+      "3":"Yet",
+      "4":"But"
+    },
+    {
+      "quetn":"Please stay here ____ I return.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"For",
+      "2":"Since",
+      "3":"Till",
+      "4":"But"
+    },
+    {
+      "quetn":"You cannot drive a car _____ you turn eighteen.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"Unless",
+      "2":"Until",
+      "3":"Till",
+      "4":"Since"
+    },
+    {
+      "quetn":"Do you want juice ____ water?",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"And",
+      "2":"But",
+      "3":"For",
+      "4":"Or"
+    },
+    {
+      "quetn":"The food in this hotel is bad _____ the rooms are comfortable.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"And",
+      "2":"But",
+      "3":"Since",
+      "4":"Or"
+    },
+    {
+      "quetn":"I got a new job _____ I got a new car",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"And",
+      "2":"But",
+      "3":"Since",
+      "4":"For"
+    },
+    {
+      "quetn":"_______ I understood computers well, I could not fix the problem.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"And",
+      "2":"Even though",
+      "3":"Since",
+      "4":"For"
+    },
+    {
+      "quetn":"He sang ____________ She played the guitar.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"While",
+      "2":"But",
+      "3":"Since",
+      "4":"For"
+    }
+
+  ]
+}

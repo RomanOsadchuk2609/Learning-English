@@ -1,0 +1,258 @@
+ {  "Mainhd":"Select The Correct Adjective From The Given Options.",
+
+
+    "Sub":
+
+    [
+      {
+        "quetn":"Bill is two years ___ than Wanda.",
+        "Answr":"1",
+        "optns":"1,2",
+        "1":"younger",
+        "2":"smaller"
+      },
+      {
+        "quetn":"France is ___ European country.",
+        "Answr":"2",
+        "optns":"1,2",
+        "1":"an",
+        "2":"a"
+      },
+      {
+        "quetn":"The lake water is ___ in the morning before people begin swimming.",
+        "Answr":"2",
+        "optns":"1,2",
+        "1":"clean",
+        "2":"clear"
+      },
+      {
+        "quetn":"Wendy could eat ___ because she felt sick.",
+        "Answr":"1",
+        "optns":"1,2",
+        "1":"little",
+        "2":"alittle"
+      },
+      {
+        "quetn":"Gladys was ___ to hear of her friend's misfortune.",
+        "Answr":"2",
+        "optns":"1,2",
+        "1":"angry",
+        "2":"sorry"
+      },
+      {
+        "quetn":"Teaching is one way to make ___ honest living.",
+        "Answr":"2",
+        "optns":"1,2",
+        "1":"a",
+        "2":"an"
+      },
+      {
+        "quetn":"I make ___ money than my brother.",
+        "Answr":"1",
+        "optns":"1,2",
+        "1":"less",
+        "2":"fewer"
+      },
+      {
+        "quetn":"Ruth has been ___ since last spring.",
+        "Answr":"1",
+        "optns":"1,2",
+        "1":"ill",
+        "2":"sick"
+      },
+      {
+        "quetn":"Remember that ___ day of the week has its problems.",
+        "Answr":"2",
+        "optns":"1,2",
+        "1":"each",
+        "2":"every"
+      },
+      {
+        "quetn":"Wanda and Bill are my friends. The ___ I met after finishing high school.",
+        "Answr":"2",
+        "optns":"1,2",
+        "1":"later",
+        "2":"latter"
+      },
+      {
+        "quetn":"Osaka is ___from Tokyo than Nagoya.",
+        "Answr":"1",
+        "optns":"1,2",
+        "1":"farther",
+        "2":"further"
+      },
+      {
+        "quetn":"I met Bill ___ than Wanda.",
+        "Answr":"2",
+        "optns":"1,2",
+        "1":"latter",
+        "2":"later"
+      },
+      {
+        "quetn":"There are only ___ bottles left.",
+        "Answr":"2",
+        "optns":"1,2",
+        "1":"few",
+        "2":"a few"
+      },
+      {
+        "quetn":"Our apartment building is seven stories ___.",
+        "Answr":"1",
+        "optns":"1,2",
+        "1":"high",
+        "2":"tall"
+      },
+      {
+        "quetn":"July 15 was the ___ day of school.",
+        "Answr":"1",
+        "optns":"1,2",
+        "1":"last",
+        "2":"latest"
+      },
+      {
+        "quetn":"He easily becomes ___.",
+        "Answr":"1",
+        "optns":"1,2",
+        "1":"angry",
+        "2":"nervous"
+      },
+      {
+        "quetn":"My grandfather is two years ___ than my grandmother.",
+        "Answr":"1",
+        "optns":"1,2",
+        "1":"older",
+        "2":"bigger"
+      },
+      {
+        "quetn":"I am very ___in your stories.",
+        "Answr":"1",
+        "optns":"1,2",
+        "1":"interested",
+        "2":"interesting"
+      },
+      {
+        "quetn":"The movie gave me ___ jitters.",
+        "Answr":"1",
+        "optns":"1,2",
+        "1":"nervous",
+        "2":"angry"
+      },{
+      "quetn":"Patrick has ___ girlfriends than I do.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"less",
+      "2":"fewer"
+    },
+      {
+        "quetn":"Paul became ___ when he heard that he would not get the raise.",
+        "Answr":"2",
+        "optns":"1,2",
+        "1":"sorry",
+        "2":"angry"
+      },
+      {
+        "quetn":"Would you like ___ bread?",
+        "Answr":"1",
+        "optns":"1,2",
+        "1":"some",
+        "2":"any"
+      },
+      {
+        "quetn":"The bad smell made me feel ___.",
+        "Answr":"1",
+        "optns":"1,2",
+        "1":"sick",
+        "2":"ill"
+      },
+
+      {
+        "quetn":"My friend Wanda is ___ than me.",
+        "Answr":"2",
+        "optns":"1,2",
+        "1":"elder",
+        "2":"older"
+      },
+      {
+        "quetn":"Take ___ day as it comes.",
+        "Answr":"1",
+        "optns":"1,2",
+        "1":"each",
+        "2":"every"
+      },
+      {
+        "quetn":"I will take ___ apple I have in my hand.",
+        "Answr":"2",
+        "optns":"1,2",
+        "1":"that",
+        "2":"this"
+      },
+      {
+        "quetn":"Antiseptic soap is the best way to keep your hands ___.",
+        "Answr":"2",
+        "optns":"1,2",
+        "1":"clear",
+        "2":"clean"
+      },
+      {
+        "quetn":"Danielle has ___ sister, not two.",
+        "Answr":"1",
+        "optns":"1,2",
+        "1":"one",
+        "2":"a"
+      },
+      {
+        "quetn":"What is the ___ fashion from Paris?",
+        "Answr":"1",
+        "optns":"1,2",
+        "1":"latest",
+        "2":"last"
+      },
+      {
+        "quetn":"The library has ___ books.",
+        "Answr":"2",
+        "optns":"1,2",
+        "1":"much",
+        "2":"many"
+      },
+      {
+        "quetn":"Is there ___ milk in the refrigerator?",
+        "Answr":"2",
+        "optns":"1,2",
+        "1":"many",
+        "2":"much"
+      },
+      {
+        "quetn":"Derek is ___ for his age.",
+        "Answr":"1",
+        "optns":"1,2",
+        "1":"big",
+        "2":"old"
+      },
+      {
+        "quetn":"My father is 180 centimeters ___.",
+        "Answr":"2",
+        "optns":"1,2",
+        "1":"high",
+        "2":"tall"
+      },
+      {
+        "quetn":"Please tell me an ___ story.",
+        "Answr":"2",
+        "optns":"1,2",
+        "1":"interested",
+        "2":"interesting"
+      },
+      {
+        "quetn":"The Austin Hotel is the ___ building in town.",
+        "Answr":"2",
+        "optns":"1,2",
+        "1":"eldest",
+        "2":"oldest"
+      }
+
+    ]
+  }
+
+
+
+

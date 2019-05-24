@@ -1,0 +1,149 @@
+{	"Mainhd":"Choose the correct option from the following.",
+  "Sub":
+
+  [
+    {
+      "quetn":"It happened in a flash means:",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"it happens very quickly",
+      "2":"it happens when there is lightening",
+      "3":"all of the above",
+      "4":"None of these"
+    },
+    {
+      "quetn":"The older you get the sooner you will give up the ghost means:",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"you'll eventually die",
+      "2":"to try half-heartedly",
+      "3":"to give up completely",
+      "4":"None of these"
+    },
+
+    {
+      "quetn":"I'm feeling a bit under the weather means you are:",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"walking in the rain",
+      "2":"walking under the clouds",
+      "3":"you are feeling a bit ill, sad or you lack energy",
+      "4":"None of these"
+    },
+    {
+      "quetn":"David is a good egg means:",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"that there is a chicken by the name of David that lays good eggs",
+      "2":"David is a person who can be relied on",
+      "3":"David is smart",
+      "4":"None of these"
+    },
+
+    {
+      "quetn":"Don't jump the gun means:",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"you start doing something before the appropriate time",
+      "2":"you do something but don't finish it",
+      "3":"you are committing suicide",
+      "4":"None of these"
+    },
+
+    {
+      "quetn":"You're in a pickle now for not paying your electricity bill means:",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"you are in some trouble or mess",
+      "2":"you're in good terms",
+      "3":"you're bad",
+      "4":"None of these"
+    },
+    {
+      "quetn":"Now we're Even Stevens again means",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"something that is equal between two people",
+      "2":"two people named Steven",
+      "3":"All of the above",
+      "4":"None of these"
+    },
+    {
+      "quetn":"Zero hour means:",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"a time when something important is about to begin",
+      "2":"GMT hour",
+      "3":"Midnight hour",
+      "4":"None of these"
+    },
+    {
+      "quetn":"Are you trying to keep up with the Joneses? means:",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"you are friendly and responsible",
+      "2":"you are competitive about material possessions and you are trying to have the best and latest things",
+      "3":"you imitate others",
+      "4":"None of these"
+    },
+    {
+      "quetn":"John Doe refers to:",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"an unidentified male",
+      "2":" a famous historical figure",
+      "3":"to the actor John Doe",
+      "4":"None of these"
+    },
+
+    {
+      "quetn":"He has misunderstood everything, indeed he has gone off the rails:",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"the persons train has derailed",
+      "2":" the person got off the railway track",
+      "3":"the person has lost track of reality",
+      "4":"None of these"
+    },
+    {
+      "quetn":"I'm still on the phone, so keep your pants on! means",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"not to over-react or get angry",
+      "2":"don't take their pants off",
+      "3":"come back later",
+      "4":"None of these"
+    },
+
+    {
+      "quetn":"You drive me crazy means:",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"an irresponsible driver",
+      "2":"to be double-minded",
+      "3":"to greatly irritate or annoy some",
+      "4":"None of these"
+    },
+
+    {
+      "quetn":"Are you starting to get cold feet means:",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"your feet is cold",
+      "2":"your hands and feet are cold",
+      "3":"to become timid or afraid and change ones mind",
+      "4":"None of these"
+    },
+
+    {
+      "quetn":"Its freezing cold in here means:",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Its very cold",
+      "2":"Its very hot",
+      "3":"Its the middle of winter",
+      "4":"None of these"
+    }
+
+  ]
+}

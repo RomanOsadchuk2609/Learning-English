@@ -1,0 +1,154 @@
+{	"Mainhd":"Choose the correct interjection for the below questions.",
+
+  "Sub":
+
+  [
+    {
+      "quetn": "Oh, that was probably a big mistake on my part.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Oh",
+      "2":"that",
+      "3":"was",
+      "4":"probably"
+    },
+
+    {
+      "quetn": "Well, I think I had better be going soon.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Well",
+      "2":"I",
+      "3":"think",
+      "4":"be"
+    },
+
+    {
+      "quetn": "Wow!  That must be a very hot fire.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Wow",
+      "2":"a",
+      "3":"very",
+      "4":"hot"
+    },
+
+    {
+      "quetn": "Yes, you may go with us to Canada tomorrow.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Yes",
+      "2":"you",
+      "3":"may",
+      "4":"with"
+    },
+
+    {
+      "quetn": "You don't have it as bad as I do.  Ugh!  How dumb do you think I am?",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"don't",
+      "2":"have",
+      "3":"it",
+      "4":"Ugh"
+    },
+    {
+      "quetn": "Whew! This weather is very warm for this time of year.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Whew",
+      "2":"This",
+      "3":"weather",
+      "4":"is"
+    },
+    {
+      "quetn": "Yes, we arrived safely in Toledo, and we enjoyed the visit with the grandchildren although the weather was really cold and cloudy.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Yes",
+      "2":"we",
+      "3":"the",
+      "4":"although"
+    },
+
+    {
+      "quetn": "Ouch!  That hurt.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Ouch",
+      "2":"That",
+      "3":"hurt",
+      "4":"That"
+    },
+
+    {
+      "quetn": "You don't have it as bad as I do.  Ugh!  How dumb do you think I am?",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"don't",
+      "2":"have",
+      "3":"it",
+      "4":"Ugh"
+    },
+
+    {
+      "quetn": "Great  I am ready for the test.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Great",
+      "2":"I",
+      "3":"am",
+      "4":"ready"
+    },
+
+    {
+      "quetn":"_____! You're stepping on my foot.(expressing pain)",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"Ah",
+      "2":"Oh",
+      "3":"Ouch",
+      "4":"Hmmm"
+    },
+
+    {
+      "quetn":"Oh _____! Does it hurt?(expressing pity)",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"alas",
+      "2":"er",
+      "3":"dear",
+      "4":"eh"
+    },
+
+    {
+      "quetn":"_____, that seems good.(expressing pleasure)",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"Ah",
+      "2":"Er",
+      "3":"Hmmm",
+      "4":"Hey"
+    },
+
+    {
+      "quetn":"_____, she's dead now.(expressing grief or pity)",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"Oh",
+      "2":"Er",
+      "3":"Hay",
+      "4":"Alas"
+    },
+
+    {
+      "quetn":"_____ me! That's a surprise!(expressing surprise)",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"Woop",
+      "2":"Na-a",
+      "3":"Ouch",
+      "4":"Dear"
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{  "Mainhd":"Select The Correct Noun From The Given Options.",
+
+
+  "Sub":
+
+  [
+    {
+      "quetn":"Who is the ___ standing next to Fred?",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"woman",
+      "2":"wife"
+    },
+    {
+      "quetn":"Several chemicals are known to ___ cancer to develop.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"cause",
+      "2":"reason"
+    },
+    {
+      "quetn":"At church the hymns are usually played on an ___.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"organ",
+      "2":"instrument"
+    },
+    {
+      "quetn":"That is Fred's ___ Ginger. They have been married for 35 years.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"woman",
+      "2":"wife"
+    },
+    {
+      "quetn":"Sumo is a sport that is only open to ___.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"men",
+      "2":"people"
+    },
+    {
+      "quetn":"Roger wore a three-piece ___ to the ceremony.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"dress",
+      "2":"suit"
+    },
+    {
+      "quetn":"Richard broke a ___ in his left foot.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"finger",
+      "2":"toe"
+    },
+    {
+      "quetn":"The ___ in the mountains is fresh and easy to breathe.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"wind",
+      "2":"air"
+    },
+    {
+      "quetn":"Only one ___ may enter at a time.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"individual",
+      "2":"person, man"
+    },
+    {
+      "quetn":"Most ___ do not want to pay sales tax.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"men",
+      "2":"people"
+    },
+    {
+      "quetn":"Eric is a ___. He always treats others kindly.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"gentleman",
+      "2":"man"
+    },{
+    "quetn":"Is there ___ to put this box in the trunk?",
+    "Answr":"2",
+    "optns":"1,2",
+    "1":"place",
+    "2":"room"
+  },
+    {
+      "quetn":"I have no ___ to study when the weather is hot.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"desire",
+      "2":"appetite"
+    },
+    {
+      "quetn":"I hurt my ___ when the brick fell on my shoe.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"foot",
+      "2":"leg"
+    },
+    {
+      "quetn":"I live in the red brick ___ on the corner.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"home",
+      "2":"house"
+    },
+    {
+      "quetn":"My Aunt told me the ___ of how she traveled to Canada.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"story",
+      "2":"history"
+    },
+    {
+      "quetn":"I will meet you in the front row of the ___.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"theater",
+      "2":"play"
+    },
+    {
+      "quetn":"Immigration from Europe is an important part of Canadian ___.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"story",
+      "2":"history"
+    },
+    {
+      "quetn":"In English class we are studying a ___ by Wordsworth.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"poetry",
+      "2":"poem"
+    },
+    {
+      "quetn":"I want to get a good seat to watch the ___.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"play",
+      "2":"theater"
+    },
+    {
+      "quetn":"He jumped out of the window and landed on the ___.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"floor",
+      "2":"ground"
+    },
+    {
+      "quetn":"He broke his __ in two places -- above the ankle and below the hip.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"leg",
+      "2":"foot"
+    },
+    {
+      "quetn":"How much does this painting ___?",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"cost",
+      "2":"price"
+    },
+    {
+      "quetn":"Every Sunday he and his friends have a ___ of soccer.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"game",
+      "2":"play"
+    }
+  ]
+}

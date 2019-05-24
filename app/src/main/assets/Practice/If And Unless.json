@@ -1,0 +1,188 @@
+{  "Mainhd":"Choose the correct answer from the given options",
+
+  "Sub":
+
+  [
+    {
+      "quetn":"Don't do it ___ you don't want to.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    },
+    {
+      "quetn":"___ you ask me to sit somewhere else, I'll sit here.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    },
+    {
+      "quetn":"Sign the document only ___ you read it carefully.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    },
+    {
+      "quetn":"You won't be able to describe the picture ___ you look at it carefully.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    },
+    {
+      "quetn":"I'll go to the beach with you ___ it rains this weekend.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    },
+    {
+      "quetn":"He'll be sent to jail ___ he's caught in the act.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    },
+    {
+      "quetn":"He shouldn't drive ___ he doesn't have a driver's license.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    },
+    {
+      "quetn":"Just let it go ___ you don't want to be involved in any argument.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    },
+    {
+      "quetn":"Life on the planet will be impossible ___ we don't fight against air and water pollution.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    },
+    {
+      "quetn":"___ we learn from our mistakes, we may repeat them.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    },
+    {
+      "quetn":"___ she does well in the interview, she won't be accepted in the Ph.D. program.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    },
+    {
+      "quetn":"___ you need me, just give me a call, and I'll be there in no time.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    },
+    {
+      "quetn":"I'll go to the concert with you tonight ___ my boss asks me to work overtime this evening.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    },
+    {
+      "quetn":"___ you ever come to California, feel free to visit us.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    },
+    {
+      "quetn":"___ you want to develop a lung disease, you shouldn't smoke.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    },
+    {
+      "quetn":"___ you don't mind, I'll sit here.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    },
+    {
+      "quetn":"___ you love her, marry her.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    },
+    {
+      "quetn":"Don't do it ___ you're not sure of the consequences.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    },
+    {
+      "quetn":"___ she works hard, she won't get a promotion.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    }
+  ,
+    {
+      "quetn":"___ you buy the tickets in advance, you won't be able to see that concert.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    }
+  ,
+    {
+      "quetn":"___ you don't understand the exercise, I'll try to help you.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    }
+  ,
+    {
+      "quetn":"He must study ___ he doesn't want to flunk the course.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    }
+  ,
+    {
+      "quetn":"Don't interrupt the meeting ___ it's an emergency.",
+      "Answr":"2",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    }
+  ,
+    {
+      "quetn":"___ he moves to another country, it'll probably be to Australia.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    }
+  ,
+    {
+      "quetn":"I'll punish you ___ you break one of my favorite vases.",
+      "Answr":"1",
+      "optns":"1,2",
+      "1":"if",
+      "2":"unless"
+    }
+  ]
+}

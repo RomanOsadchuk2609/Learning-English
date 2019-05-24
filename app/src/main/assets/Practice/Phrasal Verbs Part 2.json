@@ -1,0 +1,233 @@
+{  "Mainhd":"Select The Correct Phrasal Verb From The Given Options.",
+
+
+  "Sub":
+
+  [
+    {
+      "quetn":"I will take ___ apple I have in my hand.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"on"
+    },
+    {
+      "quetn":"Cheer ___! Things can't be all that bad.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"up",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"Please turn ___ the heater. It's getting cold.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"on"
+    },
+    {
+      "quetn":"I wouldn't rule ___ that possibility.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"out",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"Please hurry ___ or we will miss the bus.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"up",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"He carefully scraped ___ the old paint before repainting the chair.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"Please write ___ your name and address here.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"In the old days, men often stood ___ when a lady entered the room.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"up",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"He fell ___ and hurt his knee.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"on"
+    },
+    {
+      "quetn":"I grew ___ in New York.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"up",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"I forgot to pay my bill, so the water company shut ___ my water.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"We cut ___ the tree, then cut it up into firewood.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"The reason your TV doesn't work is because you forgot to plug it ___.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"The driver was tired and dozed ___ at the wheel.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"The car crashed into the tree and burst ___ flames.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"Jane is sad since she just broke ___ with her boyfriend.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"up",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"The man beat me ___ and took away all my money.",
+      "Answr":"2",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"up",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"The picnic was called ___ because of the rain.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"Please clean ___ this room. It's really dirty.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"up"
+    },
+    {
+      "quetn":"Please hold ___ a moment. I'll be ready soon.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"on",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"The sun usually comes ___ at 5:30 this time of year.",
+      "Answr":"3",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"up",
+      "4":"off"
+    },
+    {
+      "quetn":"We are almost out of gas. Let's fill ___ the tank.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"up",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"Is that a true story or did you make it ___?",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"up"
+    },
+    {
+      "quetn":"The painter lost his balance and fell ___ the roof.",
+      "Answr":"4",
+      "optns":"1,2,3,4",
+      "1":"down",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    },
+    {
+      "quetn":"The painter lost his balance and fell ___ the roof.",
+      "Answr":"1",
+      "optns":"1,2,3,4",
+      "1":"out",
+      "2":"in",
+      "3":"into",
+      "4":"off"
+    }
+  ]
+}

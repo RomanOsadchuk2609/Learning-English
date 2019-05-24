@@ -32,7 +32,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
-
+//TODO: DELETE FLESH CARDS ON DELETING CARD SET
 public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter.ViewHolder> {
     private List<CardGroup> dataSet;
     private Fragment parent;

@@ -29,7 +29,7 @@ public class Utils {
     }
 
     static {
-        //TODO WRITE PATH
+        //TODO: WRITE NEW PATH
         grammarOtherElements = new ArrayList<>(Arrays.asList(
                 new GrammarElement("Number", GRAMMAR_HTML_PATH + "Number" + ".html"),
                 new GrammarElement("Gender", GRAMMAR_HTML_PATH + "Gender" + ".html"),

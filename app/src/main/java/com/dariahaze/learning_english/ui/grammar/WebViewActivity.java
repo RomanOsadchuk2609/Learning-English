@@ -3,9 +3,11 @@ package com.dariahaze.learning_english.ui.grammar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dariahaze.learning_english.R;
 
@@ -21,7 +23,6 @@ public class WebViewActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
 
         Bundle bundle = getIntent().getExtras();
         TextView topicLarge = findViewById(R.id.topicLargeTV);
@@ -44,9 +45,19 @@ public class WebViewActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_learned, menu);
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();
+        }else if (item.getItemId() == R.id.item_learned) {
+            item.setChecked(!item.isChecked());
+            Toast.makeText(this,"Checkable:" + item.isCheckable() +
+                    "Checked:" + item.isChecked(),Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
     }

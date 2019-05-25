@@ -32,12 +32,11 @@ public class Utils {
     }
 
     static {
-        //TODO: WRITE NEW PATH
         grammarOtherElements = new ArrayList<>(Arrays.asList(
                 new GrammarElement("Ability", OTHER_HTML_PATH + "Ability" + ".html"),
                 new GrammarElement("Admitting Mistakes", OTHER_HTML_PATH + "Admitting Mistakes" + ".html"),
                 new GrammarElement("Agreeing and Disagreeing", OTHER_HTML_PATH + "Agreeing and Disagreeing" + ".html"),
-                new GrammarElement("Asking and Giving Directions in English", OTHER_HTML_PATH + "Asking and Giving Directions in English" + ".html"),
+                new GrammarElement("Asking and Giving Directions in English", OTHER_HTML_PATH + "Asking and Giving Directions" + ".html"),
                 new GrammarElement("Asking and Giving Instructions", OTHER_HTML_PATH + "Asking and Giving Instructions" + ".html"),
                 new GrammarElement("Asking and Giving Permission", OTHER_HTML_PATH + "Asking and Giving Permission" + ".html"),
                 new GrammarElement("Asking for Information", OTHER_HTML_PATH + "Asking for Information" + ".html"),
@@ -67,14 +66,14 @@ public class Utils {
                 new GrammarElement("Greeting", OTHER_HTML_PATH + "Greeting" + ".html"),
                 new GrammarElement("Guessing", OTHER_HTML_PATH + "Guessing" + ".html"),
 
-                new GrammarElement("Hope and Desires", OTHER_HTML_PATH + "Hope and Desires" + ".html"),
+                new GrammarElement("Hopes and Desires", OTHER_HTML_PATH + "Hopes and Desires" + ".html"),
                 new GrammarElement("Interrupting People", OTHER_HTML_PATH + "Interrupting People" + ".html"),
-                new GrammarElement("Introduce Yourself and Others", OTHER_HTML_PATH + "introduce yourself and others" + ".html"),
+                new GrammarElement("Introduce Yourself and Others", OTHER_HTML_PATH + "introducing yourself and others" + ".html"),
                 new GrammarElement("Likes and Dislikes", OTHER_HTML_PATH + "Likes and Dislikes" + ".html"),
                 new GrammarElement("Making an Appointment", OTHER_HTML_PATH + "Making an Appointment" + ".html"),
-                new GrammarElement("Making and Answering A Phone Call", OTHER_HTML_PATH + "Making and Answering A Phone Call" + ".html"),
+                new GrammarElement("Making and Answering A Phone Call", OTHER_HTML_PATH + "Making and Answering Phone Call" + ".html"),
                 new GrammarElement("Making Apologies", OTHER_HTML_PATH + "Making Apologies" + ".html"),
-                new GrammarElement("Making Complaints", OTHER_HTML_PATH + "Making Complaints" + ".html"),
+                new GrammarElement("Making Compliments", OTHER_HTML_PATH + "Making Compliments" + ".html"),
                 new GrammarElement("Making Friends", OTHER_HTML_PATH + "Making Friends" + ".html"),
                 new GrammarElement("Making Invitations", OTHER_HTML_PATH + "Making Invitations" + ".html"),
 
@@ -208,7 +207,7 @@ public class Utils {
 
         punctuation.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
                 new GrammarElement("Punctuation", punctuation.getPath()+"Punctuation.html"),
-                new GrammarElement("The Period, Full Stop or Poin", punctuation.getPath()+"The Period, Full Stop or Poin.html"),
+                new GrammarElement("The Period, Full Stop or Point", punctuation.getPath()+"The Period, Full Stop or Point.html"),
                 new GrammarElement("The Comma", punctuation.getPath()+"The Comma.html"),
                 new GrammarElement("The Exclamation Mark", punctuation.getPath()+"The Exclamation Mark.html"),
                 new GrammarElement("The Question Mark", punctuation.getPath()+"The Question Mark.html"),
@@ -245,7 +244,7 @@ public class Utils {
                 new GrammarElement("Present participle", verbsIngForms.getPath()+"Present participle.html"),
                 new GrammarElement("Gerund", verbsIngForms.getPath()+"Gerund.html"),
                 new GrammarElement("Verbs followed by gerunds", verbsIngForms.getPath()+"Verbs followed by gerunds.html"),
-                new GrammarElement("Gerund does not equal infinitive", verbsIngForms.getPath()+"Gerund does not equal infinitive.html"),
+                new GrammarElement("Gerund does not equals infinitive", verbsIngForms.getPath()+"Gerund does not equals infinitive.html"),
                 new GrammarElement("Gerund equals infinitive", verbsIngForms.getPath()+"Gerund equals infinitive.html")
         )));
 

@@ -59,7 +59,6 @@ public class StatisticsFragment extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
-
         statisticsReference = FirebaseDatabase.getInstance().getReference("statistics/"
                 + Utils.getFormattedUserKey(currentUser.getEmail()));
 

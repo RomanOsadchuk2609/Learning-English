@@ -2,6 +2,7 @@ package com.dariahaze.learning_english.ui.grammar;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,12 +13,24 @@ import android.widget.TextView;
 
 import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.model.GrammarElement;
+import com.dariahaze.learning_english.utils.Utils;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
 public class GrammarRVAdapter extends RecyclerView.Adapter<GrammarRVAdapter.ViewHolder> {
     private String topicLarge;
     private List<GrammarElement> dataSet;
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
+
 
     public void setTopicLarge(String topicLarge) {
         this.topicLarge = topicLarge;
@@ -25,6 +38,8 @@ public class GrammarRVAdapter extends RecyclerView.Adapter<GrammarRVAdapter.View
 
     public GrammarRVAdapter(List<GrammarElement> dataSet) {
         this.dataSet = dataSet;
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
     }
 
     public List<GrammarElement> getDataSet() {
@@ -63,7 +78,8 @@ public class GrammarRVAdapter extends RecyclerView.Adapter<GrammarRVAdapter.View
         private ConstraintLayout constraintLayout;
         private TextView numberTV, nameTV;
         private RecyclerView sublistRV;
-
+        private DatabaseReference learnedTopicsReference;
+        private int learnedChildes = 0;
 
         public ViewHolder(ConstraintLayout itemView) {
             super(itemView);
@@ -80,6 +96,12 @@ public class GrammarRVAdapter extends RecyclerView.Adapter<GrammarRVAdapter.View
             this.grammarElement = element;
             numberTV.setText(number+"");
             nameTV.setText(this.grammarElement.getName());
+
+            learnedTopicsReference = FirebaseDatabase.getInstance().getReference(
+                    "learnedTopics/" + Utils.getFormattedUserKey(currentUser.getEmail())
+                            + "/" + Utils.getFormattedTopicPath(grammarElement.getPath()));
+            learnedTopicsReference.keepSynced(true);
+
             if (!grammarElement.getSubElements().isEmpty()){
                 GrammarRVSmallAdapter adapter = new GrammarRVSmallAdapter(grammarElement.getSubElements());
                 adapter.setTopicLarge(grammarElement.getName());
@@ -96,6 +118,45 @@ public class GrammarRVAdapter extends RecyclerView.Adapter<GrammarRVAdapter.View
                         }
                     }
                 });
+
+                learnedTopicsReference.addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                        Boolean isChecked = dataSnapshot.getValue(Boolean.class);
+                        if (isChecked!=null && isChecked){
+                            learnedChildes++;
+                        } else if (isChecked!=null && !isChecked){
+                            learnedChildes--;
+                        }
+                        setBackground();
+                    }
+
+                    @Override
+                    public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                        Boolean isChecked = dataSnapshot.getValue(Boolean.class);
+                        if (isChecked!=null && isChecked){
+                            learnedChildes++;
+                        } else if (isChecked!=null && !isChecked){
+                            learnedChildes--;
+                        }
+                        setBackground();
+                    }
+
+                    @Override
+                    public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+                    }
+
+                    @Override
+                    public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
             }
             else {
                 constraintLayout.setOnClickListener(new View.OnClickListener() {
@@ -109,8 +170,39 @@ public class GrammarRVAdapter extends RecyclerView.Adapter<GrammarRVAdapter.View
                         v.getContext().startActivity(intent);
                     }
                 });
+
+                learnedTopicsReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Boolean isChecked = dataSnapshot.getValue(Boolean.class);
+                        if (isChecked!=null && isChecked){
+                            constraintLayout.setBackground(constraintLayout.getContext()
+                                    .getDrawable(R.drawable.item_background_large_learned));
+                        }
+                        else {
+                            constraintLayout.setBackground(constraintLayout.getContext()
+                                    .getDrawable(R.drawable.item_background_large));
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
             }
 
+        }
+
+        private void setBackground(){
+            if (learnedChildes == grammarElement.getSubElements().size()){
+                constraintLayout.setBackground(constraintLayout.getContext()
+                        .getDrawable(R.drawable.item_background_large_learned));
+            }
+            else {
+                constraintLayout.setBackground(constraintLayout.getContext()
+                        .getDrawable(R.drawable.item_background_large));
+            }
         }
     }
 }

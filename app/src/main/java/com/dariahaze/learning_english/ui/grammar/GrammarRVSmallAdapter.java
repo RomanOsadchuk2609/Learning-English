@@ -11,12 +11,22 @@ import android.widget.TextView;
 
 import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.model.GrammarElement;
+import com.dariahaze.learning_english.utils.Utils;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
 public class GrammarRVSmallAdapter extends RecyclerView.Adapter<GrammarRVSmallAdapter.ViewHolder> {
     private List<GrammarElement> dataSet;
     private String topicLarge;
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
 
     public void setTopicLarge(String topicLarge) {
         this.topicLarge = topicLarge;
@@ -24,6 +34,8 @@ public class GrammarRVSmallAdapter extends RecyclerView.Adapter<GrammarRVSmallAd
 
     public GrammarRVSmallAdapter(List<GrammarElement> dataSet) {
         this.dataSet = dataSet;
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
     }
 
     public List<GrammarElement> getDataSet() {
@@ -60,7 +72,7 @@ public class GrammarRVSmallAdapter extends RecyclerView.Adapter<GrammarRVSmallAd
         private GrammarElement grammarElement;
         private ConstraintLayout constraintLayout;
         private TextView  nameTV;
-
+        private DatabaseReference learnedTopicsReference;
 
         public ViewHolder(ConstraintLayout itemView) {
             super(itemView);
@@ -71,6 +83,30 @@ public class GrammarRVSmallAdapter extends RecyclerView.Adapter<GrammarRVSmallAd
         public void setItem(GrammarElement element) {
             this.grammarElement = element;
             nameTV.setText(this.grammarElement.getName());
+
+            learnedTopicsReference = FirebaseDatabase.getInstance().getReference(
+                    "learnedTopics/" +Utils.getFormattedUserKey(currentUser.getEmail()) +"/"
+                            + Utils.getFormattedTopicPath(grammarElement.getPath()));
+
+            learnedTopicsReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Boolean isChecked = dataSnapshot.getValue(Boolean.class);
+                    if (isChecked!=null && isChecked){
+                        constraintLayout.setBackground(constraintLayout.getContext()
+                                .getDrawable(R.drawable.item_background_small_learned));
+                    }
+                    else {
+                        constraintLayout.setBackground(constraintLayout.getContext()
+                                .getDrawable(R.drawable.item_background_small));
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
 
             constraintLayout.setOnClickListener(new View.OnClickListener() {
                 @Override

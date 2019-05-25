@@ -11,4 +11,6 @@
     <color name="colorQuestion">#2196F3</color>
     <color name="colorWrongQuestion">#FF5209</color>
     <color name="colorCorrectQuestion">#5DC256</color>
+    <color name="colorLearned">#83E0FFF1</color>
+    <color name="colorLearnedDark">#8392D5B8</color>
 </resources>

@@ -13,7 +13,7 @@ public class Utils {
     public final static String OTHER_HTML_PATH = "file:///android_asset/Other/";
     public final static String TENSES_HTML_PATH = "file:///android_asset/Tenses/";
     public final static String PRACTICE_TESTS_PATH = "Practice/";
-    public final static int AMOUNT_OF_TOPICS = 61;
+    public final static int AMOUNT_OF_TOPICS = 162;
     public final static int AMOUNT_OF_TESTS = 27;
 
     public final static String APP_LINK = "https://play.google.com/store/apps/details?id=com.dariahaze.learning_english";
@@ -24,9 +24,19 @@ public class Utils {
     public final static List<VideoLesson> videoLessons;
     public final static List<String> practiceTests;
 
+    public static String getFormattedTopicPath(String path){
+        path = path.replaceFirst("file:///android_asset/","");
+        if (path.contains(".html")){
+            path = path.substring(0, path.lastIndexOf('.'));
+        }
+        path = path.replaceAll("\\.","");
+        return path;
+    }
+
     public static String getFormattedUserKey(String email){
         return email.replaceAll("\\."," ");
     }
+
     public static String generateStringId(){
         return UUID.randomUUID().toString();
     }

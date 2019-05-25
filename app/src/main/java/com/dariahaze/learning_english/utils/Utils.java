@@ -127,140 +127,146 @@ public class Utils {
                 pastTenses, presentTenses, futureTenses
         ));
 
-        GrammarElement articles = new GrammarElement("Articles", GRAMMAR_HTML_PATH + "Articles/");
-        GrammarElement idioms = new GrammarElement("Idioms", GRAMMAR_HTML_PATH + "Idioms/");
-        GrammarElement phrases = new GrammarElement("Phrases", GRAMMAR_HTML_PATH + "Phrases/");
-        GrammarElement plurals = new GrammarElement("Plurals", GRAMMAR_HTML_PATH + "Plurals/");
-        GrammarElement infinitives = new GrammarElement("Infinitives", GRAMMAR_HTML_PATH + "Infinitives/");
-        GrammarElement partsOfSpeech = new GrammarElement("Parts Of Speech", GRAMMAR_HTML_PATH + "PartsOfSpeech/");
-        GrammarElement conditionals = new GrammarElement("Conditionals", GRAMMAR_HTML_PATH + "Conditionals/");
-        GrammarElement activeAndPassiveVoice = new GrammarElement("Active And Passive Voice", GRAMMAR_HTML_PATH + "Active And Passive Voice/");
-        GrammarElement auxiliaryVerbs = new GrammarElement("AuxiliaryVerbs", GRAMMAR_HTML_PATH + "Auxiliary Verbs/");
-        GrammarElement distributives = new GrammarElement("Distributives", GRAMMAR_HTML_PATH + "Distributives/");
-        GrammarElement determiners = new GrammarElement("Determiners", GRAMMAR_HTML_PATH + "Determiners/");
-        GrammarElement quantifiers = new GrammarElement("Quantifiers", GRAMMAR_HTML_PATH + "Quantifiers/");
-        GrammarElement gerundAndPresentParticles = new GrammarElement("Gerund And Present Participles", GRAMMAR_HTML_PATH + "Gerund And Present Participles/");
-        GrammarElement questionTags = new GrammarElement("Question Tags", GRAMMAR_HTML_PATH + "Question Tags/");
-        GrammarElement relativeClauses = new GrammarElement("Relative Clauses", GRAMMAR_HTML_PATH + "Relative Clauses/");
+        GrammarElement adjectives = new GrammarElement("Adjectives", GRAMMAR_HTML_PATH + "ADJECTIVES/");
+        GrammarElement adverbs = new GrammarElement("Adverbs", GRAMMAR_HTML_PATH + "ADVERBS/");
+        GrammarElement determiners = new GrammarElement("Determiners", GRAMMAR_HTML_PATH + "DETERMINERS/");
+        GrammarElement nouns = new GrammarElement("Nouns", GRAMMAR_HTML_PATH + "NOUNS/");
+        GrammarElement punctuation = new GrammarElement("Punctuation", GRAMMAR_HTML_PATH + "PUNCTUATION/");
+        GrammarElement relativeClauses = new GrammarElement("Relative Clauses", GRAMMAR_HTML_PATH + "RELATIVE CLAUSES/");
+        GrammarElement speech = new GrammarElement("Speech", GRAMMAR_HTML_PATH + "SPEECH/");
+        GrammarElement verbsConditional = new GrammarElement("Verbs. Conditional", GRAMMAR_HTML_PATH + "VERBS/CONDITIONAL/");
+        GrammarElement verbsIngForms = new GrammarElement("Verbs. The -ing Forms", GRAMMAR_HTML_PATH + "VERBS/THE -ING FORMS/");
+        GrammarElement verbsInfinitives = new GrammarElement("Verbs. Infinitives", GRAMMAR_HTML_PATH + "VERBS/INFINITIVE/");
+        GrammarElement verbsPassiveVoice = new GrammarElement("Verbs. Passive Voice", GRAMMAR_HTML_PATH + "VERBS/PASSIVE VOICE/");
 
-
-        articles.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
-                new GrammarElement("Introduction Of Articles", articles.getPath()+"Introduction.html"),
-                new GrammarElement("Usage Of Articles", articles.getPath()+"Usage.html")
+        nouns.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
+                new GrammarElement("Capitalization rules", nouns.getPath()+"Capitalization rules.html"),
+                new GrammarElement("Noun gender", nouns.getPath()+"Noun gender.html"),
+                new GrammarElement("Singular and plural nouns", nouns.getPath()+"Singular and plural nouns.html"),
+                new GrammarElement("Countable and uncountable nouns", nouns.getPath()+"Countable and uncountable nouns.html"),
+                new GrammarElement("Pronouns", nouns.getPath()+"Pronouns.html"),
+                new GrammarElement("Indefinite pronouns", nouns.getPath()+"Indefinite pronouns.html"),
+                new GrammarElement("Compound nouns", nouns.getPath()+"Compound nouns.html"),
+                new GrammarElement("Nationalities", nouns.getPath()+"Nationalities.html"),
+                new GrammarElement("Forming the possessive", nouns.getPath()+"Forming the possessive.html")
         )));
 
-        idioms.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
-                new GrammarElement("Introduction Of Idioms", idioms.getPath()+"Introduction.html"),
-                new GrammarElement("Examples Of Idioms", idioms.getPath()+"Examples.html")
+        adjectives.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
+                new GrammarElement("Functions of Adjectives", adjectives.getPath()+"Functions of Adjectives.html"),
+                new GrammarElement("Using adjectives in English", adjectives.getPath()+"Using adjectives in English.html"),
+                new GrammarElement("Ordering multiple adjectives", adjectives.getPath()+"Ordering multiple adjectives.html"),
+                new GrammarElement("The comparative and the superlative", adjectives.getPath()+"The comparative and the superlative.html"),
+                new GrammarElement("Comparing attributes", adjectives.getPath()+"Comparing attributes.html"),
+                new GrammarElement("Adjectives comparing equal quantities", adjectives.getPath()+"Adjectives comparing equal quantities.html"),
+                new GrammarElement("Adjectives comparing unequal quantities", adjectives.getPath()+"Adjectives comparing unequal quantities.html")
         )));
 
-        phrases.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
-                new GrammarElement("Introduction Of Phrases", phrases.getPath()+"Introduction.html"),
-                new GrammarElement("Types Of Phrases", phrases.getPath()+"Types Of Phrases.html"),
-                new GrammarElement("Types Of Phrases Cont'd", phrases.getPath()+"Types Of Phrases Cont'd.html")
-        )));
-
-        plurals.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
-                new GrammarElement("Plurals", plurals.getPath()+"Plurals.html")
-        )));
-
-        infinitives.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
-                new GrammarElement("Infinitives Part 1", infinitives.getPath()+"Infinitives Part 1.html"),
-                new GrammarElement("Infinitives Part 2", infinitives.getPath()+"Infinitives Part 2.html")
-        )));
-
-        partsOfSpeech.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
-                new GrammarElement("Parts Of Speech", partsOfSpeech.getPath()+"Parts_Of_Speech.html"),
-                new GrammarElement("Adjectives", partsOfSpeech.getPath()+"Adjectives.html"),
-                new GrammarElement("Adverb", partsOfSpeech.getPath()+"Adverb.html"),
-                new GrammarElement("Conjunction", partsOfSpeech.getPath()+"Conjunction.html"),
-                new GrammarElement("Interjections", partsOfSpeech.getPath()+"Interjections.html"),
-                new GrammarElement("Noun", partsOfSpeech.getPath()+"Noun.html"),
-                new GrammarElement("Prepositions", partsOfSpeech.getPath()+"Prepositions.html"),
-                new GrammarElement("Pronoun", partsOfSpeech.getPath()+"Pronoun.html"),
-                new GrammarElement("Verb", partsOfSpeech.getPath()+"Verb.html")
-        )));
-
-        conditionals.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
-                new GrammarElement("Introduction Of Conditional", conditionals.getPath()+"Introduction.html"),
-                new GrammarElement("The First Conditional", conditionals.getPath()+"The First Conditional.html"),
-                new GrammarElement("The Second Conditional", conditionals.getPath()+"The Second Conditional.html"),
-                new GrammarElement("The Third Conditional", conditionals.getPath()+"The Third Conditional.html"),
-                new GrammarElement("The Zero Conditional", conditionals.getPath()+"The Zero Conditional.html")
-        )));
-
-        activeAndPassiveVoice.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
-                new GrammarElement("Active And Passive Voice", activeAndPassiveVoice.getPath()+"Introduction.html"),
-                new GrammarElement("Rules Of Active And Passive Voice", activeAndPassiveVoice.getPath()+"Rules.html"),
-                new GrammarElement("Examples Of Active And Passive Voice", activeAndPassiveVoice.getPath()+"Examples.html")
-        )));
-
-        auxiliaryVerbs.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
-                new GrammarElement("Introduction", auxiliaryVerbs.getPath()+"Introduction.html"),
-                new GrammarElement("Usage", auxiliaryVerbs.getPath()+"Usage.html"),
-                new GrammarElement("Statements And Questions", auxiliaryVerbs.getPath()+"Statements And Questions.html")
-        )));
-
-        auxiliaryVerbs.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
-                new GrammarElement("Introduction", auxiliaryVerbs.getPath()+"Introduction.html"),
-                new GrammarElement("Usage", auxiliaryVerbs.getPath()+"Usage.html"),
-                new GrammarElement("Statements And Questions", auxiliaryVerbs.getPath()+"Statements And Questions.html")
-        )));
-
-        distributives.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
-                new GrammarElement("All, Both, Half", distributives.getPath()+"All,Both,Half.html"),
-                new GrammarElement("Each, Either, E very, Neither", distributives.getPath()+"Each,Either,Every,Neither.html")
+        adverbs.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
+                new GrammarElement("Using adverbs in English", adverbs.getPath()+"Using adverbs in English.html"),
+                new GrammarElement("Forming adverbs from adjectives", adverbs.getPath()+"Forming adverbs from adjectives.html"),
+                new GrammarElement("Comparative and superlative adverbs", adverbs.getPath()+"Comparative and superlative adverbs.html"),
+                new GrammarElement("Adverbs of place", adverbs.getPath()+"Adverbs of place.html"),
+                new GrammarElement("Adverbs of time", adverbs.getPath()+"Adverbs of time.html"),
+                new GrammarElement("Adverbs of manner", adverbs.getPath()+"Adverbs of manner.html"),
+                new GrammarElement("Adverbs of degree", adverbs.getPath()+"Adverbs of degree.html"),
+                new GrammarElement("Adverbs of certainty", adverbs.getPath()+"Adverbs of certainty.html"),
+                new GrammarElement("Viewpoint and commenting adverbs", adverbs.getPath()+"Viewpoint and commenting adverbs.html"),
+                new GrammarElement("Relative adverbs", adverbs.getPath()+"Relative adverbs.html"),
+                new GrammarElement("Interrogative adverbs", adverbs.getPath()+"Interrogative adverbs.html")
         )));
 
         determiners.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
-                new GrammarElement("Introduction", determiners.getPath()+"Introduction.html"),
-                new GrammarElement("Types", determiners.getPath()+"Types.html"),
-                new GrammarElement("Defining Words", determiners.getPath()+"Defining_Words.html"),
-                new GrammarElement("Definite Articles", determiners.getPath()+"Definite_Articles.html"),
-                new GrammarElement("Exception To Using The Definite Articles", determiners.getPath()+"Exception_To_Using_The_Definite_Articles.html"),
-                new GrammarElement("Such What Rather Quite", determiners.getPath()+"Such_What_Rather_Quite.html"),
-                new GrammarElement("The Demonstratives", determiners.getPath()+"The_Demonstratives.html"),
-                new GrammarElement("The Demonstratives", determiners.getPath()+"The_Demonstratives.html"),
-                new GrammarElement("The Which And Whose", determiners.getPath()+"Which_And_Whose.html"),
-                new GrammarElement("Which What Whose", determiners.getPath()+"Which_What_Whose.html")
+                new GrammarElement("The definite article", determiners.getPath()+"The definite article.html"),
+                new GrammarElement("Indefinite Articles", determiners.getPath()+"Indefinite Articles.html"),
+                new GrammarElement("Demonstratives", determiners.getPath()+"Demonstratives.html"),
+                new GrammarElement("Pronouns", determiners.getPath()+"Pronouns.html"),
+                new GrammarElement("Quantifiers", determiners.getPath()+"Quantifiers.html"),
+                new GrammarElement("Numbers in English", determiners.getPath()+"Numbers in English.html"),
+                new GrammarElement("Pick the right quantifier", determiners.getPath()+"Pick the right quantifier.html"),
+                new GrammarElement("Expressing opinions about quantity", determiners.getPath()+"Expressing opinions about quantity.html"),
+                new GrammarElement("Indefinite and Incomplete Quantities", determiners.getPath()+"Indefinite and Incomplete Quantities.html"),
+                new GrammarElement("Graded quantifiers", determiners.getPath()+"Graded quantifiers.html"),
+                new GrammarElement("Enough as a quantifier", determiners.getPath()+"Enough as a quantifier.html"),
+                new GrammarElement("Distributives", determiners.getPath()+"Distributives.html"),
+                new GrammarElement("Using \"each\" and \"every\"", determiners.getPath()+"Using each and every.html"),
+                new GrammarElement("Using \"all\" as a distributive", determiners.getPath()+"Using all as a distributive.html"),
+                new GrammarElement("Using \"half\" as a distributive", determiners.getPath()+"Using half as a distributive.html"),
+                new GrammarElement("Distributives for pairs of objects", determiners.getPath()+"Distributives for pairs of objects.html"),
+                new GrammarElement("Determiners of difference", determiners.getPath()+"Determiners of difference.html"),
+                new GrammarElement("Pre-determiners", determiners.getPath()+"Pre-determiners.html")
         )));
 
-        quantifiers.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
-                new GrammarElement("Quantifiers Introduction", quantifiers.getPath()+"Quantifiers Introduction.html"),
-                new GrammarElement("Quantifiers That Express Attitude", quantifiers.getPath()+"Quantifiers that express attitude.html"),
-                new GrammarElement("Comparative Quantifiers", quantifiers.getPath()+"Comparative quantifiers.html"),
-                new GrammarElement("Graded Quantifiers", quantifiers.getPath()+"Graded_Quantifiers.html"),
-                new GrammarElement("Quantifiers With Countable And Uncountable Nouns", quantifiers.getPath()+"Quantifiers_with_countable_and_uncountable_nouns.html"),
-                new GrammarElement("The Quantifiers Some And Any", quantifiers.getPath()+"The_Quantifiers_Some_and_Any.html"),
-                new GrammarElement("The Quantifiers A Few, few, A Little, Little", quantifiers.getPath()+"The_Quantifiers_Few_Little.html"),
-                new GrammarElement("The Quantifiers Compound Nouns Made With SOME, ANY, NO", quantifiers.getPath()+"The_Quantifiers_Compound_nouns_made_with_SOME,_ANY_and_NO.html")
+        speech.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
+                new GrammarElement("Direct and Indirect Speech", speech.getPath()+"Direct and Indirect Speech.html"),
+                new GrammarElement("Tense Changes When Using Reported Speech", speech.getPath()+"Tense Changes When Using Reported Speech.html"),
+                new GrammarElement("Changing time and place references", speech.getPath()+"Changing time and place references.html"),
+                new GrammarElement("Question Forms and Reported Speech", speech.getPath()+"Question Forms and Reported Speech.html"),
+                new GrammarElement("Reporting verbs", speech.getPath()+"Reporting verbs.html"),
+                new GrammarElement("Reported Speech part 1", speech.getPath()+"Reported Speech part 1.html"),
+                new GrammarElement("Reported Speech part 2", speech.getPath()+"Reported Speech part 2.html")
         )));
 
-        gerundAndPresentParticles.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
-                new GrammarElement("Gerund Or Infinitive", gerundAndPresentParticles.getPath()+"Gerund or Infinitive.html"),
-                new GrammarElement("The Gerunds.json", gerundAndPresentParticles.getPath()+"The Gerunds.json.html"),
-                new GrammarElement("The Present Participle", gerundAndPresentParticles.getPath()+"The Present Participle.html"),
-                new GrammarElement("The Gerund And The Present Participle", gerundAndPresentParticles.getPath()+"The Gerund and the Present Participle.html"),
-                new GrammarElement("Verbs Followed By The Gerund", gerundAndPresentParticles.getPath()+"Verbs Followed By The Gerund.html")
-        )));
-
-        questionTags.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
-                new GrammarElement("Introduction Of Question Tags", questionTags.getPath()+"Introduction.html"),
-                new GrammarElement("Rules Of Question Tags", questionTags.getPath()+"Rules.html"),
-                new GrammarElement("Examples Of Question Tags", questionTags.getPath()+"Examples.html")
+        punctuation.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
+                new GrammarElement("Punctuation", punctuation.getPath()+"Punctuation.html"),
+                new GrammarElement("The Period, Full Stop or Poin", punctuation.getPath()+"The Period, Full Stop or Poin.html"),
+                new GrammarElement("The Comma", punctuation.getPath()+"The Comma.html"),
+                new GrammarElement("The Exclamation Mark", punctuation.getPath()+"The Exclamation Mark.html"),
+                new GrammarElement("The Question Mark", punctuation.getPath()+"The Question Mark.html"),
+                new GrammarElement("The Colon", punctuation.getPath()+"The Colon.html"),
+                new GrammarElement("The Semicolon", punctuation.getPath()+"The Semicolon.html"),
+                new GrammarElement("Quotation Marks", punctuation.getPath()+"Quotation Marks.html"),
+                new GrammarElement("The Apostrophe", punctuation.getPath()+"The Apostrophe.html"),
+                new GrammarElement("Hyphens and Dashes", punctuation.getPath()+"Hyphens and Dashes.html"),
+                new GrammarElement("Brackets and Parentheses", punctuation.getPath()+"Brackets and Parentheses.html")
         )));
 
         relativeClauses.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
-                new GrammarElement("Introduction", relativeClauses.getPath()+"An Introduction.html"),
-                new GrammarElement("Defining Relative Clauses", relativeClauses.getPath()+"Defining Relative Clauses.html"),
-                new GrammarElement("Non-Defining Relative Clauses", relativeClauses.getPath()+"Non-Defining Relative Clauses.html"),
-                new GrammarElement("Where To Put The Preposition In A Relative Clause", relativeClauses.getPath()+"Where to put the preposition in a relative clause.html")
+                new GrammarElement("Relative clauses", relativeClauses.getPath()+"Relative clauses.html"),
+                new GrammarElement("Preposition placement in relative clauses", relativeClauses.getPath()+"Preposition placement in relative clauses.html"),
+                new GrammarElement("Defining relative clauses", relativeClauses.getPath()+"Defining relative clauses.html"),
+                new GrammarElement("Non-defining relative clauses", relativeClauses.getPath()+"Non-defining relative clauses.html")
         )));
 
-        grammarElements = new ArrayList<>(Arrays.asList(articles, idioms, phrases, plurals,
-                infinitives, partsOfSpeech, conditionals, activeAndPassiveVoice, auxiliaryVerbs,
-                distributives, determiners, quantifiers, gerundAndPresentParticles, quantifiers,
-                relativeClauses));
+        verbsConditional.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
+                new GrammarElement("Conditional", verbsConditional.getPath()+"Conditional.html"),
+                new GrammarElement("The unreal past", verbsConditional.getPath()+"The unreal past.html"),
+                new GrammarElement("How to use \"Unless\"", verbsConditional.getPath()+"How to use Unless.html"),
+                new GrammarElement("Zero Conditional", verbsConditional.getPath()+"Zero Conditional.html"),
+                new GrammarElement("Type 1 Conditional", verbsConditional.getPath()+"Type 1 Conditional.html"),
+                new GrammarElement("Type 2 Conditional", verbsConditional.getPath()+"Type 2 Conditional.html"),
+                new GrammarElement("Present Continuous Conditional", verbsConditional.getPath()+"Present Continuous Conditional.html"),
+                new GrammarElement("Type 3 Conditional", verbsConditional.getPath()+"Type 3 Conditional.html"),
+                new GrammarElement("Perfect Continuous Conditional", verbsConditional.getPath()+"Perfect Continuous Conditional.html"),
+                new GrammarElement("Mixed Conditional", verbsConditional.getPath()+"Mixed Conditional.html")
+        )));
+
+        verbsIngForms.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
+                new GrammarElement("The -ing forms", verbsIngForms.getPath()+"The -ing forms.html"),
+                new GrammarElement("Present participle", verbsIngForms.getPath()+"Present participle.html"),
+                new GrammarElement("Gerund", verbsIngForms.getPath()+"Gerund.html"),
+                new GrammarElement("Verbs followed by gerunds", verbsIngForms.getPath()+"Verbs followed by gerunds.html"),
+                new GrammarElement("Gerund does not equal infinitive", verbsIngForms.getPath()+"Gerund does not equal infinitive.html"),
+                new GrammarElement("Gerund equals infinitive", verbsIngForms.getPath()+"Gerund equals infinitive.html")
+        )));
+
+        verbsInfinitives.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
+                new GrammarElement("Infinitive", verbsInfinitives.getPath()+"Infinitive.html"),
+                new GrammarElement("Perfect Infinitive", verbsInfinitives.getPath()+"Perfect Infinitive.html"),
+                new GrammarElement("Perfect continuous infinitive", verbsInfinitives.getPath()+"Perfect continuous infinitive.html"),
+                new GrammarElement("Continuous infinitive", verbsInfinitives.getPath()+"Continuous infinitive.html"),
+                new GrammarElement("Passive infinitive", verbsInfinitives.getPath()+"Passive infinitive.html"),
+                new GrammarElement("Verbs followed by infinitives", verbsInfinitives.getPath()+"Verbs followed by infinitives.html")
+        )));
+
+        verbsPassiveVoice.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
+                new GrammarElement("Passive voice", verbsPassiveVoice.getPath()+"Passive voice.html"),
+                new GrammarElement("Passive voice to active voice", verbsPassiveVoice.getPath()+"Passive voice to active voice.html"),
+                new GrammarElement("Alternative ways to form the passive voice", verbsPassiveVoice.getPath()+"Alternative ways to form the passive voice.html")
+        )));
+
+        grammarElements = new ArrayList<>(Arrays.asList(nouns, adjectives, adverbs, determiners,
+                verbsConditional, verbsIngForms, verbsInfinitives, verbsPassiveVoice, speech,
+                punctuation, relativeClauses));
 
 
         videoLessons = new ArrayList<>(Arrays.asList(

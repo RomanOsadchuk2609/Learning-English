@@ -12,6 +12,8 @@ public class Utils {
     public final static String GRAMMAR_HTML_PATH = "file:///android_asset/Grammar/";
     public final static String TENSES_HTML_PATH = "file:///android_asset/Tenses/";
     public final static String PRACTICE_TESTS_PATH = "Practice/";
+    public final static int AMOUNT_OF_TOPICS = 167;
+    public final static int AMOUNT_OF_TESTS = 27;
 
     public final static String APP_LINK = "https://play.google.com/store/apps/details?id=com.dariahaze.learning_english";
 

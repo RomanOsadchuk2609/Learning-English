@@ -57,6 +57,8 @@ public class PracticeTestActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
     private Integer bestScore = null;
+    private DatabaseReference statisticsReference;
+    int tests = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +70,24 @@ public class PracticeTestActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         practiceTest = (PracticeTest) bundle.get("Test");
+
+        statisticsReference = FirebaseDatabase.getInstance().getReference("statistics/"
+                + Utils.getFormattedUserKey(currentUser.getEmail()));
+
+        statisticsReference.child("tests").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Integer amountOfTests = dataSnapshot.getValue(Integer.class);
+                if (amountOfTests!=null){
+                    tests = amountOfTests;
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         bestScoreReference = FirebaseDatabase.getInstance().getReference("bestScores/"
                 + Utils.getFormattedUserKey(currentUser.getEmail())+"/"+bundle.getString("Topic"));
@@ -273,6 +293,11 @@ public class PracticeTestActivity extends AppCompatActivity {
         if (correctAnswers > practiceTest.getBestScore()){
             practiceTest.setBestScore(correctAnswers);
             bestScoreReference.setValue(correctAnswers);
+
+            if (correctAnswers == practiceTest.getBestScore()){
+                tests++;
+                statisticsReference.child("tests").setValue(tests);
+            }
         }
         resultDialog = new MaterialDialog.Builder(this)
                 .title("You got " + correctAnswers + " of " + practiceTest.getQuestions().size())

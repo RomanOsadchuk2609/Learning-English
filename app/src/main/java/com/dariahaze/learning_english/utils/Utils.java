@@ -10,9 +10,10 @@ import java.util.UUID;
 
 public class Utils {
     public final static String GRAMMAR_HTML_PATH = "file:///android_asset/Grammar/";
+    public final static String OTHER_HTML_PATH = "file:///android_asset/Other/";
     public final static String TENSES_HTML_PATH = "file:///android_asset/Tenses/";
     public final static String PRACTICE_TESTS_PATH = "Practice/";
-    public final static int AMOUNT_OF_TOPICS = 167;
+    public final static int AMOUNT_OF_TOPICS = 61;
     public final static int AMOUNT_OF_TESTS = 27;
 
     public final static String APP_LINK = "https://play.google.com/store/apps/details?id=com.dariahaze.learning_english";
@@ -33,54 +34,61 @@ public class Utils {
     static {
         //TODO: WRITE NEW PATH
         grammarOtherElements = new ArrayList<>(Arrays.asList(
-                new GrammarElement("Number", GRAMMAR_HTML_PATH + "Number" + ".html"),
-                new GrammarElement("Gender", GRAMMAR_HTML_PATH + "Gender" + ".html"),
-                new GrammarElement("Capitalization", GRAMMAR_HTML_PATH + "Capitalization" + ".html"),
-                new GrammarElement("Possessive", GRAMMAR_HTML_PATH + "Possessive" + ".html"),
-                new GrammarElement("Order of Adjectives", GRAMMAR_HTML_PATH + "Order of Adjectives" + ".html"),
-                new GrammarElement("Independent and Dependent Clauses", GRAMMAR_HTML_PATH + "Independent and Dependent Clauses" + ".html"),
-                new GrammarElement("Shall", GRAMMAR_HTML_PATH + "Shall" + ".html"),
-                new GrammarElement("Should", GRAMMAR_HTML_PATH + "Should" + ".html"),
-                new GrammarElement("Subjects, Verbs and Objects", GRAMMAR_HTML_PATH + "Subjects, Verbs and Objects" + ".html"),
-                new GrammarElement("The imperative", GRAMMAR_HTML_PATH + "Number" + ".html"),
-                new GrammarElement("Use Of Little, A Little, Few", GRAMMAR_HTML_PATH + "Use Of Little, A Little, Few" + ".html"),
-                new GrammarElement("Use of Shall", GRAMMAR_HTML_PATH + "Use of Shall" + ".html"),
-                new GrammarElement("Use of Should", GRAMMAR_HTML_PATH + "Use of Should" + ".html"),
-                new GrammarElement("Use Of Unless", GRAMMAR_HTML_PATH + "Use Of Unless" + ".html"),
-                new GrammarElement("Used to", GRAMMAR_HTML_PATH + "Used to" + ".html"),
-                new GrammarElement("Vocabulary", GRAMMAR_HTML_PATH + "Vocabulary" + ".html"),
-                new GrammarElement("To Get", GRAMMAR_HTML_PATH + "To Get" + ".html"),
-                new GrammarElement("Punctuation Rules", GRAMMAR_HTML_PATH + "Punctuation Rules" + ".html"),
-                new GrammarElement("Homonyms", GRAMMAR_HTML_PATH + "Homonyms" + ".html")
+                new GrammarElement("Ability", OTHER_HTML_PATH + "Ability" + ".html"),
+                new GrammarElement("Admitting Mistakes", OTHER_HTML_PATH + "Admitting Mistakes" + ".html"),
+                new GrammarElement("Agreeing and Disagreeing", OTHER_HTML_PATH + "Agreeing and Disagreeing" + ".html"),
+                new GrammarElement("Asking and Giving Directions in English", OTHER_HTML_PATH + "Asking and Giving Directions in English" + ".html"),
+                new GrammarElement("Asking and Giving Instructions", OTHER_HTML_PATH + "Asking and Giving Instructions" + ".html"),
+                new GrammarElement("Asking and Giving Permission", OTHER_HTML_PATH + "Asking and Giving Permission" + ".html"),
+                new GrammarElement("Asking for Information", OTHER_HTML_PATH + "Asking for Information" + ".html"),
+                new GrammarElement("Asking for Opinions", OTHER_HTML_PATH + "Asking for Opinions" + ".html"),
+                new GrammarElement("Blaming and Accusing", OTHER_HTML_PATH + "Blaming and Accusing" + ".html"),
+                new GrammarElement("Certainty and Uncertainty", OTHER_HTML_PATH + "Certainty and Uncertainty" + ".html"),
+
+                new GrammarElement("Checking for Understanding and Asking for Clarification", OTHER_HTML_PATH + "Checking for Understanding and Asking for Clarification" + ".html"),
+                new GrammarElement("Congratulations and Best Wishes", OTHER_HTML_PATH + "Congratulations and Best Wishes" + ".html"),
+                new GrammarElement("Demanding Explanations", OTHER_HTML_PATH + "Demanding Explanations" + ".html"),
+                new GrammarElement("Do you speak English?", OTHER_HTML_PATH + "Do you speak English" + ".html"),
+                new GrammarElement("Expressing Cause and Effect", OTHER_HTML_PATH + "Expressing Cause and Effect" + ".html"),
+                new GrammarElement("Expressing Disappointment", OTHER_HTML_PATH + "Expressing Disappointment" + ".html"),
+                new GrammarElement("Expressing Indifference", OTHER_HTML_PATH + "Expressing Indifference" + ".html"),
+                new GrammarElement("Expressing Obligation", OTHER_HTML_PATH + "Expressing Obligation" + ".html"),
+                new GrammarElement("Expressing Preferences", OTHER_HTML_PATH + "Expressing Preferences" + ".html"),
+                new GrammarElement("Expressing Prohibition", OTHER_HTML_PATH + "Expressing Prohibition" + ".html"),
+
+                new GrammarElement("Expressing Regret", OTHER_HTML_PATH + "Expressing Regret" + ".html"),
+                new GrammarElement("Expressing Shock", OTHER_HTML_PATH + "Expressing Shock" + ".html"),
+                new GrammarElement("Expressing Sympathy", OTHER_HTML_PATH + "Expressing Sympathy" + ".html"),
+                new GrammarElement("Fear and Anxiety", OTHER_HTML_PATH + "Fear and Anxiety" + ".html"),
+                new GrammarElement("Giving Bad News", OTHER_HTML_PATH + "Giving Bad News" + ".html"),
+                new GrammarElement("Giving Compliments", OTHER_HTML_PATH + "Giving Compliments" + ".html"),
+                new GrammarElement("Giving Good News", OTHER_HTML_PATH + "Giving Good News" + ".html"),
+                new GrammarElement("Giving Opinions", OTHER_HTML_PATH + "Giving Opinions" + ".html"),
+                new GrammarElement("Greeting", OTHER_HTML_PATH + "Greeting" + ".html"),
+                new GrammarElement("Guessing", OTHER_HTML_PATH + "Guessing" + ".html"),
+
+                new GrammarElement("Hope and Desires", OTHER_HTML_PATH + "Hope and Desires" + ".html"),
+                new GrammarElement("Interrupting People", OTHER_HTML_PATH + "Interrupting People" + ".html"),
+                new GrammarElement("Introduce Yourself and Others", OTHER_HTML_PATH + "introduce yourself and others" + ".html"),
+                new GrammarElement("Likes and Dislikes", OTHER_HTML_PATH + "Likes and Dislikes" + ".html"),
+                new GrammarElement("Making an Appointment", OTHER_HTML_PATH + "Making an Appointment" + ".html"),
+                new GrammarElement("Making and Answering A Phone Call", OTHER_HTML_PATH + "Making and Answering A Phone Call" + ".html"),
+                new GrammarElement("Making Apologies", OTHER_HTML_PATH + "Making Apologies" + ".html"),
+                new GrammarElement("Making Complaints", OTHER_HTML_PATH + "Making Complaints" + ".html"),
+                new GrammarElement("Making Friends", OTHER_HTML_PATH + "Making Friends" + ".html"),
+                new GrammarElement("Making Invitations", OTHER_HTML_PATH + "Making Invitations" + ".html"),
+
+                new GrammarElement("Making Offers", OTHER_HTML_PATH + "Making Offers" + ".html"),
+                new GrammarElement("Making Promises", OTHER_HTML_PATH + "Making Promises" + ".html"),
+                new GrammarElement("Making Requests", OTHER_HTML_PATH + "Making Requests" + ".html"),
+                new GrammarElement("Making Suggestions and Giving Advice", OTHER_HTML_PATH + "Making Suggestions and Giving Advice" + ".html"),
+                new GrammarElement("Saying Goodbye", OTHER_HTML_PATH + "Saying Goodbye" + ".html"),
+                new GrammarElement("Talking About Feelings", OTHER_HTML_PATH + "Talking About Feelings" + ".html"),
+                new GrammarElement("Talking About Health and Illness", OTHER_HTML_PATH + "Talking About Health and Illness" + ".html"),
+                new GrammarElement("Talking About Jobs and Occupations", OTHER_HTML_PATH + "Talking About Jobs and Occupations" + ".html"),
+                new GrammarElement("Talking About Time", OTHER_HTML_PATH + "Talking About Time" + ".html"),
+                new GrammarElement("Thank You", OTHER_HTML_PATH + "Thank You" + ".html")
         ));
-
-        /*GrammarElement pastTenses = new GrammarElement("Past tenses",TENSES_HTML_PATH + "Past tense/");
-        GrammarElement presentTenses = new GrammarElement("Present tenses",TENSES_HTML_PATH + "Present tense/");
-        GrammarElement futureTenses = new GrammarElement("Future tenses",TENSES_HTML_PATH + "Future tense/");
-
-        pastTenses.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
-                new GrammarElement("Simple past",pastTenses.getPath()+"Simple past.html"),
-                new GrammarElement("Past continuous",pastTenses.getPath()+"Past continuous.html"),
-                new GrammarElement("Past perfect",pastTenses.getPath()+"Past perfect.html"),
-                new GrammarElement("Past perfect continuous",pastTenses.getPath()+"Past perfect continuous.html")
-        )));
-
-        presentTenses.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
-                new GrammarElement("Simple present",presentTenses.getPath()+"Simple present.html"),
-                new GrammarElement("Present continuous",presentTenses.getPath()+"Present continuous.html"),
-                new GrammarElement("Present perfect",presentTenses.getPath()+"Present perfect.html"),
-                new GrammarElement("For experience",presentTenses.getPath()+"For experience.html"),
-                new GrammarElement("For continuing situation",presentTenses.getPath()+"For continuing situation.html"),
-                new GrammarElement("For change",presentTenses.getPath()+"For change.html"),
-                new GrammarElement("Present perfect continuous",presentTenses.getPath()+"Present perfect continuous.html")
-        )));
-
-        futureTenses.setSubElements(new ArrayList<GrammarElement>(Arrays.asList(
-                new GrammarElement("Simple future",futureTenses.getPath()+"Simple future.html"),
-                new GrammarElement("Future continuous",futureTenses.getPath()+"Future continuous.html"),
-                new GrammarElement("Future perfect",futureTenses.getPath()+"Future perfect.html"),
-                new GrammarElement("Future perfect continuous",futureTenses.getPath()+"Future perfect continuous.html")
-        )));*/
 
         GrammarElement pastTenses = new GrammarElement("Past tenses",TENSES_HTML_PATH + "Past/");
         GrammarElement presentTenses = new GrammarElement("Present tenses",TENSES_HTML_PATH + "Present/");

@@ -45,7 +45,7 @@ public class Utils {
                 new GrammarElement("Blaming and Accusing", OTHER_HTML_PATH + "Blaming and Accusing" + ".html"),
                 new GrammarElement("Certainty and Uncertainty", OTHER_HTML_PATH + "Certainty and Uncertainty" + ".html"),
 
-                new GrammarElement("Checking for Understanding and Asking for Clarification", OTHER_HTML_PATH + "Checking for Understanding and Asking for Clarification" + ".html"),
+                new GrammarElement("Checking for Understanding and Asking for Clarification", OTHER_HTML_PATH + "Checking for Understanding-Asking for Clarification" + ".html"),
                 new GrammarElement("Congratulations and Best Wishes", OTHER_HTML_PATH + "Congratulations and Best Wishes" + ".html"),
                 new GrammarElement("Demanding Explanations", OTHER_HTML_PATH + "Demanding Explanations" + ".html"),
                 new GrammarElement("Do you speak English?", OTHER_HTML_PATH + "Do you speak English" + ".html"),
@@ -116,15 +116,15 @@ public class Utils {
                 new GrammarElement("Future continuous",futureTenses.getPath()+"Future continuous.html"),
                 new GrammarElement("Future perfect",futureTenses.getPath()+"Future perfect.html"),
                 new GrammarElement("Future perfect continuous",futureTenses.getPath()+"Future perfect continuous.html"),
-                new GrammarElement("Immediate future",futureTenses.getPath()+"Immediate future.html"),
-                new GrammarElement("Future obligation",futureTenses.getPath()+"Future obligation.html"),
-                new GrammarElement("Future with going",futureTenses.getPath()+"Future with going.html"),
                 new GrammarElement("Present continuous for future arrangements",futureTenses.getPath()+"Present continuous for future arrangements.html"),
-                new GrammarElement("Simple present for future events",futureTenses.getPath()+"Simple present for future events.html")
+                new GrammarElement("Simple present for future events",futureTenses.getPath()+"Simple present for future events.html"),
+                new GrammarElement("Future with going",futureTenses.getPath()+"Future with going.html"),
+                new GrammarElement("Future obligation",futureTenses.getPath()+"Future obligation.html"),
+                new GrammarElement("Immediate future",futureTenses.getPath()+"Immediate future.html")
         )));
 
         grammarTensesElements = new ArrayList<>(Arrays.asList(
-                pastTenses, presentTenses, futureTenses
+                presentTenses, pastTenses, futureTenses
         ));
 
         GrammarElement adjectives = new GrammarElement("Adjectives", GRAMMAR_HTML_PATH + "ADJECTIVES/");

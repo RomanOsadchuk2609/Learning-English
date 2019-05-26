@@ -28,8 +28,11 @@ import com.dariahaze.learning_english.model.FlashCard;
 import com.dariahaze.learning_english.utils.Utils;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 //TODO: DELETE FLESH CARDS ON DELETING CARD SET
@@ -84,6 +87,9 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
         private ConstraintLayout constraintLayout;
         private TextView amountOfCards, nameTV;
         private ImageButton menuButton;
+        private boolean isChecked = false;
+        private boolean isMutable;
+        private DatabaseReference learnedCardGroupsReference ;
 
 
         public ViewHolder(ConstraintLayout itemView) {
@@ -107,6 +113,27 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
             nameTV.setText(this.cardGroup.getName());
             setAmountOfCards(cardGroup.getSize());
 
+            learnedCardGroupsReference = FirebaseDatabase.getInstance()
+                    .getReference("learnedCardSets/" +
+                            Utils.getFormattedUserKey(currentUser.getEmail()) + "/" +
+                            cardGroup.getKey());
+
+            learnedCardGroupsReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Boolean isLearned = dataSnapshot.getValue(Boolean.class);
+                    if (isLearned!=null){
+                        isChecked = isLearned;
+                        setBackground();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
             constraintLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -120,26 +147,15 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
                     }
                 }
             });
+            constraintLayout.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    parent.getActivity().openContextMenu(menuButton);
+                    return true;
+                }
+            });
 
-
-            if (currentUser!=null && !cardGroup.getPath().contains(Utils.getFormattedUserKey(currentUser.getEmail()))){
-                menuButton.setVisibility(View.INVISIBLE);
-                constraintLayout.setOnLongClickListener(new View.OnLongClickListener() {
-                    @Override
-                    public boolean onLongClick(View v) {
-                        return true;
-                    }
-                });
-            }
-            else if (currentUser!=null && cardGroup.getPath().contains(Utils.getFormattedUserKey(currentUser.getEmail()))){
-                constraintLayout.setOnLongClickListener(new View.OnLongClickListener() {
-                    @Override
-                    public boolean onLongClick(View v) {
-                        parent.getActivity().openContextMenu(menuButton);
-                        return true;
-                    }
-                });
-            }
+            isMutable = currentUser!=null && cardGroup.getPath().contains(Utils.getFormattedUserKey(currentUser.getEmail()));
 
         }
 
@@ -148,6 +164,12 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
         public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
             PopupMenu popup = new PopupMenu(v.getContext(), v);
             popup.getMenuInflater().inflate(R.menu.menu_card_group, popup.getMenu());
+            popup.getMenu().findItem(R.id.item_learned_group).setChecked(isChecked);
+            if (!isMutable) {
+                popup.getMenu().findItem(R.id.add_card).setVisible(false);
+                popup.getMenu().findItem(R.id.rename).setVisible(false);
+                popup.getMenu().findItem(R.id.delete).setVisible(false);
+            }
             popup.setOnMenuItemClickListener(this);
             popup.show();
         }
@@ -159,6 +181,12 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
             mCardGroupReference = FirebaseDatabase.getInstance().getReference(cardGroup.getPath());
 
             switch (item.getItemId()){
+                case R.id.item_learned_group:
+                    isChecked = !isChecked;
+                    item.setChecked(!item.isChecked());
+                    setBackground();
+                    learnedCardGroupsReference.setValue(isChecked);
+                    break;
                 case R.id.add_card:
                     final int[] cardNumber = {cardGroup.getSize() + 1};
                     dialog = new MaterialDialog.Builder(constraintLayout.getContext())
@@ -255,6 +283,17 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
             }
             else {
                 amountOfCards.setText(itemView.getResources().getString(R.string.empty_card_group));
+            }
+        }
+
+        private void setBackground(){
+            if (isChecked){
+                constraintLayout.setBackground(constraintLayout.getContext()
+                        .getDrawable(R.drawable.item_background_large_learned));
+            }
+            else {
+                constraintLayout.setBackground(constraintLayout.getContext()
+                        .getDrawable(R.drawable.item_background_large));
             }
         }
     }

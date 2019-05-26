@@ -63,4 +63,7 @@
     <string name="amount_of_learned_card_sets_0_x">Amount of learned card sets: 0/X</string>
     <string name="your_statistics">Your Statistics</string>
     <string name="learned">Learned</string>
+    <string name="delete">Delete</string>
+    <string name="rename">Rename</string>
+    <string name="add_card">Add Card</string>
 </resources>

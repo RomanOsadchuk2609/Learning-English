@@ -2,12 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/item_learned_group"
+        android:checkable="true"
+        android:enabled="true"
+        android:title="@string/learned" />
+    <item
         android:id="@+id/add_card"
-        android:title="Add Card" />
+        android:title="@string/add_card" />
     <item
         android:id="@+id/rename"
-        android:title="Rename" />
+        android:title="@string/rename" />
     <item
         android:id="@+id/delete"
-        android:title="Delete" />
+        android:title="@string/delete" />
 </menu>

@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity
 
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 
-        //27.05.2019 00:00
-        if (new Date().getTime() > 1558915200000L){
+        //02.06.2019 20:00
+        if (new Date().getTime() > 1559505600000L){
             finish();
             System.exit(0);
         }

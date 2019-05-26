@@ -36,11 +36,10 @@ public class CardFragment extends Fragment {
     private FlashCard flashCard;
     private int amountOfCards;
     private int cardIndex;
-    private boolean isFrontSide = true;
-    private boolean isEditable = false;
+    private boolean isFrontSide = true, isEditable = false, isDeleted = false, isEditing = false;
 
     private EditText frontTextET, backTextET, descriptionET;
-    private TextView cardIndexTV, frontTextTV, backTextTV, sideTV, descriptionTV;
+    private TextView cardIndexTV, frontTextTV, backTextTV, sideTV, descriptionTV, deletedTV;
     private ImageButton buttonSave, buttonRemove, buttonBack;
     private LinearLayout editorLayout, backReadLayout, backWriteLayout;
     private DatabaseReference mFlashCardReference;
@@ -85,6 +84,7 @@ public class CardFragment extends Fragment {
         descriptionET = view.findViewById(R.id.editTextDescription);
         backReadLayout = view.findViewById(R.id.backReadLayout);
         backWriteLayout = view.findViewById(R.id.backWriteLayout);
+        deletedTV = view.findViewById(R.id.textViewCardDeleted);
 
         buttonSave = view.findViewById(R.id.imageButtonSaveCard);
         //buttonRemove = view.findViewById(R.id.imageButtonSaveCard);
@@ -113,6 +113,10 @@ public class CardFragment extends Fragment {
             backTextET.setText(flashCard.getBackText());
             descriptionTV.setText(flashCard.getDescription());
             descriptionET.setText(flashCard.getDescription());
+            isDeleted = flashCard.isDeleted();
+            if (isDeleted) {
+                deletedTV.setVisibility(View.VISIBLE);
+            }
         }
 
 
@@ -145,7 +149,7 @@ public class CardFragment extends Fragment {
     }
 
     private void deleteCard(){
-        if (isEditable){
+        if (isEditable && !isDeleted && !isEditing){
             MaterialDialog dialog = new MaterialDialog.Builder(getContext())
                     .title("Delete this card?")
                     .positiveText("Yes")
@@ -158,15 +162,22 @@ public class CardFragment extends Fragment {
                             mFlashCardReference.setValue(null);
                             adapter.deleteCard(flashCard);
                             Toast.makeText(getContext(),"Card will be deleted",Toast.LENGTH_LONG).show();
+                            deletedTV.setVisibility(View.VISIBLE);
+                            isDeleted = true;
                         }
                     }).show();
+        } else if (isDeleted) {
+            Toast.makeText(getContext(),"This card is already deleted!",Toast.LENGTH_LONG).show();
+        } else if (isEditing) {
+            Toast.makeText(getContext(),"This card is editing now!",Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(getContext(),"You can't delete cards of this set!",Toast.LENGTH_LONG).show();
         }
     }
 
     private void editCard(){
-        if (isEditable){
+        if (isEditable && !isDeleted){
+            isEditing = true;
             mFlashCardReference = FirebaseDatabase.getInstance()
                     .getReference(flashCard.getPath());
 
@@ -177,8 +188,8 @@ public class CardFragment extends Fragment {
             final InputMethodManager imm = (InputMethodManager) getContext()
                     .getSystemService(Context.INPUT_METHOD_SERVICE);
             editorLayout.setVisibility(View.VISIBLE);
+            frontTextTV.setVisibility(View.INVISIBLE);
             frontTextET.setVisibility(View.VISIBLE);
-            backTextET.setVisibility(View.VISIBLE);
             backReadLayout.setVisibility(View.INVISIBLE);
             backWriteLayout.setVisibility(View.VISIBLE);
 
@@ -193,6 +204,7 @@ public class CardFragment extends Fragment {
             buttonBack.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    isEditing = false;
                     frontTextTV.setText(oldFrontText);
                     backTextTV.setText(oldBackText);
                     descriptionTV.setText(oldDescription);
@@ -212,6 +224,7 @@ public class CardFragment extends Fragment {
             buttonSave.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    isEditing = false;
                     flashCard.setFrontText(frontTextET.getText().toString());
                     flashCard.setBackText(backTextET.getText().toString());
                     flashCard.setDescription(descriptionET.getText().toString());
@@ -229,8 +242,9 @@ public class CardFragment extends Fragment {
                     mFlashCardReference.setValue(flashCard);
                 }
             });
-        }
-        else {
+        } else if (isDeleted) {
+            Toast.makeText(getContext(),"This card is already deleted!",Toast.LENGTH_LONG).show();
+        } else {
             Toast.makeText(getContext(),"You can't edit cards of this set!",Toast.LENGTH_LONG).show();
         }
     }

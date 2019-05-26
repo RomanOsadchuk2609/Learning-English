@@ -14,6 +14,7 @@ import com.dariahaze.learning_english.R;
 import com.dariahaze.learning_english.model.CardGroup;
 import com.dariahaze.learning_english.model.FlashCard;
 import com.dariahaze.learning_english.utils.Utils;
+import com.google.android.gms.dynamic.IFragmentWrapper;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -32,6 +33,7 @@ public class CardPagerActivity extends AppCompatActivity {
     private Query mFlashCardsReference;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
+    private ViewPager cardsPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +47,7 @@ public class CardPagerActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        final ViewPager cardsPager = findViewById(R.id.cardPager);
+        cardsPager = findViewById(R.id.cardPager);
         Bundle bundle = getIntent().getExtras();
         cardGroup = (CardGroup) bundle.get("CardGroup");
 
@@ -53,12 +55,12 @@ public class CardPagerActivity extends AppCompatActivity {
         boolean isEditable = cardGroup.getKey().contains(userKey);
         List<FlashCard> flashCardList = new ArrayList<>();
         final FlashCardsPagerAdapter adapter = new FlashCardsPagerAdapter(
-                getSupportFragmentManager(),flashCardList,cardGroup,isEditable);
+                getSupportFragmentManager(),flashCardList,cardGroup,isEditable, this);
         cardsPager.setAdapter(adapter);
 
         mFlashCardsReference = FirebaseDatabase.getInstance()
                 .getReference("flashCards/"+cardGroup.getKey()).orderByChild("number");
-        mFlashCardsReference.keepSynced(true);
+        //mFlashCardsReference.keepSynced(true);
 
 
         mFlashCardsReference.addChildEventListener(new ChildEventListener() {
@@ -77,10 +79,10 @@ public class CardPagerActivity extends AppCompatActivity {
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-                FlashCard flashCard = dataSnapshot.getValue(FlashCard.class);
+                /*FlashCard flashCard = dataSnapshot.getValue(FlashCard.class);
                 flashCard.setKey(dataSnapshot.getKey());
                 flashCard.setPath("flashCards/"+cardGroup.getKey()+"/"+flashCard.getKey());
-                adapter.notifyDataSetChanged();
+                adapter.notifyDataSetChanged();*/
             }
 
             @Override
@@ -112,5 +114,10 @@ public class CardPagerActivity extends AppCompatActivity {
             finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void scrollPager(int cardIndex){
+        cardsPager.getAdapter().notifyDataSetChanged();
+        cardsPager.setCurrentItem(cardIndex);
     }
 }

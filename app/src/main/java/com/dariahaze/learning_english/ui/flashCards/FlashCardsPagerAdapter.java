@@ -20,6 +20,7 @@ public class  FlashCardsPagerAdapter  extends FragmentStatePagerAdapter {
     private List<FlashCard> flashCards;
     private boolean isEditable = false;
     private int cardGroupSize;
+    private CardPagerActivity parentActivity;
 
     private DatabaseReference mCardGroupReference;
 
@@ -50,25 +51,41 @@ public class  FlashCardsPagerAdapter  extends FragmentStatePagerAdapter {
     }
 
     public void deleteCard(FlashCard flashCard){
+
         if (flashCards.contains(flashCard)){
+
+            flashCards.get(flashCards.indexOf(flashCard)).setDeleted(true);
+            cardGroup.setSize(cardGroup.getSize() -1);
+            mCardGroupReference.setValue(cardGroup);
+
+            /*int cardIndex;
+            cardIndex = flashCards.indexOf(flashCard);
             flashCards.remove(flashCard);
             numberOfTabs--;
             cardGroupSize--;
-            cardGroup.setSize(cardGroupSize);
+            cardGroup.setSize(cardGroup.getSize() -1);
             mCardGroupReference.setValue(cardGroup);
-            notifyDataSetChanged();;
+            //notifyDataSetChanged();
+            if (cardIndex < flashCards.size()-1 || cardIndex==0){
+                cardIndex++;
+            }
+            else if (cardIndex > 0){
+                cardIndex--;
+            }
 
+            parentActivity.scrollPager(cardIndex);*/
         }
     }
 
     public FlashCardsPagerAdapter(FragmentManager fm, List<FlashCard> flashCards, CardGroup cardGroup,
-                                  boolean isEditable) {
+                                  boolean isEditable, CardPagerActivity parentActivity) {
         super(fm);
         this.flashCards = flashCards;
         this.numberOfTabs = flashCards.size();
         this.isEditable = isEditable;
         this.cardGroup = cardGroup;
         this.cardGroupSize = cardGroup.getSize();
+        this.parentActivity = parentActivity;
         mCardGroupReference = FirebaseDatabase.getInstance().getReference(cardGroup.getPath());
     }
 
@@ -84,6 +101,7 @@ public class  FlashCardsPagerAdapter  extends FragmentStatePagerAdapter {
     public int getCount() {
         return numberOfTabs;
     }
+
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {

@@ -15,6 +15,9 @@ public class FlashCard implements Serializable {
     private String backText;
     private String description;
 
+    @Exclude
+    private boolean isDeleted;
+
     public FlashCard() {
     }
 
@@ -86,5 +89,15 @@ public class FlashCard implements Serializable {
     @Exclude
     public void setPath(String path) {
         this.path = path;
+    }
+
+    @Exclude
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    @Exclude
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
     }
 }

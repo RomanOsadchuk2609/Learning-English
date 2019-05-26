@@ -197,6 +197,17 @@ public class FlashCardsFragment extends Fragment {
 
                     // A data item has changed
                     CardGroup cardGroup = dataSnapshot.getValue(CardGroup.class);
+                    String key = dataSnapshot.getKey();
+                    cardGroup.setKey(key);
+                    cardGroup.setPath(userPath+key);
+                    if (cardGroupList.contains(cardGroup)){
+                        int index = cardGroupList.indexOf(cardGroup);
+                        cardGroupList.get(index).setSize(cardGroup.getSize());
+                        cardGroupList.get(index).setMaxCardNumber(cardGroup.getMaxCardNumber());
+                        cardGroupList.get(index).setName(cardGroup.getName());
+                        //adapter.getDataSet().add(cardGroup);
+                        adapter.notifyItemChanged(index);
+                    }
                 }
 
                 @Override

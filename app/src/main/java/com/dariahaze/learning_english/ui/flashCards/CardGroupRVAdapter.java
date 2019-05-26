@@ -92,7 +92,7 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
         private DatabaseReference learnedCardGroupsReference ;
         private DatabaseReference statisticsCardSets ;
         private int learnedSets = 0;
-
+        private int maxCardNumber;
 
         public ViewHolder(ConstraintLayout itemView) {
             super(itemView);
@@ -131,6 +131,7 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
         public void setItem(CardGroup element) {
             this.cardGroup = element;
             nameTV.setText(this.cardGroup.getName());
+            maxCardNumber = cardGroup.getMaxCardNumber();
             setAmountOfCards(cardGroup.getSize());
 
             learnedCardGroupsReference = FirebaseDatabase.getInstance()
@@ -225,13 +226,17 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
                                 @Override
                                 public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                                     View view = dialog.getCustomView();
-                                    EditText frontText,  backText;
+                                    EditText frontText,  backText, description;
                                     frontText = view.findViewById(R.id.dialogFrontText);
                                     backText = view.findViewById(R.id.dialogBackText);
+                                    description = view.findViewById(R.id.dialogDescription);
                                     FlashCard flashCard = new FlashCard(frontText.getText()+"",
                                             backText.getText()+"");
+                                    flashCard.setDescription(description.getText().toString());
                                     flashCard.setKey(userKey+"FlashCardId"+Utils.generateStringId());
-                                    flashCard.setNumber(cardNumber[0]);
+                                    maxCardNumber++;
+                                    flashCard.setNumber(maxCardNumber);
+                                    cardGroup.setMaxCardNumber(maxCardNumber);
 
                                     mFlashCardsReference = FirebaseDatabase.getInstance()
                                             .getReference("flashCards/"+cardGroup.getKey()+"/"+flashCard.getKey());
@@ -243,6 +248,7 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
                                     dialog.setTitle("Add card #"+ cardNumber[0]);
                                     frontText.getText().clear();
                                     backText.getText().clear();
+                                    description.getText().clear();
                                     setAmountOfCards(cardNumber[0]-1);
                                     frontText.requestFocus();
                                     InputMethodManager imm = (InputMethodManager) dialog.getContext()

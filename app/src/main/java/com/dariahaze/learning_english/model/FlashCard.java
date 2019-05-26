@@ -13,6 +13,7 @@ public class FlashCard implements Serializable {
     private int number;
     private String frontText;
     private String backText;
+    private String description;
 
     public FlashCard() {
     }
@@ -57,6 +58,14 @@ public class FlashCard implements Serializable {
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    public String getDescription() {
+        return description != null ? description : "";
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Exclude

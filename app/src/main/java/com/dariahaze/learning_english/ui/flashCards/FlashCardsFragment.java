@@ -114,6 +114,7 @@ public class FlashCardsFragment extends Fragment {
                                         UUID.randomUUID().toString());
                                 cardGroup.setName(dialog.getInputEditText().getText().toString());
                                 cardGroup.setSize(0);
+                                cardGroup.setMaxCardNumber(0);
                                 if (currentUser!=null){
                                     mUserCardSetReference.child(cardGroup.getKey()).setValue(cardGroup);
                                 }

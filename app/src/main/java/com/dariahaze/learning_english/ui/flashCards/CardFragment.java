@@ -39,10 +39,10 @@ public class CardFragment extends Fragment {
     private boolean isFrontSide = true;
     private boolean isEditable = false;
 
-    private EditText frontTextET, backTextET;
-    private TextView cardIndexTV, frontTextTV, backTextTV, sideTV;
+    private EditText frontTextET, backTextET, descriptionET;
+    private TextView cardIndexTV, frontTextTV, backTextTV, sideTV, descriptionTV;
     private ImageButton buttonSave, buttonRemove, buttonBack;
-    private LinearLayout editorLayout;
+    private LinearLayout editorLayout, backReadLayout, backWriteLayout;
     private DatabaseReference mFlashCardReference;
 
     FlashCardsPagerAdapter adapter;
@@ -78,9 +78,13 @@ public class CardFragment extends Fragment {
         cardIndexTV = view.findViewById(R.id.card_index_tv);
         frontTextTV = view.findViewById(R.id.card_front_tv);
         backTextTV = view.findViewById(R.id.card_back_tv);
+        descriptionTV = view.findViewById(R.id.card_description_tv);
         sideTV = view.findViewById(R.id.card_front_back_tv);
         frontTextET = view.findViewById(R.id.editTextFront);
         backTextET = view.findViewById(R.id.editTextBack);
+        descriptionET = view.findViewById(R.id.editTextDescription);
+        backReadLayout = view.findViewById(R.id.backReadLayout);
+        backWriteLayout = view.findViewById(R.id.backWriteLayout);
 
         buttonSave = view.findViewById(R.id.imageButtonSaveCard);
         //buttonRemove = view.findViewById(R.id.imageButtonSaveCard);
@@ -101,27 +105,14 @@ public class CardFragment extends Fragment {
             }
         });
 
-        /*if (isEditable){
-            flipView.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                    editorLayout.setVisibility(View.VISIBLE);
-                    frontTextET.setVisibility(View.VISIBLE);
-                    backTextET.setVisibility(View.VISIBLE);
-                    frontTextTV.setVisibility(View.INVISIBLE);
-                    backTextTV.setVisibility(View.INVISIBLE);
-                    return true;
-                }
-            });
-        }*/
-
-
         cardIndexTV.setText(cardIndex + " of " + amountOfCards);
         if (flashCard!=null){
             frontTextTV.setText(flashCard.getFrontText());
             backTextTV.setText(flashCard.getBackText());
             frontTextET.setText(flashCard.getFrontText());
             backTextET.setText(flashCard.getBackText());
+            descriptionTV.setText(flashCard.getDescription());
+            descriptionET.setText(flashCard.getDescription());
         }
 
 
@@ -179,15 +170,17 @@ public class CardFragment extends Fragment {
             mFlashCardReference = FirebaseDatabase.getInstance()
                     .getReference(flashCard.getPath());
 
-            final String oldFrontText = flashCard.getFrontText(), oldBackText = flashCard.getBackText();
+            final String oldFrontText = flashCard.getFrontText(),
+                    oldBackText = flashCard.getBackText(),
+                    oldDescription = flashCard.getDescription();
 
             final InputMethodManager imm = (InputMethodManager) getContext()
                     .getSystemService(Context.INPUT_METHOD_SERVICE);
             editorLayout.setVisibility(View.VISIBLE);
             frontTextET.setVisibility(View.VISIBLE);
             backTextET.setVisibility(View.VISIBLE);
-            frontTextTV.setVisibility(View.INVISIBLE);
-            backTextTV.setVisibility(View.INVISIBLE);
+            backReadLayout.setVisibility(View.INVISIBLE);
+            backWriteLayout.setVisibility(View.VISIBLE);
 
             if (isFrontSide){
                 frontTextET.requestFocus();
@@ -202,15 +195,17 @@ public class CardFragment extends Fragment {
                 public void onClick(View v) {
                     frontTextTV.setText(oldFrontText);
                     backTextTV.setText(oldBackText);
+                    descriptionTV.setText(oldDescription);
 
                     editorLayout.setVisibility(View.INVISIBLE);
+                    backWriteLayout.setVisibility(View.INVISIBLE);
+                    backReadLayout.setVisibility(View.VISIBLE);
                     frontTextET.setVisibility(View.INVISIBLE);
-                    backTextET.setVisibility(View.INVISIBLE);
                     frontTextTV.setVisibility(View.VISIBLE);
-                    backTextTV.setVisibility(View.VISIBLE);
 
                     frontTextET.setText(oldFrontText);
                     backTextET.setText(oldBackText);
+                    descriptionET.setText(oldDescription);
                 }
             });
 
@@ -219,15 +214,17 @@ public class CardFragment extends Fragment {
                 public void onClick(View v) {
                     flashCard.setFrontText(frontTextET.getText().toString());
                     flashCard.setBackText(backTextET.getText().toString());
+                    flashCard.setDescription(descriptionET.getText().toString());
 
                     frontTextTV.setText(flashCard.getFrontText());
                     backTextTV.setText(flashCard.getBackText());
+                    descriptionTV.setText(flashCard.getDescription());
 
                     editorLayout.setVisibility(View.INVISIBLE);
+                    backWriteLayout.setVisibility(View.INVISIBLE);
+                    backReadLayout.setVisibility(View.VISIBLE);
                     frontTextET.setVisibility(View.INVISIBLE);
-                    backTextET.setVisibility(View.INVISIBLE);
                     frontTextTV.setVisibility(View.VISIBLE);
-                    backTextTV.setVisibility(View.VISIBLE);
 
                     mFlashCardReference.setValue(flashCard);
                 }

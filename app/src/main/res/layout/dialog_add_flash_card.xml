@@ -21,4 +21,12 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/back_text"/>
+
+    <EditText
+        android:id="@+id/dialogDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/description"/>
 </LinearLayout>

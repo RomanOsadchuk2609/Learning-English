@@ -15,6 +15,7 @@ public class CardGroup implements Serializable {
 
     private String name;
     private int size;
+    private int maxCardNumber;
 
     public CardGroup() {
     }
@@ -37,6 +38,14 @@ public class CardGroup implements Serializable {
 
     public void setSize(int size) {
         this.size = size;
+    }
+
+    public int getMaxCardNumber() {
+        return maxCardNumber;
+    }
+
+    public void setMaxCardNumber(int maxCardNumber) {
+        this.maxCardNumber = maxCardNumber;
     }
 
     @Exclude

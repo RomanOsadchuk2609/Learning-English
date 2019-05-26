@@ -90,6 +90,8 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
         private boolean isChecked = false;
         private boolean isMutable;
         private DatabaseReference learnedCardGroupsReference ;
+        private DatabaseReference statisticsCardSets ;
+        private int learnedSets = 0;
 
 
         public ViewHolder(ConstraintLayout itemView) {
@@ -103,6 +105,24 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
                 @Override
                 public void onClick(View v) {
                     parent.getActivity().openContextMenu(menuButton);
+                }
+            });
+
+            statisticsCardSets = FirebaseDatabase.getInstance().getReference("statistics/" +
+                    Utils.getFormattedUserKey(currentUser.getEmail()) + "/cardSets");
+
+            statisticsCardSets.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Integer amount = dataSnapshot.getValue(Integer.class);
+                    if (amount!=null){
+                        learnedSets = amount;
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
                 }
             });
 
@@ -184,6 +204,12 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
                 case R.id.item_learned_group:
                     isChecked = !isChecked;
                     item.setChecked(!item.isChecked());
+                    if (isChecked){
+                        learnedSets++;
+                    } else if (learnedSets>0){
+                        learnedSets --;
+                    }
+                    statisticsCardSets.setValue(learnedSets);
                     setBackground();
                     learnedCardGroupsReference.setValue(isChecked);
                     break;
@@ -268,6 +294,10 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
                                             .getReference("flashCards/"+cardGroup.getKey());
                                     mFlashCardsReference.setValue(null);
                                     learnedCardGroupsReference.setValue(null);
+                                    if (isChecked){
+                                        learnedSets--;
+                                        statisticsCardSets.setValue(learnedSets);
+                                    }
                                     dataSet.remove(getAdapterPosition());
                                     notifyItemRemoved(getAdapterPosition());
                                 }

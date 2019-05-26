@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dariahaze.learning_english.R;
-import com.dariahaze.learning_english.model.UsersStatistics;
 import com.dariahaze.learning_english.utils.Utils;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,8 +28,11 @@ import com.google.firebase.database.ValueEventListener;
 public class StatisticsFragment extends Fragment {
 
     private DatabaseReference statisticsReference;
+    private DatabaseReference cardSetsReference;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
+    private TextView amountOfTestsTV, amountOfTopicsTV, amountOfCardSetsTV;
+    private int learnedCardSets = 0, allCardSets = 0;
 
     public StatisticsFragment() {
         // Required empty public constructor
@@ -51,13 +54,14 @@ public class StatisticsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable final Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        final TextView amountOfTestsTV, amountOfTopicsTV, amountOfCardSets;
-        amountOfCardSets = view.findViewById(R.id.statisticsCardSets);
+        amountOfCardSetsTV = view.findViewById(R.id.statisticsCardSets);
         amountOfTopicsTV = view.findViewById(R.id.statisticsTopics);
         amountOfTestsTV = view.findViewById(R.id.statisticsTests);
 
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
+
+        cardSetsReference = FirebaseDatabase.getInstance().getReference("cards/");
 
         statisticsReference = FirebaseDatabase.getInstance().getReference("statistics/"
                 + Utils.getFormattedUserKey(currentUser.getEmail()));
@@ -102,6 +106,84 @@ public class StatisticsFragment extends Fragment {
             }
         });
 
+        statisticsReference.child("cardSets").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Integer cardSets = dataSnapshot.getValue(Integer.class);
+                if (cardSets != null){
+                    learnedCardSets = cardSets;
+                    setAmountOfLearnedCardSets();
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        cardSetsReference.child("admin").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                allCardSets++;
+                setAmountOfLearnedCardSets();
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+                allCardSets--;
+                setAmountOfLearnedCardSets();
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        cardSetsReference.child(Utils.getFormattedUserKey(currentUser.getEmail()))
+                .addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                allCardSets++;
+                setAmountOfLearnedCardSets();
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+                allCardSets--;
+                setAmountOfLearnedCardSets();
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
+    private void setAmountOfLearnedCardSets(){
+        amountOfCardSetsTV.setText("Amount of learned card sets: "+learnedCardSets+"/"+allCardSets);
     }
 }

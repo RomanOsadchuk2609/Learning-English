@@ -35,7 +35,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
-//TODO: DELETE FLESH CARDS ON DELETING CARD SET
+
 public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter.ViewHolder> {
     private List<CardGroup> dataSet;
     private Fragment parent;
@@ -264,6 +264,10 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
                                 @Override
                                 public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                                     mCardGroupReference.setValue(null);
+                                    mFlashCardsReference = FirebaseDatabase.getInstance()
+                                            .getReference("flashCards/"+cardGroup.getKey());
+                                    mFlashCardsReference.setValue(null);
+                                    learnedCardGroupsReference.setValue(null);
                                     dataSet.remove(getAdapterPosition());
                                     notifyItemRemoved(getAdapterPosition());
                                 }

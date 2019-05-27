@@ -13,4 +13,21 @@
     <color name="colorCorrectQuestion">#5DC256</color>
     <color name="colorLearned">#83E0FFF1</color>
     <color name="colorLearnedDark">#8392D5B8</color>
+
+
+    <color name="colorPinkDark">#CC1F62</color>
+    <color name="colorPink">#ff3986</color>
+    <color name="colorPinkLight">#FC85B3</color>
+    <color name="colorVioletDark">#731BFF</color>
+    <color name="colorViolet">#8d44ff</color>
+    <color name="colorVioletLight">#9F67F8</color>
+    <color name="colorBlueDark">#1957F5</color>
+    <color name="colorBlue">#2f9bff</color>
+    <color name="colorBlueLight">#6FB8FC</color>
+    <color name="colorGreenDark">#0FCF76</color>
+    <color name="colorGreen">#24f2ad</color>
+    <color name="colorGreenLight">#91FCD8</color>
+    <color name="colorYellowDark">#FFAB2E</color>
+    <color name="colorYellow">#ffd12e</color>
+    <color name="colorYellowLight">#FFE68E</color>
 </resources>

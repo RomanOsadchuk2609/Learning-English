@@ -36,12 +36,14 @@ public class MainActivity extends AppCompatActivity
     private boolean mainFragmentIsOpened = true;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
+    private Toolbar toolbar;
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //getWindow().setStatusBarColor(getResources().getColor(R.color.colorVioletDark));
 
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 
@@ -60,29 +62,33 @@ public class MainActivity extends AppCompatActivity
         }
         else {
 
-
-            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-            setSupportActionBar(toolbar);
-
             fm = getSupportFragmentManager();
             fm.beginTransaction().replace(R.id.main_content, MainFragment.newInstance()).commit();
-
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                    this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-            drawer.addDrawerListener(toggle);
-            toggle.syncState();
-
-            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-            navigationView.setNavigationItemSelectedListener(this);
+            init();
             navigationView.getMenu().getItem(0).setChecked(true);
-
-            View headerLayout = navigationView.getHeaderView(0);
-            TextView usernameTV = headerLayout.findViewById(R.id.usernameTV);
-            Log.d("SIGN_IN", "currentUser:" + currentUser.getDisplayName());
-            usernameTV.setText(currentUser.getDisplayName());
-
         }
+    }
+
+    private void init(){
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        findViewById(R.id.drawer_layout).setFitsSystemWindows(true);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        View headerLayout = navigationView.getHeaderView(0);
+        TextView usernameTV = headerLayout.findViewById(R.id.usernameTV);
+        Log.d("SIGN_IN", "currentUser:" + currentUser.getDisplayName());
+        usernameTV.setText(currentUser.getDisplayName());
     }
 
     @Override
@@ -108,22 +114,39 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_total) {
             fm.beginTransaction().replace(R.id.main_content, MainFragment.newInstance()).commit();
             mainFragmentIsOpened = true;
+            navigationView.getMenu().getItem(0).setChecked(true);
         } else if (id == R.id.nav_grammar_in_use) {
+            setTheme(R.style.AppThemePink);
+            setContentView(R.layout.activity_main);
+            init();
+            navigationView.getMenu().getItem(1).setChecked(true);
             fm.beginTransaction().replace(R.id.main_content, GrammarPagesFragment.newInstance()).commit();
             mainFragmentIsOpened = false;
         } else if (id == R.id.nav_grammar_test) {
+            setTheme(R.style.AppThemeViolet);
+            setContentView(R.layout.activity_main);
+            init();
+            navigationView.getMenu().getItem(2).setChecked(true);
             fm.beginTransaction().replace(R.id.main_content, TestsFragment.newInstance()).commit();
             mainFragmentIsOpened = false;
         } else if (id == R.id.nav_flash_cards) {
+            setTheme(R.style.AppThemeBlue);
+            setContentView(R.layout.activity_main);
+            init();
+            navigationView.getMenu().getItem(3).setChecked(true);
             fm.beginTransaction().replace(R.id.main_content, FlashCardsFragment.newInstance()).commit();
-
-            /*Intent intent = new Intent (getApplicationContext(), CardPagerActivity.class);
-            startActivity(intent);*/
             mainFragmentIsOpened = false;
         }else if (id == R.id.nav_video_lessons) {
+            setTheme(R.style.AppThemeGreen);
+            setContentView(R.layout.activity_main);
+            init();
             fm.beginTransaction().replace(R.id.main_content, VideoLessonsFragment.newInstance()).commit();
             mainFragmentIsOpened = false;
         } else if (id == R.id.nav_user_statistics) {
+            setTheme(R.style.AppThemeYellow);
+            setContentView(R.layout.activity_main);
+            init();
+            navigationView.getMenu().getItem(4).setChecked(true);
             fm.beginTransaction().replace(R.id.main_content, StatisticsFragment.newInstance()).commit();
             mainFragmentIsOpened = false;
         } else if (id == R.id.nav_share) {

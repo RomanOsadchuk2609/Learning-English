@@ -90,7 +90,7 @@ public class UsersAnswersAdapter  extends RecyclerView.Adapter<UsersAnswersAdapt
             this.answer = answer;
             this.question = question;
 
-            questionTV.setText(question.getExplanation());
+            questionTV.setText(question.getQuestion());
             explanationTV.setText(question.getExplanation());
 
             if (question.getAnswersList().size()==1){

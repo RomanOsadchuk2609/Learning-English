@@ -29,7 +29,7 @@
         android:id="@+id/timePanelPractice"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:background="@color/colorPrimaryLight"
+        android:background="@color/colorVioletLight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarPracticeTests">
@@ -273,6 +273,8 @@
         android:layout_marginBottom="8dp"
         android:text="@string/next"
         android:textSize="18sp"
+        android:textColor="@color/colorWhite"
+        android:backgroundTint="@color/colorVioletLight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

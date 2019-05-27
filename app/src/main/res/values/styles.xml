@@ -1,19 +1,73 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
+    <!--<style name="AppThemePink" parent="Theme.AppCompat.Light.NoActionBar">
+        &lt;!&ndash; Customize your theme here. &ndash;&gt;
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/colorWindowBackground</item>
         <item name="android:homeAsUpIndicator">@drawable/ic_keyboard_backspace_black_24dp</item>
+    </style>-->
+
+    <style name="AppThemePink" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPink</item>
+        <item name="colorPrimaryDark">@color/colorPinkDark</item>
+        <item name="colorAccent">@color/colorPink</item>
+        <item name="android:windowBackground">@color/colorWindowBackground</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_keyboard_backspace_black_24dp</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
-    <!--<style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>-->
+    <style name="AppThemeViolet" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorViolet</item>
+        <item name="colorPrimaryDark">@color/colorVioletDark</item>
+        <item name="colorAccent">@color/colorViolet</item>
+        <item name="android:windowBackground">@color/colorWindowBackground</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_keyboard_backspace_black_24dp</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+
+    </style>
+
+    <style name="AppThemeBlue" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorBlue</item>
+        <item name="colorPrimaryDark">@color/colorBlueDark</item>
+        <item name="colorAccent">@color/colorBlue</item>
+        <item name="android:windowBackground">@color/colorWindowBackground</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_keyboard_backspace_black_24dp</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="AppThemeGreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorGreen</item>
+        <item name="colorPrimaryDark">@color/colorGreenDark</item>
+        <item name="colorAccent">@color/colorGreen</item>
+        <item name="android:windowBackground">@color/colorWindowBackground</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_keyboard_backspace_black_24dp</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="AppThemeYellow" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorYellow</item>
+        <item name="colorPrimaryDark">@color/colorYellowDark</item>
+        <item name="colorAccent">@color/colorYellow</item>
+        <item name="android:windowBackground">@color/colorWindowBackground</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_keyboard_backspace_black_24dp</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+
+
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 

@@ -17,13 +17,15 @@
 
     <color name="colorPinkDark">#CC1F62</color>
     <color name="colorPink">#ff3986</color>
-    <color name="colorPinkLight">#FC85B3</color>
+    <color name="colorPinkLight">#FFC3DA</color>
+    <color name="colorPinkLearned">#FFE8F0</color>
     <color name="colorVioletDark">#731BFF</color>
     <color name="colorViolet">#8d44ff</color>
     <color name="colorVioletLight">#9F67F8</color>
     <color name="colorBlueDark">#5D87F7</color>
     <color name="colorBlue">#2f9bff</color>
-    <color name="colorBlueLight">#6FB8FC</color>
+    <color name="colorBlueLight">#B1D6FA</color>
+    <color name="colorBlueLearned">#D4EAFF</color>
     <color name="colorGreenDark">#20DD85</color>
     <color name="colorGreen">#1CD698</color>
     <color name="colorGreenLight">#91FCD8</color>

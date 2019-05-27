@@ -329,7 +329,7 @@ public class CardGroupRVAdapter  extends RecyclerView.Adapter<CardGroupRVAdapter
         private void setBackground(){
             if (isChecked){
                 constraintLayout.setBackground(constraintLayout.getContext()
-                        .getDrawable(R.drawable.item_background_large_learned));
+                        .getDrawable(R.drawable.item_background_large_learned_blue));
             }
             else {
                 constraintLayout.setBackground(constraintLayout.getContext()

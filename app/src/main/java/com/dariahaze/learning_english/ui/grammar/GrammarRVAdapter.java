@@ -177,7 +177,7 @@ public class GrammarRVAdapter extends RecyclerView.Adapter<GrammarRVAdapter.View
                         Boolean isChecked = dataSnapshot.getValue(Boolean.class);
                         if (isChecked!=null && isChecked){
                             constraintLayout.setBackground(constraintLayout.getContext()
-                                    .getDrawable(R.drawable.item_background_large_learned));
+                                    .getDrawable(R.drawable.item_background_large_learned_pink));
                         }
                         else {
                             constraintLayout.setBackground(constraintLayout.getContext()
@@ -197,7 +197,7 @@ public class GrammarRVAdapter extends RecyclerView.Adapter<GrammarRVAdapter.View
         private void setBackground(){
             if (learnedChildes == grammarElement.getSubElements().size()){
                 constraintLayout.setBackground(constraintLayout.getContext()
-                        .getDrawable(R.drawable.item_background_large_learned));
+                        .getDrawable(R.drawable.item_background_large_learned_pink));
             }
             else {
                 constraintLayout.setBackground(constraintLayout.getContext()

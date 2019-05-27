@@ -94,7 +94,7 @@ public class GrammarRVSmallAdapter extends RecyclerView.Adapter<GrammarRVSmallAd
                     Boolean isChecked = dataSnapshot.getValue(Boolean.class);
                     if (isChecked!=null && isChecked){
                         constraintLayout.setBackground(constraintLayout.getContext()
-                                .getDrawable(R.drawable.item_background_small_learned));
+                                .getDrawable(R.drawable.item_background_small_learned_pink));
                     }
                     else {
                         constraintLayout.setBackground(constraintLayout.getContext()

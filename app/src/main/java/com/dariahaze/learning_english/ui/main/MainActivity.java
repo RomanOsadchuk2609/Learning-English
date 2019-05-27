@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity
         else {
 
             fm = getSupportFragmentManager();
-            fm.beginTransaction().replace(R.id.main_content, MainFragment.newInstance()).commit();
+            fm.beginTransaction().replace(R.id.main_content, MainFragment.newInstance(MainActivity.this)).commit();
             init();
             navigationView.getMenu().getItem(0).setChecked(true);
         }
@@ -112,44 +112,42 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         if (id == R.id.nav_total) {
-            fm.beginTransaction().replace(R.id.main_content, MainFragment.newInstance()).commit();
+            fm.beginTransaction().replace(R.id.main_content, MainFragment.newInstance(MainActivity.this)).commit();
             mainFragmentIsOpened = true;
             navigationView.getMenu().getItem(0).setChecked(true);
-        } else if (id == R.id.nav_grammar_in_use) {
-            setTheme(R.style.AppThemePink);
-            setContentView(R.layout.activity_main);
-            init();
-            navigationView.getMenu().getItem(1).setChecked(true);
+        }
+
+        else if (id == R.id.nav_grammar_in_use) {
+            setActivityTheme(1);
             fm.beginTransaction().replace(R.id.main_content, GrammarPagesFragment.newInstance()).commit();
             mainFragmentIsOpened = false;
-        } else if (id == R.id.nav_grammar_test) {
-            setTheme(R.style.AppThemeViolet);
-            setContentView(R.layout.activity_main);
-            init();
-            navigationView.getMenu().getItem(2).setChecked(true);
+        }
+
+        else if (id == R.id.nav_grammar_test) {
+            setActivityTheme(2);
             fm.beginTransaction().replace(R.id.main_content, TestsFragment.newInstance()).commit();
             mainFragmentIsOpened = false;
-        } else if (id == R.id.nav_flash_cards) {
-            setTheme(R.style.AppThemeBlue);
-            setContentView(R.layout.activity_main);
-            init();
-            navigationView.getMenu().getItem(3).setChecked(true);
+        }
+
+        else if (id == R.id.nav_flash_cards) {
+            setActivityTheme(3);
             fm.beginTransaction().replace(R.id.main_content, FlashCardsFragment.newInstance()).commit();
             mainFragmentIsOpened = false;
-        }else if (id == R.id.nav_video_lessons) {
-            setTheme(R.style.AppThemeGreen);
-            setContentView(R.layout.activity_main);
-            init();
+        }
+
+        else if (id == R.id.nav_video_lessons) {
+            setActivityTheme(4);
             fm.beginTransaction().replace(R.id.main_content, VideoLessonsFragment.newInstance()).commit();
             mainFragmentIsOpened = false;
-        } else if (id == R.id.nav_user_statistics) {
-            setTheme(R.style.AppThemeYellow);
-            setContentView(R.layout.activity_main);
-            init();
-            navigationView.getMenu().getItem(4).setChecked(true);
+        }
+
+        else if (id == R.id.nav_user_statistics) {
+            setActivityTheme(5);
             fm.beginTransaction().replace(R.id.main_content, StatisticsFragment.newInstance()).commit();
             mainFragmentIsOpened = false;
-        } else if (id == R.id.nav_share) {
+        }
+
+        else if (id == R.id.nav_share) {
             Intent share = new Intent(android.content.Intent.ACTION_SEND);
             share.setType("text/plain");
             share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
@@ -160,7 +158,9 @@ public class MainActivity extends AppCompatActivity
             share.putExtra(Intent.EXTRA_TEXT, Utils.APP_LINK);
 
             startActivity(Intent.createChooser(share, "Share link via..."));
-        } else if (id == R.id.nav_sign_out) {
+        }
+
+        else if (id == R.id.nav_sign_out) {
             mAuth.signOut();
             openSignInActivity();
         }
@@ -175,6 +175,38 @@ public class MainActivity extends AppCompatActivity
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_SINGLE_TOP);
         this.startActivity (intent);
         this.finishActivity (0);
+    }
+
+    public void setActivityTheme(int index){
+        switch (index){
+            case 1:
+                setTheme(R.style.AppThemePink);
+                setContentView(R.layout.activity_main);
+                init();
+                break;
+            case 2:
+                setTheme(R.style.AppThemeViolet);
+                setContentView(R.layout.activity_main);
+                init();
+                break;
+            case 3:
+                setTheme(R.style.AppThemeBlue);
+                setContentView(R.layout.activity_main);
+                init();
+                break;
+            case 4:
+                setTheme(R.style.AppThemeGreen);
+                setContentView(R.layout.activity_main);
+                init();
+                break;
+            case 5:
+                setTheme(R.style.AppThemeYellow);
+                setContentView(R.layout.activity_main);
+                init();
+                break;
+        }
+
+        navigationView.getMenu().getItem(index).setChecked(true);
     }
 
 }

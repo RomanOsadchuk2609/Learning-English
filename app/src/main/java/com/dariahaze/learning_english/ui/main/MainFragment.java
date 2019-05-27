@@ -25,13 +25,19 @@ import com.dariahaze.learning_english.ui.videoLessons.VideoLessonsFragment;
  */
 public class MainFragment extends Fragment {
 
+    private MainActivity parentActivity;
+
+    public void setParentActivity(MainActivity parentActivity) {
+        this.parentActivity = parentActivity;
+    }
 
     public MainFragment() {
         // Required empty public constructor
     }
 
-    public static MainFragment newInstance() {
+    public static MainFragment newInstance(MainActivity parentActivity) {
         MainFragment fragment = new MainFragment();
+        fragment.setParentActivity(parentActivity);
         return fragment;
     }
 
@@ -56,6 +62,7 @@ public class MainFragment extends Fragment {
         grammarCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                parentActivity.setActivityTheme(1);
                 assert getFragmentManager() != null;
                 getFragmentManager().beginTransaction().replace(R.id.main_content, GrammarPagesFragment.newInstance())
                         .commit();
@@ -65,6 +72,8 @@ public class MainFragment extends Fragment {
         testsCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                parentActivity.setActivityTheme(2);
+                getActivity().setTheme(R.style.AppThemeViolet);
                 assert getFragmentManager() != null;
                 getFragmentManager().beginTransaction().replace(R.id.main_content, TestsFragment.newInstance())
                         .commit();
@@ -74,6 +83,7 @@ public class MainFragment extends Fragment {
         flashCardsCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                parentActivity.setActivityTheme(3);
                 assert getFragmentManager() != null;
                 getFragmentManager().beginTransaction().replace(R.id.main_content, FlashCardsFragment.newInstance())
                         .commit();
@@ -83,6 +93,7 @@ public class MainFragment extends Fragment {
         videoLessonsCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                parentActivity.setActivityTheme(4);
                 assert getFragmentManager() != null;
                 getFragmentManager().beginTransaction().replace(R.id.main_content, VideoLessonsFragment.newInstance())
                         .commit();
@@ -92,6 +103,7 @@ public class MainFragment extends Fragment {
         statisticsCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                parentActivity.setActivityTheme(5);
                 assert getFragmentManager() != null;
                 getFragmentManager().beginTransaction().replace(R.id.main_content, StatisticsFragment.newInstance())
                         .commit();

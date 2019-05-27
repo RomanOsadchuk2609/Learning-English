@@ -19,6 +19,7 @@
         <item name="android:homeAsUpIndicator">@drawable/ic_keyboard_backspace_black_24dp</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:statusBarColor">@color/colorPinkDark</item>
     </style>
 
     <style name="AppThemeViolet" parent="Theme.AppCompat.Light.NoActionBar">

@@ -21,11 +21,11 @@
     <color name="colorVioletDark">#731BFF</color>
     <color name="colorViolet">#8d44ff</color>
     <color name="colorVioletLight">#9F67F8</color>
-    <color name="colorBlueDark">#1957F5</color>
+    <color name="colorBlueDark">#5D87F7</color>
     <color name="colorBlue">#2f9bff</color>
     <color name="colorBlueLight">#6FB8FC</color>
-    <color name="colorGreenDark">#0FCF76</color>
-    <color name="colorGreen">#24f2ad</color>
+    <color name="colorGreenDark">#20DD85</color>
+    <color name="colorGreen">#1CD698</color>
     <color name="colorGreenLight">#91FCD8</color>
     <color name="colorYellowDark">#FFAB2E</color>
     <color name="colorYellow">#ffd12e</color>

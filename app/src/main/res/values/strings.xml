@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Learning English</string>
+    <string name="app_name">Dive into English</string>
     <string name="web_client_id">391054699526-e828316umovtdjr5i55qkq668usf2mkd.apps.googleusercontent.com</string>
     <string name="sign_in">Sign in</string>
     <string name="title_activity_main">MainActivity</string>
